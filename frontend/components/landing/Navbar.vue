@@ -132,7 +132,6 @@ export default {
   data() {
     return {
       menuItems: [
-        { title: "About", path: "/about", hasDropdown: false },
         { title: "Services", path: "/services", hasDropdown: false },
         { 
           title: "Products", 

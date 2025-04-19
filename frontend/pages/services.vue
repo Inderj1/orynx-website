@@ -27,7 +27,7 @@ definePageMeta({
       <!-- Hero Banner -->
       <div class="relative rounded-xl overflow-hidden mb-16 mt-8">
         <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary-dark/80 z-10"></div>
-        <img src="@/assets/img/hero.jpg" alt="Healthcare Services" class="w-full h-64 md:h-80 object-cover">
+        <img src="/health-heart.jpg" alt="Healthcare Services" class="w-full h-64 md:h-80 object-cover">
         <div class="absolute inset-0 z-20 flex items-center justify-center">
           <div class="text-center text-white px-4">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">AI-Powered Healthcare Solutions</h2>

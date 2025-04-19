@@ -8,19 +8,23 @@
           </p>
         </div>
         <div class="flex items-center space-x-6">
+          <a href="/products" 
+             class="text-font hover:text-header transition-colors duration-300">
+            Products
+          </a>
+          <a href="/services" 
+             class="text-font hover:text-header transition-colors duration-300">
+            Services
+          </a>
+          <a href="/contact" 
+             class="text-font hover:text-header transition-colors duration-300">
+            Contact
+          </a>
           <a href="https://github.com/jayhere1" 
              target="_blank" 
              rel="noopener" 
              class="text-font hover:text-header transition-colors duration-300">
             GitHub
-          </a>
-          <a href="/about" 
-             class="text-font hover:text-header transition-colors duration-300">
-            About
-          </a>
-          <a href="/contact" 
-             class="text-font hover:text-header transition-colors duration-300">
-            Contact
           </a>
         </div>
       </div>

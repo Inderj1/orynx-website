@@ -1,4 +1,6 @@
 <script setup>
+import LandingAboutUs from '~/components/landing/AboutUs.vue';
+
 definePageMeta({
   layout: "landing",
   title: "Orynx - Home",
@@ -34,9 +36,6 @@ definePageMeta({
 <template>
   <LandingContainer>
     <LandingHero />
-    <LandingFeatures />
-    <LandingLogos />
-    
-    <LandingTechnologies />
+    <LandingAboutUs />
   </LandingContainer>
 </template>
