@@ -10,7 +10,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
-    "nuxt-icon",
+    // "nuxt-icon", // Temporarily commented out due to compatibility issues
     "@nuxt/image-edge",
   ],
   plugins: ["~/plugins/firebase.js"],
