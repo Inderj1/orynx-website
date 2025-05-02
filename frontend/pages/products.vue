@@ -30,7 +30,7 @@ definePageMeta({
                         position: 1,
                         url: 'https://orynx.co.uk/products/ai-foot-drop-calculation',
                         name: 'AI-Assisted Foot Drop Calculation',
-                        description: 'Developed at Queen Margaret University, this innovative research project leverages AI and machine learning to revolutionize the management of foot drop, enhancing shared decisionmaking and patient-centered care.'
+                        description: 'This innovative research project leverages AI and machine learning to revolutionize the management of foot drop, enhancing shared decisionmaking and patient-centered care.'
                     },
                     {
                         '@type': 'ListItem',
@@ -71,7 +71,7 @@ const products = ref([
         id: 1,
         category: 'AI/ML',
         title: 'AI-Assisted Foot Drop Calculation',
-        description: 'Developed at Queen Margaret University, this innovative research project leverages AI and machine learning to revolutionize the management of foot drop, enhancing shared decisionmaking and patient-centered care.',
+        description: 'This innovative research project leverages AI and machine learning to revolutionize the management of foot drop, enhancing shared decisionmaking and patient-centered care.',
         features: [
             {
                 title: 'Machine learning for accurate gait analysis',
