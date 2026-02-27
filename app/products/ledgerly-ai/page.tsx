@@ -316,10 +316,12 @@ function CFOCopilotSection() {
                 </div>
               ))}
             </div>
-            <Button className="bg-foreground text-background hover:bg-foreground/90 group">
-              Book a Demo
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="/pricing">
+              <Button className="bg-foreground text-background hover:bg-foreground/90 group">
+                Book a Demo
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

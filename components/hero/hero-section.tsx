@@ -116,21 +116,25 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <Button
-                size="lg"
-                className="bg-foreground text-background hover:bg-foreground/90 group px-8 shadow-lg shadow-foreground/10 transition-all hover:shadow-xl hover:shadow-foreground/15"
-              >
-                Get a Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border hover:bg-muted group bg-transparent transition-all hover:border-teal/30"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                See How It Works
-              </Button>
+              <a href="/pricing">
+                <Button
+                  size="lg"
+                  className="bg-foreground text-background hover:bg-foreground/90 group px-8 shadow-lg shadow-foreground/10 transition-all hover:shadow-xl hover:shadow-foreground/15"
+                >
+                  Get a Demo
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
+              <a href="/how-it-works">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-border hover:bg-muted group bg-transparent transition-all hover:border-teal/30"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  See How It Works
+                </Button>
+              </a>
             </motion.div>
 
             <motion.div
@@ -207,7 +211,7 @@ export function HeroSection() {
                   transition={{ delay: 0.7, duration: 0.6 }}
                 >
                   <div
-                    className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-teal leading-none"
+                    className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground/50 leading-none"
                     style={{ fontFamily: 'var(--font-space-mono)', letterSpacing: '0.08em' }}
                   >
                     STRATAX

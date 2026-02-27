@@ -389,10 +389,12 @@ export default function LedgerlyFieldPage() {
               Purpose-built financial intelligence for field service companies. Four economic engines analyze every job, crew, and invoice — turning operational data into profitability insights across 14 financial views.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
-              <Button className="bg-foreground text-background hover:bg-foreground/90 group">
-                Book a Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <a href="/pricing">
+                <Button className="bg-foreground text-background hover:bg-foreground/90 group">
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
+              </a>
               <span className="px-4 py-2 rounded-full bg-coral/10 text-coral border border-coral/20 text-sm font-semibold">
                 LEDGERLY FIELD
               </span>

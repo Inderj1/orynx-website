@@ -450,10 +450,12 @@ function SDKPreviewSection() {
                 </li>
               ))}
             </ul>
-            <Button className="bg-foreground text-background hover:bg-foreground/90 group">
-              View Documentation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <a href="/how-it-works">
+              <Button className="bg-foreground text-background hover:bg-foreground/90 group">
+                View Documentation
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </a>
           </motion.div>
         </div>
       </div>

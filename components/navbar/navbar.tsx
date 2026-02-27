@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ArrowRight, BrainCircuit, BookOpen, MapPin, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
@@ -25,12 +25,6 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const productsTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const { scrollY } = useScroll()
-
-  // Teal accent line width grows as you scroll
-  const accentWidth = useTransform(scrollY, [0, 100], ["0%", "100%"])
-  const accentOpacity = useTransform(scrollY, [0, 60], [0, 1])
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -58,16 +52,8 @@ export function Navbar() {
             "relative flex items-center justify-between transition-all duration-500 ease-out",
             isScrolled
               ? "h-14 px-5 rounded-full border border-border/60 bg-background/70 backdrop-blur-xl shadow-lg shadow-black/[0.06]"
-              : "h-16 lg:h-20 px-0 rounded-none border-transparent bg-transparent"
+              : "h-16 lg:h-20 px-0 rounded-none bg-background/80 backdrop-blur-md border-b border-border/40"
           )}>
-            {/* Teal accent line — grows on scroll (full-width mode only) */}
-            {!isScrolled && (
-              <motion.div
-                className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-teal/80 via-teal to-teal/80"
-                style={{ width: accentWidth, opacity: accentOpacity }}
-              />
-            )}
-
             {/* Teal glow ring on scrolled pill */}
             {isScrolled && (
               <div className="absolute inset-0 rounded-full ring-1 ring-teal/10 pointer-events-none" />
@@ -90,8 +76,8 @@ export function Navbar() {
 
             {/* Desktop Navigation */}
             <div className={cn(
-              "hidden lg:flex items-center gap-0.5 transition-all duration-500",
-              isScrolled ? "mx-3" : "mx-8"
+              "hidden lg:flex items-center gap-0.5 ml-auto transition-all duration-500",
+              isScrolled ? "mr-3" : "mr-6"
             )}>
               {navLinks.map((link) => (
                 link.hasDropdown ? (
@@ -174,28 +160,24 @@ export function Navbar() {
               ))}
             </div>
 
+            {/* Separator */}
+            <div className="hidden lg:block w-px h-5 bg-border/60 mx-2" />
+
             {/* Desktop CTAs */}
             <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-              <a
-                href="#"
-                className={cn(
-                  "text-sm font-semibold text-foreground/60 hover:text-foreground transition-all duration-300 px-3 py-1.5 rounded-full hover:bg-foreground/[0.04]",
-                  isScrolled ? "hidden" : "block"
-                )}
-              >
-                Sign In
+              <a href="/pricing">
+                <Button
+                  size="sm"
+                  className={cn(
+                    "bg-teal text-white hover:bg-teal/90 rounded-full px-5 font-semibold shadow-sm shadow-teal/25 transition-all duration-300 group",
+                    "hover:shadow-lg hover:shadow-teal/30 hover:scale-[1.02] active:scale-[0.98]",
+                    isScrolled && "px-4 text-xs"
+                  )}
+                >
+                  Get a Demo
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                </Button>
               </a>
-              <Button
-                size="sm"
-                className={cn(
-                  "bg-teal text-white hover:bg-teal/90 rounded-full px-5 font-semibold shadow-sm shadow-teal/25 transition-all duration-300 group",
-                  "hover:shadow-lg hover:shadow-teal/30 hover:scale-[1.02] active:scale-[0.98]",
-                  isScrolled && "px-4 text-xs"
-                )}
-              >
-                Get a Demo
-                <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -274,13 +256,12 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25 }}
               >
-                <Button variant="outline" className="w-full justify-center bg-transparent rounded-xl h-12 font-semibold">
-                  Sign In
-                </Button>
-                <Button className="w-full justify-center bg-teal text-white hover:bg-teal/90 rounded-xl h-12 shadow-md shadow-teal/20 font-semibold group">
-                  Get a Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <a href="/pricing" className="w-full">
+                  <Button className="w-full justify-center bg-teal text-white hover:bg-teal/90 rounded-xl h-12 shadow-md shadow-teal/20 font-semibold group">
+                    Get a Demo
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </a>
               </motion.div>
             </div>
           </motion.div>

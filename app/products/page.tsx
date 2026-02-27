@@ -291,10 +291,12 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto pt-2">
-                  <Button className="bg-foreground text-background hover:bg-foreground/90 group h-9 text-sm">
-                    Get a Demo
-                    <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <a href="/pricing">
+                    <Button className="bg-foreground text-background hover:bg-foreground/90 group h-9 text-sm">
+                      Get a Demo
+                      <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                   <Link
                     href="/products/stratax-ai"
                     className="inline-flex items-center gap-1 text-sm font-medium text-teal hover:underline"
@@ -338,10 +340,12 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
-                    Book a Demo
-                    <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <a href="/pricing">
+                    <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
+                      Book a Demo
+                      <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                   <Link
                     href="/products/ledgerly-ai"
                     className="inline-flex items-center gap-1 text-xs font-medium text-gold hover:underline"
@@ -390,10 +394,12 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
-                    Book a Demo
-                    <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  <a href="/pricing">
+                    <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
+                      Book a Demo
+                      <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </a>
                   <Link
                     href="/products/ledgerly-field"
                     className="inline-flex items-center gap-1 text-xs font-medium text-coral hover:underline"
