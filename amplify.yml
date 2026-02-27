@@ -3,8 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-        - corepack enable
-        - corepack prepare pnpm@latest --activate
+        - npm install -g pnpm
         - pnpm install --frozen-lockfile
     build:
       commands:
