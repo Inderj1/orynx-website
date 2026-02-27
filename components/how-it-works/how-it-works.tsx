@@ -44,25 +44,6 @@ export function HowItWorks() {
   return (
     <section ref={ref} className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-20"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-            How It Works
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Three Modes of{" "}
-            <span className="text-teal">Intelligence</span>
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            StrataxAI operates across three complementary modes — proactive monitoring, reactive querying, and dashboard-driven autonomy.
-          </p>
-        </motion.div>
-
         {/* Steps */}
         <div className="max-w-4xl mx-auto space-y-8">
           {steps.map((step, index) => {
