@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Figtree", "DM Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  --color-primary: #156d95;
+  --color-primary-hover: #125a7a;
+  --color-primary-light: #e6f4f9;
+  --color-primary-muted: #cce9f3;
+
+  --color-surface: #ffffff;
+  --color-surface-secondary: #f9fafb;
+  --color-surface-tertiary: #f3f4f6;
+
+  --color-border: #e5e5e5;
+  --color-border-secondary: #e5e7eb;
+
+  --color-text-primary: #202020;
+  --color-text-secondary: #4b5563;
+  --color-text-tertiary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  --shadow-card-hover: 0 20px 60px -16px rgba(0, 0, 0, 0.15);
+  --shadow-nav: 0 2px 16px -2px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-button: 0 4px 12px rgba(21, 109, 149, 0.3);
+
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-pill: 9999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color-scheme: light only;
+  }
+  body {
+    @apply bg-surface text-text-primary font-sans;
+  }
+  ::selection {
+    @apply bg-primary-light text-primary;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-border rounded-2xl transition-all duration-200;
+  }
+  .card:hover {
+    @apply border-primary shadow-card;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-1 text-[13px] font-medium rounded-pill;
+  }
+  .badge-primary {
+    @apply bg-primary-muted text-primary-hover;
+  }
+  .badge-gray {
+    @apply bg-surface-tertiary text-text-secondary;
+  }
+  .label {
+    @apply text-xs font-semibold uppercase tracking-wide text-text-tertiary;
+  }
+  .tech-pill {
+    @apply px-3.5 py-2 bg-white border border-border rounded-xl text-sm text-text-primary transition-all duration-150 hover:border-primary/40 hover:shadow-subtle;
+  }
+}
