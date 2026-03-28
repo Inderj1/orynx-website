@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "About | Orynx",
-  meta: [{ name: "description", content: "Orynx builds integration platforms, AI products, and custom software. Dedicated engineering teams based in Edinburgh, Scotland." }],
+  description: "Orynx builds integration platforms, AI products, and custom software. Dedicated engineering teams based in Edinburgh, Scotland.",
+  ogTitle: "About Orynx",
+  ogDescription: "Engineers, AI specialists, and product builders based in Edinburgh. Integration platforms, AI products, and dedicated teams.",
+  ogUrl: "https://orynx.co.uk/about",
+  twitterTitle: "About Orynx",
+  twitterDescription: "Engineers, AI specialists, and product builders based in Edinburgh.",
 });
 
 const values = [

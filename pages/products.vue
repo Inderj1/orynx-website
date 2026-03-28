@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "Products | Orynx",
-  meta: [{ name: "description", content: "Integration platforms, AI products, and industry-specific tools across healthcare, finance, IoT, and compliance." }],
+  description: "Integration platforms, AI products, and industry tools. EHR Bridge, ComplianceOS, Call Center AI, CommBridge, AutoPRD, and more.",
+  ogTitle: "Products | Orynx",
+  ogDescription: "Integration platforms and AI products across healthcare, compliance, communications, and developer tools.",
+  ogUrl: "https://orynx.co.uk/products",
+  twitterTitle: "Products | Orynx",
+  twitterDescription: "Integration platforms and AI products across healthcare, compliance, and more.",
 });
 
 const products = [

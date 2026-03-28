@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "Contact | Orynx",
-  meta: [{ name: "description", content: "Get in touch with Orynx. We'd love to discuss your project." }],
+  description: "Get in touch with Orynx. Based in Edinburgh, Scotland. Let's discuss your project — AI products, integration platforms, or dedicated teams.",
+  ogTitle: "Contact Orynx",
+  ogDescription: "Get in touch to discuss AI products, integration platforms, or dedicated engineering teams.",
+  ogUrl: "https://orynx.co.uk/contact",
+  twitterTitle: "Contact Orynx",
+  twitterDescription: "Get in touch to discuss your project.",
 });
 </script>
 

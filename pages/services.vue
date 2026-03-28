@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "Services | Orynx",
-  meta: [{ name: "description", content: "Consulting services for web, AI/ML, LLM integration, and custom development with dedicated engineering teams." }],
+  description: "Consulting services for web development, AI/ML, LLM integration, and custom software development with dedicated engineering teams.",
+  ogTitle: "Consulting Services | Orynx",
+  ogDescription: "Web, AI/ML, LLM, and custom development with dedicated engineering teams. Any language, any platform.",
+  ogUrl: "https://orynx.co.uk/services",
+  twitterTitle: "Consulting Services | Orynx",
+  twitterDescription: "Dedicated engineering teams for web, AI/ML, LLM, and custom development.",
 });
 
 const services = [

@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "News | Orynx",
-  meta: [{ name: "description", content: "Latest news and developments from Orynx." }],
+  description: "Latest news and developments from Orynx. Product launches, partnerships, and company updates.",
+  ogTitle: "News | Orynx",
+  ogDescription: "Latest news and developments from Orynx.",
+  ogUrl: "https://orynx.co.uk/news",
+  twitterTitle: "News | Orynx",
+  twitterDescription: "Latest news and developments from Orynx.",
 });
 
 const newsItems = [

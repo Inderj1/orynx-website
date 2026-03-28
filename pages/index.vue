@@ -1,7 +1,15 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({ title: "Orynx | AI Products & Software Engineering" });
+useSeoMeta({
+  title: "Orynx | AI Products & Software Engineering",
+  description: "We build integration platforms, AI products, and custom software — from healthcare and fintech to IoT and compliance. Plus dedicated engineering teams.",
+  ogTitle: "Orynx | AI Products & Software Engineering",
+  ogDescription: "Integration platforms, AI products, and dedicated engineering teams across healthcare, fintech, IoT, and compliance.",
+  ogUrl: "https://orynx.co.uk",
+  twitterTitle: "Orynx | AI Products & Software Engineering",
+  twitterDescription: "Integration platforms, AI products, and dedicated engineering teams.",
+});
 
 const services = [
   { icon: "heroicons:globe-alt", title: "Web Development", desc: "Full-stack web applications built with modern frameworks and scalable architecture." },

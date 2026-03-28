@@ -1,9 +1,14 @@
 <script setup>
 definePageMeta({ layout: "landing" });
 
-useHead({
+useSeoMeta({
   title: "Partners | Orynx",
-  meta: [{ name: "description", content: "Our technology partners: Microsoft, NVIDIA, Google, and AWS." }],
+  description: "Technology partners: Microsoft Founders Hub, NVIDIA Inception, Google Startups Accelerator, and AWS Cloud Partner.",
+  ogTitle: "Technology Partners | Orynx",
+  ogDescription: "Backed by Microsoft, NVIDIA, Google, and AWS.",
+  ogUrl: "https://orynx.co.uk/partners",
+  twitterTitle: "Technology Partners | Orynx",
+  twitterDescription: "Backed by Microsoft, NVIDIA, Google, and AWS.",
 });
 
 const partners = [
