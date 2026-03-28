@@ -102,6 +102,60 @@ const products = [
     features: ["AI Virtual Patient Simulations (24/7)", "Interactive 3D Anatomy Explorer", "OSCE & Clinical Skills Training", "AI-Generated Flashcards with Spaced Repetition", "Radiology Training & Imaging Library", "Adaptive Learning Pathways"],
     stats: ["AI-Powered", "3D Anatomy", "24/7 Access"],
   },
+  {
+    id: "orynx-agents",
+    badge: "Agentic AI SDK",
+    name: "Orynx Agents",
+    desc: "Enterprise-grade multi-agent framework built for production. Intelligent context management, multi-tier memory, stateful agents with durable execution, and compliance-ready safety — all provider-agnostic across Python, TypeScript, Rust, and Go.",
+    color: "bg-[#0d9488]",
+    featureGroups: [
+      {
+        title: "Context & Orchestration",
+        items: [
+          "Intelligent context management with 24+ swappable strategies",
+          "Smart agent coordination with typed handoff contracts",
+          "Stateful agents with validated transitions and persistent state",
+          "Durable, crash-safe execution with automatic recovery",
+          "Sequential, parallel, and hierarchical orchestration patterns",
+        ],
+      },
+      {
+        title: "Memory & Intelligence",
+        items: [
+          "Multi-tier memory architecture — hot, warm, and cold storage",
+          "Cognitive graph memory modelling facts, experiences, beliefs, and summaries",
+          "LLM-powered memory extraction with deduplication and conflict resolution",
+          "Semantic search across vector stores with automatic embeddings",
+          "Checkpointing and time-travel debugging for any workflow",
+          "AI-optimised tool selection that improves with usage",
+          "Lookahead planning for complex multi-step reasoning",
+        ],
+      },
+      {
+        title: "Safety, Compliance & Audit",
+        items: [
+          "Policy engine with anomaly detection and human escalation",
+          "Full data lineage and flow tracking across agents",
+          "Enterprise data loss prevention with compliance presets",
+          "GDPR, HIPAA, and PCI-DSS ready out of the box",
+          "Sandboxed code execution with resource limits",
+        ],
+      },
+      {
+        title: "Developer Experience",
+        items: [
+          "Provider-agnostic — works with 100+ LLM providers",
+          "Multi-language SDKs: Python, TypeScript, Rust, Go",
+          "High-performance core with up to 10x speedups",
+          "Native agent-to-agent protocol with skill discovery",
+          "Model Context Protocol (MCP) client and server",
+          "Built-in REST API server with real-time streaming",
+          "Interactive CLI and YAML-based crew configuration",
+        ],
+      },
+    ],
+    stats: ["24+ Context Strategies", "Multi-Tier Memory", "Durable & Stateful", "Compliance-Ready", "100+ LLM Providers", "4 Language SDKs"],
+  },
 ];
 </script>
 
@@ -132,7 +186,31 @@ const products = [
             <h2 class="text-2xl md:text-3xl font-bold text-text-primary tracking-[-0.02em] mb-3">{{ product.name }}</h2>
             <p class="text-text-secondary leading-relaxed max-w-3xl mb-8">{{ product.desc }}</p>
 
-            <div class="grid md:grid-cols-2 gap-8">
+            <!-- Grouped features layout (for products with featureGroups) -->
+            <template v-if="product.featureGroups">
+              <div class="grid sm:grid-cols-2 gap-8">
+                <div v-for="group in product.featureGroups" :key="group.title">
+                  <span class="label mb-4 block">{{ group.title }}</span>
+                  <ul class="space-y-2.5">
+                    <li v-for="item in group.items" :key="item" class="flex items-start gap-2.5">
+                      <svg class="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class="text-sm text-text-secondary">{{ item }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-8">
+                <span class="label mb-4 block">Highlights</span>
+                <div class="flex flex-wrap gap-2">
+                  <span v-for="stat in product.stats" :key="stat" class="tech-pill">{{ stat }}</span>
+                </div>
+              </div>
+            </template>
+
+            <!-- Standard features layout -->
+            <div v-else class="grid md:grid-cols-2 gap-8">
               <div>
                 <span class="label mb-4 block">Key Features</span>
                 <ul class="space-y-2.5">
@@ -151,6 +229,7 @@ const products = [
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -25,6 +25,7 @@ const featuredProducts = [
   { name: "CommBridge", desc: "Unified comms layer — Slack, Teams, Discord, email, voice", color: "bg-[#f59e0b]" },
   { name: "AutoPRD", desc: "Autonomous dev pipeline — feedback to shipped code", color: "bg-[#6366f1]" },
   { name: "OpenEyes Cloud", desc: "Cloud-native ophthalmology EPR platform", color: "bg-[#0ea5e9]" },
+  { name: "Orynx Agents", desc: "Multi-agent AI SDK — 24+ context strategies, graph memory", color: "bg-[#0d9488]" },
 ];
 
 const partners = [

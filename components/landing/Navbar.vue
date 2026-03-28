@@ -9,6 +9,7 @@ const products = [
   { title: "CommBridge", path: "/products#commbridge", desc: "Unified communications" },
   { title: "AutoPRD", path: "/products#autoprd", desc: "Autonomous dev pipeline" },
   { title: "Ambient Scribe", path: "/products#ai-scribe", desc: "Medical transcription" },
+  { title: "Orynx Agents", path: "/products#orynx-agents", desc: "Agentic AI SDK" },
   { title: "View All", path: "/products", desc: "See all products" },
 ];
 

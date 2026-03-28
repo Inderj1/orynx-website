@@ -16,6 +16,7 @@
             <li><NuxtLink to="/products#compliance-os" class="text-sm text-text-tertiary hover:text-primary transition-colors">ComplianceOS</NuxtLink></li>
             <li><NuxtLink to="/products#call-center-ai" class="text-sm text-text-tertiary hover:text-primary transition-colors">Call Center AI</NuxtLink></li>
             <li><NuxtLink to="/products#commbridge" class="text-sm text-text-tertiary hover:text-primary transition-colors">CommBridge</NuxtLink></li>
+            <li><NuxtLink to="/products#orynx-agents" class="text-sm text-text-tertiary hover:text-primary transition-colors">Orynx Agents</NuxtLink></li>
             <li><NuxtLink to="/products" class="text-sm text-text-tertiary hover:text-primary transition-colors">View All</NuxtLink></li>
           </ul>
         </div>
