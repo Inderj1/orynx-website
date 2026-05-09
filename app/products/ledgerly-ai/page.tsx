@@ -452,36 +452,49 @@ export default function LedgerlyAIPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
+      <section className="relative bg-background overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/financial.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/70 via-55% to-background/15" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[96px] pb-12 lg:pt-[120px] lg:pb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-[60ch]"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-gold/10 text-gold text-sm font-medium mb-4">
-              AR Automation
+            <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+              LEDGERLY PRO · AR Automation
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance" style={{ letterSpacing: "-0.03em" }}>
-              AI-Powered Accounts Receivable{" "}
-              <span className="text-gold">Automation</span>
+            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+              Accounts receivable that{" "}
+              <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+                runs itself.
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              10 intelligent agents automating the entire accounts receivable workflow — from invoice creation to cash application. Natural language queries let your finance team ask questions in plain English.
+            <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+              10 intelligent agents automating the entire AR workflow — from
+              invoice creation to cash application. Natural language queries
+              let your finance team ask questions in plain English.
             </p>
-            <div className="flex items-center justify-center gap-3 flex-wrap">
-              <span className="px-4 py-2 rounded-full bg-gold/10 text-gold border border-gold/20 text-sm font-semibold">
+            <div className="flex flex-wrap items-center gap-2 mt-7">
+              <span className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft border border-rule rounded-full px-3 py-1.5 bg-background/60 backdrop-blur-sm">
                 LEDGERLY PRO
+              </span>
+              <span className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft border border-rule rounded-full px-3 py-1.5 bg-background/60 backdrop-blur-sm">
+                10 AR Agents
+              </span>
+              <span className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft border border-rule rounded-full px-3 py-1.5 bg-background/60 backdrop-blur-sm">
+                NetSuite · Salesforce · SAP
               </span>
             </div>
           </motion.div>

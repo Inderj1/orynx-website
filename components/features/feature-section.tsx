@@ -176,10 +176,7 @@ export function FeatureSection() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
 
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Angled divider top */}
-      <div className="absolute top-0 left-0 right-0 h-24 bg-background transform -skew-y-2 origin-top-left -translate-y-12" />
-
+    <section className="relative py-20 lg:py-28 border-t border-rule overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section header */}
         <motion.div

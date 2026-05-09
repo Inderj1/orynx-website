@@ -1,23 +1,30 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowRight, BrainCircuit, BookOpen, MapPin, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
+import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
+
+type NavLink = {
+  label: string
+  href: string
+  hasDropdown?: boolean
+}
 
 const productLinks = [
-  { label: "STRATAX AI Enterprise", href: "/products/stratax-ai", desc: "AI Operating System", icon: BrainCircuit, color: "teal" },
-  { label: "LEDGERLY PRO", href: "/products/ledgerly-ai", desc: "AR Automation", icon: BookOpen, color: "gold" },
-  { label: "LEDGERLY FIELD", href: "/products/ledgerly-field", desc: "Field Operations", icon: MapPin, color: "coral" },
+  { label: "STRATAX AI Enterprise", href: "/products/stratax-ai", desc: "AI Operating System" },
+  { label: "LEDGERLY PRO", href: "/products/ledgerly-ai", desc: "AR Automation" },
+  { label: "LEDGERLY FIELD", href: "/products/ledgerly-field", desc: "Field Operations" },
 ]
 
-const navLinks = [
+const navLinks: NavLink[] = [
+  { label: "Services", href: "/services" },
   { label: "Products", href: "/products", hasDropdown: true },
-  { label: "Solutions", href: "/solutions" },
   { label: "Agents SDK", href: "/agents" },
   { label: "Technology", href: "/how-it-works" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "About", href: "/about" },
 ]
 
 export function Navbar() {
@@ -25,61 +32,51 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isProductsOpen, setIsProductsOpen] = useState(false)
   const productsTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : ""
+    return () => { document.body.style.overflow = "" }
+  }, [isMobileMenuOpen])
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50"
-      >
-        <div className={cn(
-          "mx-auto transition-all duration-500 ease-out",
+      <header
+        className={cn(
+          "fixed top-0 left-0 right-0 z-50 bg-background transition-[border-color,box-shadow] duration-200",
           isScrolled
-            ? "max-w-3xl mt-3 px-0"
-            : "max-w-screen-2xl mt-0 px-6 lg:px-12"
-        )}>
-          <nav className={cn(
-            "relative flex items-center justify-between transition-all duration-500 ease-out",
-            isScrolled
-              ? "h-14 px-5 rounded-full border border-border/60 bg-background/70 backdrop-blur-xl shadow-lg shadow-black/[0.06]"
-              : "h-16 lg:h-20 px-0 rounded-none bg-background/80 backdrop-blur-md border-b border-border/40"
-          )}>
-            {/* Teal glow ring on scrolled pill */}
-            {isScrolled && (
-              <div className="absolute inset-0 rounded-full ring-1 ring-teal/10 pointer-events-none" />
-            )}
-
-            {/* Logo */}
-            <a href="/" className="flex items-center flex-shrink-0 group">
+            ? "border-b border-rule"
+            : "border-b border-transparent"
+        )}
+      >
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+          <nav className="flex items-center h-16 lg:h-[72px]">
+            {/* Wordmark */}
+            <a
+              href="/"
+              className="flex items-center group flex-shrink-0 group-hover:opacity-80 transition-opacity"
+              aria-label="Stratax Labs — home"
+            >
               <Image
-                src="/stratax.png"
-                alt="StrataxAI"
-                width={160}
-                height={40}
-                className={cn(
-                  "w-auto transition-all duration-500 group-hover:opacity-80",
-                  isScrolled ? "h-6" : "h-8"
-                )}
+                src="/labs-ai.svg"
+                alt="Stratax Labs"
+                width={1250}
+                height={354}
                 priority
+                className="h-12 lg:h-14 w-auto"
               />
             </a>
 
-            {/* Desktop Navigation */}
-            <div className={cn(
-              "hidden lg:flex items-center gap-0.5 ml-auto transition-all duration-500",
-              isScrolled ? "mr-3" : "mr-6"
-            )}>
-              {navLinks.map((link) => (
+            {/* Desktop nav */}
+            <div className="hidden lg:flex items-center gap-1 ml-auto mr-6">
+              {navLinks.map((link) =>
                 link.hasDropdown ? (
                   <div
                     key={link.label}
@@ -89,185 +86,131 @@ export function Navbar() {
                       setIsProductsOpen(true)
                     }}
                     onMouseLeave={() => {
-                      productsTimeout.current = setTimeout(() => setIsProductsOpen(false), 200)
+                      productsTimeout.current = setTimeout(() => setIsProductsOpen(false), 160)
                     }}
                   >
                     <a
                       href={link.href}
-                      className={cn(
-                        "relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 group inline-flex items-center gap-1",
-                        "text-foreground/70 hover:text-foreground",
-                        "hover:bg-teal/[0.06]"
-                      )}
+                      className="inline-flex items-center gap-1 px-3 py-2 text-[15px] font-medium text-ink-soft hover:text-ink transition-colors duration-150"
                     >
                       {link.label}
-                      <ChevronDown className={cn(
-                        "w-3 h-3 transition-transform duration-200",
-                        isProductsOpen && "rotate-180"
-                      )} />
-                      <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-teal scale-0 group-hover:scale-100 transition-transform duration-200" />
+                      <ChevronDown
+                        className={cn(
+                          "w-3.5 h-3.5 transition-transform duration-200",
+                          isProductsOpen && "rotate-180"
+                        )}
+                      />
                     </a>
-                    <AnimatePresence>
-                      {isProductsOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute top-full left-0 mt-2 w-72 bg-background/95 backdrop-blur-xl border border-border rounded-xl shadow-xl shadow-black/[0.08] p-2 z-50"
-                        >
+                    {isProductsOpen && (
+                      <div
+                        className="absolute top-full left-0 pt-2"
+                        role="menu"
+                      >
+                        <div className="w-[320px] bg-background border border-rule rounded-md shadow-[0_8px_24px_-8px_rgba(0,27,58,0.12)] overflow-hidden">
                           {productLinks.map((product) => (
                             <a
                               key={product.label}
                               href={product.href}
-                              className="flex items-start gap-3 px-3 py-2.5 rounded-lg hover:bg-muted/60 transition-colors duration-150 group/item"
+                              className="flex items-baseline justify-between gap-4 px-5 py-4 hover:bg-surface transition-colors duration-150 border-b border-rule last:border-b-0"
+                              role="menuitem"
                             >
-                              <div className={`w-8 h-8 rounded-lg bg-${product.color}/10 text-${product.color} flex items-center justify-center flex-shrink-0 mt-0.5`}>
-                                <product.icon className="w-4 h-4" />
-                              </div>
                               <div>
-                                <div className="text-sm font-semibold text-foreground">{product.label}</div>
-                                <div className="text-xs text-muted-foreground">{product.desc}</div>
+                                <div className="text-[14px] font-semibold text-ink">{product.label}</div>
+                                <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
                               </div>
+                              <ArrowUpRight className="w-4 h-4 text-ink-muted flex-shrink-0 mt-1" />
                             </a>
                           ))}
-                          <div className="border-t border-border mt-1 pt-1">
-                            <a
-                              href="/products"
-                              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-muted/60 transition-colors duration-150 text-xs font-medium text-muted-foreground hover:text-foreground"
-                            >
-                              View all products <ArrowRight className="w-3 h-3" />
-                            </a>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                          <a
+                            href="/products"
+                            className="flex items-center justify-between px-5 py-3 bg-surface hover:bg-rule transition-colors duration-150 text-[12px] font-mono uppercase tracking-[0.14em] text-ink-soft"
+                            role="menuitem"
+                          >
+                            View all products
+                            <ArrowUpRight className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <a
                     key={link.label}
                     href={link.href}
-                    className={cn(
-                      "relative px-4 py-2 text-sm font-semibold rounded-full transition-all duration-200 group",
-                      "text-foreground/70 hover:text-foreground",
-                      "hover:bg-teal/[0.06]"
-                    )}
+                    className="px-3 py-2 text-[15px] font-medium text-ink-soft hover:text-ink transition-colors duration-150"
                   >
                     {link.label}
-                    <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-teal scale-0 group-hover:scale-100 transition-transform duration-200" />
                   </a>
                 )
-              ))}
+              )}
             </div>
 
-            {/* Separator */}
-            <div className="hidden lg:block w-px h-5 bg-border/60 mx-2" />
+            {/* Desktop CTA */}
+            <a
+              href="/pricing"
+              className="hidden lg:inline-flex items-center gap-1.5 h-10 px-5 rounded-full bg-accent-orange text-white text-[14px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group ml-auto lg:ml-0"
+            >
+              {PRIMARY_CTA_LABEL}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
 
-            {/* Desktop CTAs */}
-            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-              <a href="/pricing">
-                <Button
-                  size="sm"
-                  className={cn(
-                    "bg-teal text-white hover:bg-teal/90 rounded-full px-5 font-semibold shadow-sm shadow-teal/25 transition-all duration-300 group",
-                    "hover:shadow-lg hover:shadow-teal/30 hover:scale-[1.02] active:scale-[0.98]",
-                    isScrolled && "px-4 text-xs"
-                  )}
-                >
-                  Get a Demo
-                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
-                </Button>
-              </a>
-            </div>
-
-            {/* Mobile Menu Button */}
+            {/* Mobile menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={cn(
-                "lg:hidden p-2 rounded-full transition-all duration-200",
-                isMobileMenuOpen
-                  ? "bg-foreground/10 text-foreground rotate-90"
-                  : "text-foreground hover:bg-foreground/[0.05]"
-              )}
+              className="lg:hidden ml-auto p-2 -mr-2 text-ink hover:bg-surface rounded transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </nav>
         </div>
-      </motion.header>
+      </header>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 lg:hidden"
-          >
-            <div className="container mx-auto px-6 py-6">
-              <nav className="flex flex-col gap-1">
-                {navLinks.map((link, i) => (
-                  <div key={link.label}>
-                    <motion.a
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.06, type: "spring", stiffness: 200 }}
-                      className="text-lg font-bold text-foreground py-4 px-4 rounded-xl hover:bg-teal/[0.05] transition-colors flex items-center justify-between group"
-                    >
-                      {link.label}
-                      <ArrowRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-teal group-hover:translate-x-1 transition-all duration-200" />
-                    </motion.a>
-                    {link.hasDropdown && (
-                      <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: i * 0.06 + 0.1 }}
-                        className="pl-4 flex flex-col gap-0.5 mb-2"
-                      >
-                        {productLinks.map((product) => (
-                          <a
-                            key={product.label}
-                            href={product.href}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="flex items-center gap-3 py-2.5 px-4 rounded-lg hover:bg-muted/60 transition-colors"
-                          >
-                            <div className={`w-7 h-7 rounded-md bg-${product.color}/10 text-${product.color} flex items-center justify-center flex-shrink-0`}>
-                              <product.icon className="w-3.5 h-3.5" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-semibold text-foreground">{product.label}</div>
-                              <div className="text-xs text-muted-foreground">{product.desc}</div>
-                            </div>
-                          </a>
-                        ))}
-                      </motion.div>
-                    )}
-                  </div>
-                ))}
-              </nav>
-              <motion.div
-                className="flex flex-col gap-3 mt-8 px-4"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25 }}
-              >
-                <a href="/pricing" className="w-full">
-                  <Button className="w-full justify-center bg-teal text-white hover:bg-teal/90 rounded-xl h-12 shadow-md shadow-teal/20 font-semibold group">
-                    Get a Demo
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-background pt-16 lg:hidden overflow-y-auto">
+          <div className="px-6 py-8 space-y-1">
+            {navLinks.map((link) => (
+              <div key={link.label}>
+                <a
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center justify-between py-4 border-b border-rule"
+                >
+                  <span className="font-display text-2xl font-semibold text-ink tracking-[-0.02em]">
+                    {link.label}
+                  </span>
+                  <ArrowUpRight className="w-5 h-5 text-ink-muted" />
                 </a>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
+                {link.hasDropdown && (
+                  <div className="pl-2 py-2 space-y-2">
+                    {productLinks.map((product) => (
+                      <a
+                        key={product.label}
+                        href={product.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="block py-2"
+                      >
+                        <div className="text-[14px] font-semibold text-ink">{product.label}</div>
+                        <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            <a
+              href="/pricing"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="mt-8 flex items-center justify-center gap-1.5 h-12 rounded-full bg-accent-orange text-white text-[15px] font-semibold"
+            >
+              {PRIMARY_CTA_LABEL}
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      )}
     </>
   )
 }

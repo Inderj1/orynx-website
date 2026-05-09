@@ -13,6 +13,9 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 /* ─── Hover‑shine wrapper (reference3 BentoCard pattern) ─── */
 function BentoCard({
@@ -192,52 +195,49 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* ─── Hero ─── */}
-      <section className="pt-32 pb-20 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
-          <AnimatedCard delay={0} direction="up">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-teal animate-pulse" />
-              Products
+      <section className="relative bg-background overflow-hidden border-b border-rule">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/platform.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-right-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
+          <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+            Products
+          </span>
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            AI products for{" "}
+            <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+              enterprise.
             </span>
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance"
-              style={{ letterSpacing: "-0.03em" }}
+          </h1>
+          <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+            Enterprise-grade AI that connects to your existing systems, learns
+            from every interaction, and writes intelligent decisions back
+            autonomously.
+          </p>
+          <div className="flex flex-wrap items-center gap-2 mt-8">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
             >
-              AI products for{" "}
-              <span className="text-teal">enterprise</span>
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-              Enterprise-grade AI that connects to your existing systems, learns from every interaction,
-              and writes intelligent decisions back autonomously.
-            </p>
-
-            {/* Stats badges */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { label: "CAMP Framework", color: "teal" },
-                { label: "Enterprise Data Bridge", color: "teal" },
-                { label: "17+ Context Strategies", color: "coral" },
-                { label: "Graph Memory", color: "gold" },
-              ].map((badge) => (
-                <span
-                  key={badge.label}
-                  className={`px-3 py-1 rounded-full border text-xs font-medium bg-${badge.color}/5 text-${badge.color} border-${badge.color}/20`}
-                >
-                  {badge.label}
-                </span>
-              ))}
-            </div>
-          </AnimatedCard>
+              {PRIMARY_CTA_LABEL}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <a
+              href="#products"
+              className="inline-flex items-center gap-2 h-12 px-5 text-[15px] font-semibold text-ink hover:text-brand-blue transition-colors duration-150 group"
+            >
+              Browse the suite
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
         </div>
       </section>
 

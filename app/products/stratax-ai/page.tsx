@@ -10,10 +10,12 @@ import {
   BrainCircuit, Activity, Globe, Zap, Database, Shield,
   BarChart3, MessageSquare, Cpu, Code2, Network, Layers,
   ArrowRight, CheckCircle2, Timer, Eye, FileText, TrendingUp,
-  Search, Terminal, Workflow, ArrowLeftRight,
+  Search, Terminal, Workflow, ArrowLeftRight, ArrowUpRight,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
+import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 /* ─── CAMP Modules ─── */
 
@@ -517,41 +519,49 @@ export default function StrataxAIPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-teal/10 text-teal text-sm font-medium mb-4">
-              Enterprise AI Platform
+      <section className="relative bg-background overflow-hidden border-b border-rule">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/platform.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-right-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
+          <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+            STRATAX AI Enterprise · AI Operating System
+          </span>
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            The operating system for{" "}
+            <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+              enterprise AI.
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance" style={{ letterSpacing: "-0.03em" }}>
-              The AI Operating System for{" "}
-              <span className="text-teal">Enterprise</span>
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Full CAMP framework with self-learning AI, closed-loop write-back, and autonomous decision-making across all enterprise systems. Powered by the StrataxAI Agents SDK.
-            </p>
-            <div className="flex items-center justify-center gap-3 flex-wrap">
-              {["12+ AI Modules", "40 ERP Connectors", "CAMP Framework", "17+ Context Strategies"].map((label) => (
-                <span key={label} className="px-3 py-1.5 rounded-full bg-teal/10 text-teal border border-teal/20 text-sm font-medium">
-                  {label}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+          </h1>
+          <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+            Full CAMP framework with self-learning AI, closed-loop write-back,
+            and autonomous decision-making across every enterprise system.
+            Powered by the Stratax Labs Agents SDK.
+          </p>
+          <div className="flex flex-wrap items-center gap-2 mt-8">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
+            >
+              {PRIMARY_CTA_LABEL}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <a
+              href="#camp"
+              className="inline-flex items-center gap-2 h-12 px-5 text-[15px] font-semibold text-ink hover:text-brand-blue transition-colors duration-150 group"
+            >
+              Explore the framework
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
         </div>
       </section>
 
