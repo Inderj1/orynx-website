@@ -663,36 +663,46 @@ export default function AgentsPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
+      <section className="relative bg-background overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/agents.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/70 via-55% to-background/15" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[96px] pb-12 lg:pt-[120px] lg:pb-16">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="max-w-[60ch]"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-              Agent Framework
+            <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+              Agent Framework · Production-grade
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance" style={{ letterSpacing: "-0.03em" }}>
-              Production-grade{" "}
-              <span className="text-teal">AI agents</span>
+            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+              AI agents that{" "}
+              <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+                act.
+              </span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Not prototypes. Not demos. StrataxAI runs 30+ production agents across enterprise finance, supply chain, and data intelligence — with 99.5%+ accuracy, typed handoffs, and full audit trails.
+            <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+              Not prototypes. Not demos. Stratax Labs runs 30+ production agents
+              across enterprise finance, supply chain, and data intelligence —
+              with 99.5%+ accuracy, typed handoffs, and full audit trails.
             </p>
-            <div className="flex items-center justify-center gap-3 flex-wrap">
+            <div className="flex flex-wrap items-center gap-2 mt-7">
               {["12 CAMP Agents", "10 AR Agents", "6 Data Agents", "5 Supply Chain Agents"].map((label) => (
-                <span key={label} className="px-3 py-1.5 rounded-full bg-teal/10 text-teal border border-teal/20 text-sm font-medium">
+                <span
+                  key={label}
+                  className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft border border-rule rounded-full px-3 py-1.5 bg-background/60 backdrop-blur-sm"
+                >
                   {label}
                 </span>
               ))}

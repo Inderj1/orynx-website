@@ -268,28 +268,37 @@ export default function HowItWorksPage() {
     <main className="relative">
       <Navbar />
       {/* Hero banner */}
-      <section className="pt-32 pb-16 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-            How It Works
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance" style={{ letterSpacing: "-0.03em" }}>
-            Three Modes of{" "}
-            <span className="text-teal">Intelligence</span>
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            StrataxAI operates across three complementary modes — proactive monitoring, reactive querying, and dashboard-driven autonomy — powered by the Enterprise Data Bridge and StrataxAI Agents SDK.
-          </p>
+      <section className="relative bg-background overflow-hidden">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/platform.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/70 via-55% to-background/15" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[96px] pb-12 lg:pt-[120px] lg:pb-16">
+          <div className="max-w-[60ch]">
+            <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+              Technology · Platform
+            </span>
+            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+              Three modes of{" "}
+              <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+                intelligence.
+              </span>
+            </h1>
+            <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+              Stratax Labs operates across three complementary modes —
+              proactive monitoring, reactive querying, and dashboard-driven
+              autonomy — powered by the Enterprise Data Bridge and the
+              Agents SDK.
+            </p>
+          </div>
         </div>
       </section>
 

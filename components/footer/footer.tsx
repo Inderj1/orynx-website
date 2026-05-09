@@ -19,7 +19,6 @@ const footerLinks = {
   Platform: [
     { label: "Technology", href: "/how-it-works" },
     { label: "Agents SDK", href: "/agents" },
-    { label: "Pricing", href: "/pricing" },
   ],
 }
 

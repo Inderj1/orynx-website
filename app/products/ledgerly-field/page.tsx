@@ -10,9 +10,12 @@ import {
   MapPin, DollarSign, Users, Package, Gauge,
   ArrowRight, BarChart3, TrendingUp, Wrench,
   Database, Shield, Zap, Clock, Activity,
-  CheckCircle2, Truck, HardHat, PieChart,
+  CheckCircle2, Truck, HardHat, PieChart, ArrowUpRight,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Link from "next/link"
+import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 /* ─── 4 Economic Engines ─── */
 
@@ -361,45 +364,49 @@ export default function LedgerlyFieldPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-background relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-              radial-gradient(ellipse at 50% 50%, transparent 0%, hsl(30 15% 98%) 70%),
-              radial-gradient(circle, hsl(218 30% 88% / 0.08) 0.5px, transparent 0.5px)
-            `,
-            backgroundSize: "100% 100%, 40px 40px",
-          }}
-        />
-        <div className="container mx-auto px-6 lg:px-12 text-center max-w-3xl relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-coral/10 text-coral text-sm font-medium mb-4">
-              Field Operations Intelligence
+      <section className="relative bg-background overflow-hidden border-b border-rule">
+        <div className="absolute inset-0 z-0" aria-hidden="true">
+          <Image
+            src="/heroes/agents.webp"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
+            className="object-cover object-right-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
+        </div>
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
+          <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+            LEDGERLY FIELD · Field Operations Intelligence
+          </span>
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            Financial intelligence for{" "}
+            <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
+              field service.
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance" style={{ letterSpacing: "-0.03em" }}>
-              Financial Intelligence for{" "}
-              <span className="text-coral">Field Service</span>
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Purpose-built financial intelligence for field service companies. Four economic engines analyze every job, crew, and invoice — turning operational data into profitability insights across 14 financial views.
-            </p>
-            <div className="flex items-center justify-center gap-4 flex-wrap">
-              <a href="/pricing">
-                <Button className="bg-foreground text-background hover:bg-foreground/90 group">
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </a>
-              <span className="px-4 py-2 rounded-full bg-coral/10 text-coral border border-coral/20 text-sm font-semibold">
-                LEDGERLY FIELD
-              </span>
-            </div>
-          </motion.div>
+          </h1>
+          <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
+            Purpose-built for field service companies. Four economic engines
+            analyze every job, crew, and invoice, turning operational data into
+            profitability insights across 14 financial views.
+          </p>
+          <div className="flex flex-wrap items-center gap-2 mt-8">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
+            >
+              {PRIMARY_CTA_LABEL}
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
+            <a
+              href="#engines"
+              className="inline-flex items-center gap-2 h-12 px-5 text-[15px] font-semibold text-ink hover:text-brand-blue transition-colors duration-150 group"
+            >
+              See the engines
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </a>
+          </div>
         </div>
       </section>
 

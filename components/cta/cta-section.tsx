@@ -122,7 +122,7 @@ export function CTASection() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <a href="/pricing">
+              <a href="/contact">
                 <Button
                   size="lg"
                   className="bg-teal text-foreground hover:bg-teal/90 group px-8"
@@ -131,7 +131,7 @@ export function CTASection() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
-              <a href="/pricing">
+              <a href="/contact">
                 <Button
                   size="lg"
                   variant="outline"

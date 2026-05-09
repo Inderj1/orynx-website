@@ -12,11 +12,28 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-sans)'],
+        display: ['var(--font-display)', 'var(--font-sans)'],
+        serif: ['var(--font-serif)', 'ui-serif', 'Georgia'],
         mono: ['var(--font-mono)'],
       },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        ink: {
+          DEFAULT: 'hsl(var(--ink))',
+          soft: 'hsl(var(--ink-soft))',
+          muted: 'hsl(var(--ink-muted))',
+        },
+        'brand-blue': {
+          DEFAULT: 'hsl(var(--brand-blue))',
+          bright: 'hsl(var(--brand-blue-bright))',
+        },
+        'accent-orange': {
+          DEFAULT: 'hsl(var(--accent-orange))',
+          deep: 'hsl(var(--accent-orange-deep))',
+        },
+        surface: 'hsl(var(--surface))',
+        rule: 'hsl(var(--rule))',
         card: {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
