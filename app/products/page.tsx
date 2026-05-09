@@ -224,7 +224,7 @@ export default function ProductsPage() {
           </p>
           <div className="flex flex-wrap items-center gap-2 mt-8">
             <Link
-              href="/pricing"
+              href="/contact"
               className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
             >
               {PRIMARY_CTA_LABEL}
@@ -291,7 +291,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto pt-2">
-                  <a href="/pricing">
+                  <a href="/contact">
                     <Button className="bg-foreground text-background hover:bg-foreground/90 group h-9 text-sm">
                       Get a Demo
                       <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
@@ -340,7 +340,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <a href="/pricing">
+                  <a href="/contact">
                     <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
                       Book a Demo
                       <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
@@ -394,7 +394,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto">
-                  <a href="/pricing">
+                  <a href="/contact">
                     <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
                       Book a Demo
                       <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />

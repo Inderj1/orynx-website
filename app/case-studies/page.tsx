@@ -88,7 +88,7 @@ export default function CaseStudiesPage() {
                     {t.summary}
                   </p>
                   <a
-                    href="/pricing"
+                    href="/contact"
                     className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand-blue hover:text-brand-blue-bright transition-colors duration-150 mt-6 group"
                   >
                     Request the full case study
@@ -115,7 +115,7 @@ export default function CaseStudiesPage() {
             our delivery history and what we'd recommend for your stack.
           </p>
           <a
-            href="/pricing"
+            href="/contact"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group mt-10"
           >
             {PRIMARY_CTA_LABEL}

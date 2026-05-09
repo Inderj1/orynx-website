@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
-import { HERO_EYEBROW, PRIMARY_CTA_LABEL, SECONDARY_CTA_LABEL } from "@/lib/brand-copy"
+import { HERO_EYEBROW, PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 const stats = [
   { value: "40+", label: "ERP CONNECTORS" },
@@ -62,17 +62,10 @@ export function HeroSection() {
 
             <div className="flex flex-wrap items-center gap-2 mt-8">
               <a
-                href="/pricing"
+                href="/contact"
                 className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
               >
                 {PRIMARY_CTA_LABEL}
-                <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <a
-                href="/case-studies"
-                className="inline-flex items-center gap-2 h-12 px-5 text-[15px] font-semibold text-ink hover:text-brand-blue transition-colors duration-150 group"
-              >
-                {SECONDARY_CTA_LABEL}
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>

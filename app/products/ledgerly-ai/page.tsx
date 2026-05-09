@@ -316,7 +316,7 @@ function CFOCopilotSection() {
                 </div>
               ))}
             </div>
-            <a href="/pricing">
+            <a href="/contact">
               <Button className="bg-foreground text-background hover:bg-foreground/90 group">
                 Book a Demo
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

@@ -396,7 +396,7 @@ export default function SolutionsPage() {
           </p>
           <div className="flex flex-wrap items-center gap-2 mt-8">
             <Link
-              href="/pricing"
+              href="/contact"
               className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-accent-orange text-white text-[15px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group"
             >
               {PRIMARY_CTA_LABEL}

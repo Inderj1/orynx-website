@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 type NavLink = {
   label: string
@@ -75,7 +74,7 @@ export function Navbar() {
             </a>
 
             {/* Desktop nav */}
-            <div className="hidden lg:flex items-center gap-1 ml-auto mr-6">
+            <div className="hidden lg:flex items-center gap-1 ml-auto">
               {navLinks.map((link) =>
                 link.hasDropdown ? (
                   <div
@@ -145,15 +144,6 @@ export function Navbar() {
               )}
             </div>
 
-            {/* Desktop CTA */}
-            <a
-              href="/pricing"
-              className="hidden lg:inline-flex items-center gap-1.5 h-10 px-5 rounded-full bg-accent-orange text-white text-[14px] font-semibold hover:bg-accent-orange-deep transition-colors duration-150 group ml-auto lg:ml-0"
-            >
-              {PRIMARY_CTA_LABEL}
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-
             {/* Mobile menu button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -200,14 +190,6 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            <a
-              href="/pricing"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-8 flex items-center justify-center gap-1.5 h-12 rounded-full bg-accent-orange text-white text-[15px] font-semibold"
-            >
-              {PRIMARY_CTA_LABEL}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
           </div>
         </div>
       )}
