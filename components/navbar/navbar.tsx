@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -60,17 +59,15 @@ export function Navbar() {
             {/* Wordmark */}
             <a
               href="/"
-              className="flex items-center group flex-shrink-0 group-hover:opacity-80 transition-opacity"
+              className="flex items-baseline group flex-shrink-0 hover:opacity-80 transition-opacity"
               aria-label="Stratax Labs — home"
             >
-              <Image
-                src="/labs-ai.svg"
-                alt="Stratax Labs"
-                width={1250}
-                height={354}
-                priority
-                className="h-12 lg:h-14 w-auto"
-              />
+              <span className="font-display font-bold text-ink text-xl lg:text-[24px] tracking-[-0.02em]">
+                STRATAX
+              </span>
+              <span className="font-display font-semibold text-accent-orange text-[13px] lg:text-[15px] uppercase tracking-[0.04em] ml-1">
+                LABS
+              </span>
             </a>
 
             {/* Desktop nav */}
