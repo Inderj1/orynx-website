@@ -35,7 +35,7 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
+        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-16 lg:pt-[96px] lg:pb-20 min-h-[680px] lg:min-h-[820px] flex flex-col">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,18 +46,18 @@ export function HeroSection() {
               {HERO_EYEBROW}
             </span>
 
-            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] xl:text-[104px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
-              Where{" "}
+            <h1 className="font-display font-semibold text-ink text-[36px] sm:text-[52px] lg:text-[72px] xl:text-[84px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+              From strategy to{" "}
               <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
-                enterprise AI
-              </span>{" "}
-              gets built.
+                deployment.
+              </span>
             </h1>
 
             <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
               Stratax Labs designs, builds, and deploys AI that creates real
               business value. From strategy through closed-loop write-back,
-              with measurable impact across SAP, Salesforce, and Oracle.
+              with measurable impact across enterprise and mid-market ERPs
+              alike.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 mt-8">
@@ -76,7 +76,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-16 lg:mt-20 pt-10 border-t border-rule grid grid-cols-1 sm:grid-cols-3 gap-y-8 sm:gap-y-0"
+            className="mt-auto pt-16 lg:pt-24 grid grid-cols-1 sm:grid-cols-3 gap-y-8 sm:gap-y-0"
           >
             {stats.map((stat, i) => (
               <div
