@@ -7,7 +7,7 @@ import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 export const metadata: Metadata = {
   title: "Services | Stratax Labs",
   description:
-    "From strategy to production. Stratax Labs offers the full lifecycle of enterprise AI — strategy, build, and deploy — with measurable impact across SAP, Salesforce, and Oracle.",
+    "One team, end-to-end. Stratax Labs delivers strategy, build, and deploy as a single engagement — no throw-overs, no handoffs, with measurable impact across enterprise and mid-market ERPs.",
 }
 
 const services = [
@@ -61,9 +61,9 @@ export default function ServicesPage() {
             Services
           </span>
           <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-6 max-w-[20ch]">
-            From strategy to{" "}
+            One team. Start to{" "}
             <span className="font-serif italic font-normal text-brand-blue">
-              production.
+              finish.
             </span>
           </h1>
           <p className="text-ink-soft text-lg lg:text-xl max-w-[62ch] leading-[1.55] mt-8">
