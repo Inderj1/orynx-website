@@ -73,12 +73,12 @@ const features = [
   },
   {
     icon: Layers,
-    title: "Custom Engineering",
-    subtitle: "Dedicated teams",
-    description: "Web, AI/ML, LLM integration, and full-stack custom development. The same engineers from discovery through production deployment.",
+    title: "Run anywhere",
+    subtitle: "SaaS · self-hosted · hybrid · on-prem",
+    description: "Deploy our platforms on Orynx cloud, in your VPC, or fully on-prem for the strictest compliance regimes. Configurable data residency by region.",
     color: "teal",
     span: "md:col-span-4",
-    href: "/services",
+    href: "/products",
   },
   {
     icon: Lock,
@@ -196,12 +196,13 @@ export function FeatureSection() {
             What we ship
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Platforms, products, and{" "}
-            <span className="text-teal">engineering teams.</span>
+            Production-ready platforms for the{" "}
+            <span className="text-teal">hard sectors.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Pick a platform off the shelf. Hire a dedicated team to build what
-            you need from scratch. Most engagements do both.
+            Eleven products across healthcare, compliance, voice, communications,
+            and developer tooling. Pick a platform off the shelf and get to
+            production in weeks.
           </p>
         </motion.div>
 
