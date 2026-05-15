@@ -204,10 +204,10 @@ export default function SolutionsPage() {
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Solutions
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[16ch]">
-            Built for the{" "}
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[18ch]">
+            Software that runs{" "}
             <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
-              hard sectors.
+              your operations.
             </span>
           </h1>
           <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">

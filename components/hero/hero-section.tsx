@@ -40,17 +40,18 @@ export function HeroSection() {
               {HERO_EYEBROW}
             </span>
 
-            <h1 className="font-display font-semibold text-ink text-[40px] sm:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1.05] tracking-[-0.025em] mt-6 max-w-[16ch]">
-              Software for the{" "}
+            <h1 className="font-display font-semibold text-ink text-[40px] sm:text-[60px] lg:text-[80px] xl:text-[96px] leading-[1.05] tracking-[-0.025em] mt-6 max-w-[18ch]">
+              Software that runs{" "}
               <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
-                hard sectors.
+                your operations.
               </span>
             </h1>
 
             <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-8">
-              Production-ready platforms for healthcare, fintech, IoT, and
-              compliance — where deep integration, real-time AI, and
-              audit-grade rigour all matter at once.
+              Production agents and integration platforms that connect,
+              automate, and scale across healthcare, fintech, IoT, and
+              compliance — with deep integration, real-time intelligence, and
+              audit-grade rigour.
             </p>
 
             <div className="flex flex-wrap items-center gap-2 mt-10">

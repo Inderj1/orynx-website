@@ -196,13 +196,13 @@ export function FeatureSection() {
             What we ship
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Production-ready platforms for the{" "}
-            <span className="text-teal">hard sectors.</span>
+            Software that runs{" "}
+            <span className="text-teal">your operations.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Eleven products across healthcare, compliance, voice, communications,
-            and developer tooling. Pick a platform off the shelf and get to
-            production in weeks.
+            Eleven production platforms across healthcare, compliance, voice,
+            communications, and developer tooling. Pick a platform off the
+            shelf and get to production in weeks.
           </p>
         </motion.div>
 
