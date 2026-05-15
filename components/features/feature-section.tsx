@@ -3,85 +3,91 @@
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 import {
-  BrainCircuit, LineChart, Globe, Activity, Database, Network, Code2, RefreshCw,
-  TrendingUp, Package, ShoppingCart, FileText, Workflow, Radio, BookOpen, CreditCard,
+  HeartPulse, Shield, Bot, MessageSquare, Code2, BrainCircuit, Lock, Layers,
+  Network, Stethoscope, Eye, Sparkles, Activity, GraduationCap,
 } from "lucide-react"
 import { NetworkNodesIllustration, BrainPatternIllustration } from "./feature-illustrations"
 
 const features = [
   {
-    icon: BrainCircuit,
-    title: "Core AI",
-    subtitle: "Self-Learning Engine  \u00b7  8 Modules",
-    description: "Graph Memory with 4-network cognitive model — episodic, semantic, procedural, and belief networks. Learns from every execution and gets measurably smarter every week.",
+    icon: HeartPulse,
+    title: "Healthcare Suite",
+    subtitle: "EHR integration · clinical AI · synthetic data",
+    description: "Live in NHS and US deployments today. Six purpose-built products for hospitals, clinical researchers, and digital-health teams — wired together by EHR Bridge.",
     color: "teal",
     span: "md:col-span-5 md:row-span-2",
+    href: "/products/ehr-bridge",
     modules: [
-      { icon: TrendingUp, name: "MARGEN.AI", desc: "Margin analytics & revenue intelligence" },
-      { icon: Package, name: "STOX.AI", desc: "Smart inventory optimization" },
-      { icon: ShoppingCart, name: "ORDLY.AI", desc: "Order intelligence platform" },
-      { icon: FileText, name: "O2C.AI", desc: "Order-to-cash analysis" },
-      { icon: Workflow, name: "PROCESS.AI", desc: "Process mining & analytics" },
-      { icon: Radio, name: "TRAXX.AI", desc: "IoT kit & asset tracking" },
-      { icon: BookOpen, name: "MASTER.AI", desc: "Master data intelligence" },
-      { icon: CreditCard, name: "AP.AI", desc: "Accounts payable intelligence" },
+      { icon: Network, name: "EHR Bridge", desc: "78+ EHR connectors" },
+      { icon: Stethoscope, name: "Ambient Scribe", desc: "NHS-compliant transcription" },
+      { icon: Eye, name: "OpenEyes Cloud", desc: "Ophthalmology EPR" },
+      { icon: Sparkles, name: "MedSynth", desc: "Synthetic patient data" },
+      { icon: Activity, name: "DiaWound AI", desc: "Wound triage on mobile" },
+      { icon: GraduationCap, name: "Orynx Education", desc: "Virtual patient sims" },
     ],
   },
   {
-    icon: LineChart,
-    title: "Axis AI",
-    subtitle: "Predictive Foresight",
-    description: "What-if simulations, digital twins, and natural language queries across all connected systems. Strategic foresight for enterprise decisions.",
-    color: "coral",
-    span: "md:col-span-4",
-  },
-  {
-    icon: Globe,
-    title: "Markets AI",
-    subtitle: "External Signals",
-    description: "Demand, disruption, and logistics data for adaptive decisions. Converts unstructured signals into quantified action.",
-    color: "gold",
-    span: "md:col-span-3",
-  },
-  {
-    icon: Activity,
-    title: "Pulse AI",
-    subtitle: "Autonomous Resolution",
-    description: "10+ intelligent agents for issue detection, auto-resolution, and team sync. Chat-based ticketing keeps everyone aligned without manual intervention.",
-    color: "coral",
-    span: "md:col-span-4",
-  },
-  {
-    icon: Database,
-    title: "Enterprise Data Bridge",
-    subtitle: "No Data Movement",
-    description: "No data movement, bidirectional sync via Unified Business Schema. REST, OData, SOAP, and GraphQL protocols supported natively.",
-    color: "teal",
-    span: "md:col-span-3",
-  },
-  {
-    icon: Network,
-    title: "Graph Memory",
-    subtitle: "4-Network Cognitive Model",
-    description: "Episodic (experiences), semantic (facts), procedural (skills), and belief (summaries) networks with PersonalizedPageRank scoring.",
+    icon: Shield,
+    title: "ComplianceOS",
+    subtitle: "SOC 2 · ISO 27001 · HIPAA",
+    description: "Continuous evidence collection across 12+ tool integrations. AI-generated policies and one-click auditor exports — kickoff to ready in under 30 days.",
     color: "gold",
     span: "md:col-span-4",
+    href: "/products/compliance-os",
+  },
+  {
+    icon: Bot,
+    title: "Call Center AI",
+    subtitle: "Voice agents",
+    description: "Sub-500ms voice loops with intelligent triage, multi-language routing, and human-in-the-loop. LiveKit + Gemini 2.0.",
+    color: "coral",
+    span: "md:col-span-3",
+    href: "/products/call-center-ai",
+  },
+  {
+    icon: MessageSquare,
+    title: "CommBridge",
+    subtitle: "Unified communications",
+    description: "Slack, Teams, Discord, email, voice, and push — one API. Multi-language microservices in Go, Rust, Python, and TypeScript.",
+    color: "coral",
+    span: "md:col-span-4",
+    href: "/products/commbridge",
   },
   {
     icon: Code2,
-    title: "StrataxAI Agents SDK",
-    subtitle: "Multi-Agent Framework",
-    description: "17+ context sharing strategies, typed handoff protocol with explicit contracts, full lineage tracking. SDKs in Python, TypeScript, Rust, and Go.",
-    color: "coral",
-    span: "md:col-span-4",
+    title: "AutoPRD",
+    subtitle: "Autonomous dev pipeline",
+    description: "Feedback to shipped code via Claude Code agents and Docker sandboxes. Output: a reviewable pull request.",
+    color: "gold",
+    span: "md:col-span-3",
+    href: "/products/autoprd",
   },
   {
-    icon: RefreshCw,
-    title: "Closed-Loop Write-Back",
-    subtitle: "Autonomous Action",
-    description: "Insights write directly back into SAP, Oracle, and Salesforce. Autonomous action, not just recommendations — closing the loop between insight and execution.",
+    icon: BrainCircuit,
+    title: "Orynx Agents",
+    subtitle: "Multi-agent SDK · 100+ LLM providers",
+    description: "Enterprise-grade agent framework with typed handoffs, graph memory, durable execution, and compliance-ready safety. Python, TypeScript, Rust, Go.",
+    color: "coral",
+    span: "md:col-span-4",
+    href: "/agents",
+  },
+  {
+    icon: Layers,
+    title: "Custom Engineering",
+    subtitle: "Dedicated teams",
+    description: "Web, AI/ML, LLM integration, and full-stack custom development. The same engineers from discovery through production deployment.",
     color: "teal",
     span: "md:col-span-4",
+    href: "/services",
+  },
+  {
+    icon: Lock,
+    title: "Privacy by design",
+    subtitle: "End-to-end encryption · audit-grade",
+    description: "HIPAA, SOC 2, and ISO 27001 alignment baked in from the first commit. BAA-ready deployments and configurable data residency.",
+    color: "gold",
+    span: "md:col-span-4",
+    href: "/about",
   },
 ]
 
@@ -134,7 +140,7 @@ function BentoCard({ feature, index }: { feature: typeof features[0]; index: num
       {index === 0 && (
         <BrainPatternIllustration className="absolute bottom-2 right-2 w-28 h-28 text-teal pointer-events-none" />
       )}
-      {index === 3 && (
+      {index === 5 && (
         <NetworkNodesIllustration className="absolute bottom-2 right-2 w-24 h-24 text-coral pointer-events-none" />
       )}
 
@@ -187,14 +193,15 @@ export function FeatureSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-            The Intelligence Stack
+            What we ship
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Everything that powers{" "}
-            <span className="text-teal">StrataxAI</span>
+            Platforms, products, and{" "}
+            <span className="text-teal">engineering teams.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Four CAMP modules, Graph Memory, the StrataxAI Agents SDK, Enterprise Data Bridge, and Closed-Loop Write-Back — working in concert.
+            Pick a platform off the shelf. Hire a dedicated team to build what
+            you need from scratch. Most engagements do both.
           </p>
         </motion.div>
 

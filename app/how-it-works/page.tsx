@@ -13,68 +13,68 @@ import {
 } from "lucide-react"
 import Image from "next/image"
 
-const erpCategories = [
+const integrationCategories = [
   {
-    label: "Tier 1 ERP",
-    systems: ["SAP S/4HANA", "Oracle ERP Cloud", "Microsoft Dynamics 365", "Workday", "Infor CloudSuite", "IFS Applications"],
+    label: "Tier-1 Hospital EHR",
+    systems: ["Epic", "Cerner (Oracle Health)", "Allscripts", "Meditech", "athenahealth", "NextGen"],
   },
   {
-    label: "Mid-Market ERP",
-    systems: ["NetSuite", "Sage Intacct", "Acumatica", "Epicor ERP", "Unit4", "Syspro", "Odoo"],
+    label: "NHS & UK Systems",
+    systems: ["EMIS Web", "SystmOne (TPP)", "Vision", "Cerner Millennium UK", "OpenEyes"],
   },
   {
-    label: "Accounting",
-    systems: ["QuickBooks Online", "QuickBooks Desktop", "Xero", "Zoho Books", "FreshBooks", "Wave", "Tally Prime / ERP 9", "MYOB AccountRight"],
+    label: "Specialty EPR & Imaging",
+    systems: ["OpenEyes (Ophthalmology)", "TrakCare", "Dedalus", "Sectra PACS", "GE Centricity", "Agfa"],
   },
   {
-    label: "Microsoft",
-    systems: ["Dynamics 365", "Business Central", "Dynamics GP", "Dynamics NAV", "Dynamics AX"],
+    label: "Standards & Interop",
+    systems: ["FHIR R4", "HL7 v2.x", "CDA", "DICOM", "IHE profiles", "SMART on FHIR"],
   },
   {
-    label: "SAP",
-    systems: ["SAP S/4HANA", "SAP Business One", "SAP Business ByDesign"],
+    label: "Communications",
+    systems: ["Slack", "Microsoft Teams", "Discord", "Email (SMTP/IMAP)", "Voice (LiveKit, Twilio)", "SMS & Push"],
   },
   {
-    label: "Sage",
-    systems: ["Sage Intacct", "Sage 100", "Sage 300", "Sage 500", "Sage X3"],
+    label: "Compliance & Identity",
+    systems: ["AWS Audit Manager", "Drata", "Vanta", "Okta", "Azure AD", "Auth0"],
   },
   {
-    label: "Manufacturing",
-    systems: ["Plex Systems", "Priority Software", "Deltek Costpoint", "Katana MRP", "MRPeasy"],
+    label: "Fintech & Payments",
+    systems: ["Stripe", "Plaid", "Adyen", "QuickBooks", "Xero", "Sage Intacct"],
   },
   {
-    label: "CRM & Other",
-    systems: ["Salesforce", "HubSpot", "Ramco ERP", "Cin7", "Fishbowl"],
+    label: "Cloud & Infrastructure",
+    systems: ["AWS", "GCP", "Azure", "Kubernetes", "PostgreSQL", "Redis", "Kafka", "RabbitMQ"],
   },
 ]
 
 const bridgeCapabilities = [
-  { icon: ArrowLeftRight, label: "Bidirectional Sync", desc: "Read and write back via Unified Business Schema" },
-  { icon: Webhook, label: "Webhooks", desc: "Real-time event notifications on data changes" },
+  { icon: ArrowLeftRight, label: "Bidirectional Sync", desc: "Read and write back via the Unified Schema with sub-2-second latency" },
+  { icon: Webhook, label: "Webhooks", desc: "Real-time event notifications on clinical, comms, and business data changes" },
   { icon: Monitor, label: "AI-Powered Chat", desc: "Natural language queries across all connected systems" },
-  { icon: BarChart3, label: "Data Quality Analytics", desc: "Automated data profiling and quality scoring" },
+  { icon: BarChart3, label: "Data Quality Analytics", desc: "Automated record profiling, deduplication, and quality scoring" },
 ]
 
 const sdkFeatures = [
   {
     icon: Network,
-    title: "17+ Context Strategies",
-    description: "Full shared, scoped, isolated, hierarchical, and more. Every agent gets exactly the context it needs — no more, no less.",
+    title: "24+ Context Strategies",
+    description: "Full shared, scoped, isolated, hierarchical, and more. Every agent gets exactly the context it needs — critical for PHI, PCI, and tenant-boundary enforcement.",
   },
   {
     icon: Database,
-    title: "Graph Memory",
-    description: "4-network cognitive model: episodic (experiences), semantic (facts), procedural (skills), and belief (summaries). PersonalizedPageRank scoring.",
+    title: "Cognitive Graph Memory",
+    description: "Multi-tier (hot, warm, cold) memory modelling facts, experiences, beliefs, and summaries. LLM-powered extraction with deduplication and conflict resolution.",
   },
   {
     icon: Code2,
     title: "Typed Handoff Protocol",
-    description: "Explicit contracts between agents with type-safe handoffs. Full lineage tracking for every decision and every handoff in the chain.",
+    description: "Explicit contracts between agents with type-safe handoffs. Stateful agents with validated transitions and full lineage tracking on every decision.",
   },
   {
     icon: Shield,
-    title: "Audit & Lineage",
-    description: "Complete audit trail of every agent action, decision, and data access. Enterprise-grade compliance built into the framework.",
+    title: "Audit & Compliance",
+    description: "Complete audit trail of every agent action, decision, and data access. GDPR, HIPAA, and PCI-DSS ready out of the box with DLP presets.",
   },
 ]
 
@@ -101,14 +101,14 @@ function DataBridgeSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-teal/10 text-teal text-sm font-medium mb-4">
-            Enterprise Data Bridge
+            Universal Integration Layer
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Connect to any ERP.{" "}
+            Connect to any system.{" "}
             <span className="text-teal">No data movement.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            40 native connectors supporting REST, OData v2/v4, SOAP, and GraphQL. Kong Gateway routing. Bidirectional read/write via the Unified Business Schema.
+            78+ EHR connectors plus unified comms, compliance, fintech, and cloud integrations. FHIR R4, HL7, REST, GraphQL, gRPC, and SOAP. Bidirectional read/write with sub-2-second sync.
           </p>
         </motion.div>
 
@@ -119,7 +119,7 @@ function DataBridgeSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col md:flex-row items-center justify-center gap-4 mb-16"
         >
-          {["Your ERP", "Enterprise Data Bridge", "Unified Business Schema", "CAMP Framework", "Write-Back"].map((step, i) => (
+          {["Your System", "Orynx Integration Layer", "Unified Schema (FHIR / Business / Comms)", "Orynx Agents", "Write-Back"].map((step, i) => (
             <div key={step} className="flex items-center gap-4">
               <div className={`px-5 py-3 rounded-xl text-sm font-medium ${
                 i === 1 ? "bg-teal/10 text-teal border border-teal/30" :
@@ -135,9 +135,9 @@ function DataBridgeSection() {
           ))}
         </motion.div>
 
-        {/* ERP categories grid */}
+        {/* Integration categories grid */}
         <div className="grid md:grid-cols-4 gap-4 mb-12">
-          {erpCategories.map((cat, index) => (
+          {integrationCategories.map((cat, index) => (
             <motion.div
               key={cat.label}
               initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ function DataBridgeSection() {
           className="mt-8 text-center"
         >
           <p className="text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">On-premise agent available</span> for desktop ERPs like QuickBooks Desktop and Tally.
+            <span className="font-medium text-foreground">Self-hosted deployment available</span> for on-premise EHRs, private LLMs (Ollama, vLLM), and air-gapped environments.
           </p>
         </motion.div>
       </div>
@@ -207,14 +207,14 @@ function AgentsSDKSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-coral/10 text-coral text-sm font-medium mb-4">
-            StrataxAI Agents SDK
+            Orynx Agents SDK
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Proprietary multi-agent{" "}
+            Provider-agnostic multi-agent{" "}
             <span className="text-coral">framework</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            17+ context sharing strategies, typed handoff protocol, Graph Memory with 4-network cognitive model. Available in Python, TypeScript, Rust, and Go.
+            24+ context-sharing strategies, typed handoff protocol, cognitive graph memory with multi-tier storage. 100+ LLM providers. Available in Python, TypeScript, Rust, and Go.
           </p>
         </motion.div>
 
@@ -253,7 +253,7 @@ function AgentsSDKSection() {
                 <span className="px-2 py-0.5 rounded-full bg-gold/10 text-gold text-[10px] font-bold tracking-wider uppercase">R&D</span>
               </div>
               <p className="text-sm text-muted-foreground">
-                Neural world model for supply chain optimization, MCTS-based planning, and multi-modal agent perception. These capabilities are in active research and development.
+                Neural clinical-reasoning world models, MCTS-based care-pathway planning, multi-modal perception (imaging, vitals, notes), and synthetic data generation (MedSynth). These capabilities are in active research and development.
               </p>
             </div>
           </div>
@@ -271,32 +271,32 @@ export default function HowItWorksPage() {
       <section className="relative bg-background overflow-hidden">
         <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
-            src="/heroes/platform.webp"
+            src="/heroes/platform.png"
             alt=""
             fill
             priority
             sizes="(max-width: 1280px) 100vw, 1800px"
-            className="object-cover object-center"
+            className="object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/70 via-55% to-background/15" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 via-55% to-background/40" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[96px] pb-12 lg:pt-[120px] lg:pb-16">
           <div className="max-w-[60ch]">
             <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
               Technology · Platform
             </span>
-            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[16ch]">
               Three modes of{" "}
               <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
                 intelligence.
               </span>
             </h1>
             <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
-              Stratax Labs operates across three complementary modes —
-              proactive monitoring, reactive querying, and dashboard-driven
-              autonomy — powered by the Enterprise Data Bridge and the
-              Agents SDK.
+              Orynx operates across three complementary modes — proactive
+              monitoring, reactive natural-language querying, and
+              dashboard-driven autonomy — powered by the Universal Integration
+              Layer and the Orynx Agents SDK.
             </p>
           </div>
         </div>

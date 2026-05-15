@@ -7,54 +7,55 @@ import { Button } from "@/components/ui/button"
 
 const plans = [
   {
-    name: "STRATAX AI Enterprise",
-    tagline: "The AI Operating System for Enterprise",
+    name: "Platform",
+    tagline: "Pick a product, get to production",
     price: "Custom",
-    cta: "Get a Demo",
+    cta: "Speak with our team",
     ctaVariant: "default" as const,
     highlighted: true,
     disabled: false,
     features: [
-      "Full CAMP framework (Core, Axis, Markets, Pulse)",
-      "40+ native ERP connectors",
-      "Graph Memory (4-network cognitive model)",
-      "17+ context sharing strategies",
-      "StrataxAI Agents SDK",
-      "Self-Training ML pipelines",
-      "Unlimited agents",
-      "24/7 dedicated support",
-      "SOC 2 Type II compliant",
+      "Choose any platform: EHR Bridge, ComplianceOS, Call Center AI, CommBridge, AutoPRD, Orynx Agents",
+      "Hosted SaaS or self-hosted deployment",
+      "HIPAA / SOC 2 / ISO 27001 alignment",
+      "BAA-ready when applicable",
+      "Onboarding sprint with an Orynx engineer",
+      "SLA-backed production support",
+      "Roadmap input on the platform itself",
     ],
   },
   {
-    name: "LEDGERLY PRO",
-    tagline: "AI-Powered Accounts Receivable Automation",
+    name: "Dedicated team",
+    tagline: "Engineers assigned to your project",
     price: "Custom",
-    cta: "Book a Demo",
+    cta: "Speak with our team",
     ctaVariant: "outline" as const,
     highlighted: false,
     disabled: false,
     features: [
-      "10 intelligent AR agents",
-      "CFO Copilot",
-      "Cash Application",
-      "Dispute Management",
-      "Credit Risk Assessment",
-      "AR Aging & Forecasting",
-      "Compliance & Audit",
-      "QuickBooks, Xero, FreshBooks",
+      "Web, AI/ML, LLM, custom development",
+      "Same engineers from discovery to production",
+      "Weekly increments, not big-bang releases",
+      "Architecture review included",
+      "Pairs naturally with our platforms",
+      "Optional ongoing support after launch",
     ],
   },
   {
-    name: "LEDGERLY FIELD",
-    tagline: "Field Operations Intelligence",
-    price: "",
-    cta: "Coming Soon",
+    name: "Healthcare specialist",
+    tagline: "Clinical-grade products & integrations",
+    price: "Custom",
+    cta: "Speak with our team",
     ctaVariant: "outline" as const,
     highlighted: false,
-    disabled: true,
+    disabled: false,
     features: [
-      "Details coming soon",
+      "Ambient Scribe — NHS-compliant transcription",
+      "OpenEyes Cloud — ophthalmology EPR",
+      "MedSynth — synthetic patient data",
+      "DiaWound AI — diabetic wound triage",
+      "Orynx Education — virtual patient sims",
+      "Direct EHR Bridge integration",
     ],
   },
 ]
@@ -79,11 +80,12 @@ export function Pricing() {
             Pricing
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            Choose the right plan for{" "}
-            <span className="text-teal">your business</span>
+            Three ways to{" "}
+            <span className="text-teal">work with us.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Purpose-built AI products for enterprise operations and financial automation.
+            Buy a platform off the shelf, hire a dedicated team, or pick our
+            healthcare specialism. Most engagements blend two of the three.
           </p>
         </motion.div>
 

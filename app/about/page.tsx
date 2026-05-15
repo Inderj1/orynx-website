@@ -3,33 +3,41 @@ import { ArrowUpRight } from "lucide-react"
 import { Navbar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer/footer"
 import {
-  ACQUISITION_STORY_LONG,
+  ABOUT_STORY_LONG,
+  COMPANY_LOCATION,
+  COMPANY_NAME,
   PRIMARY_CTA_LABEL,
 } from "@/lib/brand-copy"
 
 export const metadata: Metadata = {
-  title: "About Stratax Labs | The AI labs of StrataxAI",
-  description:
-    "Stratax Labs is the AI labs of StrataxAI, formed from the acquisition of Atvantiq Solutions. We design, build, and deploy enterprise AI from strategy through closed-loop write-back.",
+  title: `About ${COMPANY_NAME} | Edinburgh-based AI products & engineering`,
+  description: `${COMPANY_NAME} builds integration platforms, AI products, and custom software for healthcare, fintech, IoT, and compliance. Based in ${COMPANY_LOCATION}.`,
 }
 
 const values = [
   {
-    title: "Ship over speculate",
-    body: "We measure ourselves on what reaches production, not what reaches a slide. Every engagement ends with something running.",
-  },
-  {
-    title: "Closed-loop or it didn't happen",
-    body: "Recommendations that don't write back are reports. We design AI that takes the action, then proves it worked.",
+    title: "Products and services, together",
+    body: "We build and release our own products in parallel with client work. It keeps us honest about what actually has to ship — not what looks good in a slide.",
   },
   {
     title: "Domain before model",
-    body: "The right answer for finance is not the right answer for field ops. We learn the domain first; the model is the easy part.",
+    body: "The right answer for a hospital is not the right answer for a bank. We learn the domain first; the model is the easy part.",
   },
   {
-    title: "Boring infrastructure, sharp results",
-    body: "Predictable deployments, observable agents, auditable decisions. The clever lives in the outcomes, not the plumbing.",
+    title: "Privacy by design",
+    body: "HIPAA, SOC 2, and ISO 27001 alignment baked in from the first commit. End-to-end encryption is the default, not the upgrade.",
   },
+  {
+    title: "Dedicated, not pooled",
+    body: "Engineers are assigned directly to your project — the same team from discovery through production. No throw-overs, no handoffs.",
+  },
+]
+
+const capabilities = [
+  { label: "Healthcare", body: "EHR integration, ambient documentation, medical AI." },
+  { label: "Fintech", body: "Payments infrastructure, compliance automation, risk scoring." },
+  { label: "IoT & Real-time", body: "Voice agents, telemetry pipelines, edge intelligence." },
+  { label: "Compliance", body: "SOC 2, ISO 27001, HIPAA — automated and audit-ready." },
 ]
 
 export default function AboutPage() {
@@ -43,38 +51,62 @@ export default function AboutPage() {
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             About
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-6 max-w-[18ch]">
-            The AI labs of{" "}
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-6 max-w-[18ch]">
+            Technology that solves{" "}
             <span className="font-serif italic font-normal text-brand-blue">
-              StrataxAI.
+              real problems.
             </span>
           </h1>
           <p className="text-ink-soft text-lg lg:text-xl max-w-[62ch] leading-[1.55] mt-8">
-            Stratax Labs designs, builds, and deploys enterprise AI for teams
-            that need it to actually work — not just demo. Our products and
-            services are shaped by the day-to-day reality of running SAP,
-            Salesforce, and Oracle at scale.
+            {COMPANY_NAME} is an Edinburgh-based product and engineering studio.
+            We build integration platforms, AI products, and custom software
+            for teams in healthcare, fintech, IoT, and compliance — and we ship
+            dedicated engineering teams alongside.
           </p>
         </div>
       </section>
 
-      {/* Origin */}
+      {/* Story */}
       <section className="py-20 lg:py-32 border-t border-rule">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-4">
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-                Origin
+                Story
               </span>
               <h2 className="font-display font-semibold text-ink text-[36px] lg:text-[52px] leading-[1.02] tracking-[-0.025em] mt-4">
-                Formerly Atvantiq Solutions.
+                Engineers, AI specialists, and product builders.
               </h2>
             </div>
             <div className="lg:col-span-8 space-y-6 text-ink-soft text-lg leading-[1.65]">
-              {ACQUISITION_STORY_LONG.split("\n\n").map((para, i) => (
+              {ABOUT_STORY_LONG.split("\n\n").map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Where we work */}
+      <section className="py-20 lg:py-32 border-t border-rule bg-surface">
+        <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
+            Where we work
+          </span>
+          <h2 className="font-display font-semibold text-ink text-[36px] lg:text-[52px] leading-[1.02] tracking-[-0.025em] mt-4 max-w-[20ch]">
+            Four sectors. One discipline.
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-y-12 mt-14">
+            {capabilities.map((c) => (
+              <div key={c.label}>
+                <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent-orange mb-3">
+                  {c.label}
+                </div>
+                <p className="text-ink text-base lg:text-lg leading-[1.55]">
+                  {c.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -110,11 +142,11 @@ export default function AboutPage() {
       <section className="py-20 lg:py-32 bg-ink text-background">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10 text-center">
           <h2 className="font-display font-semibold text-background text-[36px] lg:text-[56px] leading-[1.02] tracking-[-0.025em] max-w-[26ch] mx-auto">
-            Ready to ship enterprise AI?
+            Have something to build?
           </h2>
           <p className="text-background/70 text-lg lg:text-xl max-w-[58ch] mx-auto mt-6">
-            Tell us about your problem. We'll share the path from strategy to
-            deployment in a 30-minute call.
+            Tell us about your problem. We'll share how we'd approach it in a
+            30-minute call.
           </p>
           <a
             href="/contact"

@@ -4,20 +4,17 @@ import { Navbar } from "@/components/navbar/navbar"
 import { LogoCloud } from "@/components/logo-cloud/logo-cloud"
 import { CTASection } from "@/components/cta/cta-section"
 import { Footer } from "@/components/footer/footer"
-import { motion, useInView } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 import {
-  BrainCircuit, BookOpen, MapPin, Database, Shield, Workflow,
-  Check, ArrowRight, Zap, LineChart, Lock, BarChart3,
-  Bot, MessageSquare, Layers,
+  Network, Shield, Bot, MessageSquare, Code2, BrainCircuit,
+  Activity, Eye, Sparkles, GraduationCap, ArrowRight,
 } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
-/* ─── Hover‑shine wrapper (reference3 BentoCard pattern) ─── */
+/* ─── Hover-shine wrapper ─── */
 function BentoCard({
   children,
   className = "",
@@ -30,7 +27,6 @@ function BentoCard({
       className={`group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-teal/30 ${className}`}
       style={{ boxShadow: "var(--bento-shadow)" }}
     >
-      {/* Diagonal shine on hover */}
       <div
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100"
         style={{
@@ -43,7 +39,7 @@ function BentoCard({
   )
 }
 
-/* ─── Animated entrance wrapper (reference3 AnimatedCard) ─── */
+/* ─── Animated entrance wrapper ─── */
 function AnimatedCard({
   children,
   delay = 0,
@@ -90,91 +86,187 @@ function AnimatedCard({
   )
 }
 
-/* ─── Data ─── */
+/* ─── Product data ─── */
 
-const campModules = [
-  { name: "Core AI", desc: "Self-learning brain with Graph Memory", icon: BrainCircuit },
-  { name: "Axis AI", desc: "Predictive foresight & digital twins", icon: LineChart },
-  { name: "Markets AI", desc: "External demand & disruption signals", icon: BarChart3 },
-  { name: "Pulse AI", desc: "Autonomous issue resolution", icon: Zap },
-]
+type Product = {
+  id: string
+  href: string
+  name: string
+  tagline: string
+  description: string
+  icon: typeof Network
+  accent: "teal" | "gold" | "coral" | "blue"
+  bullets: string[]
+}
 
-const arAgents = [
-  "Invoice Creation", "Validation", "Delivery", "Payment Reminders",
-  "Cash Application", "Dispute Management", "Credit Risk",
-  "AR Aging & Forecasting", "Compliance & Audit", "CFO Copilot",
-]
-
-const fieldEngines = [
-  { name: "Revenue & Job Economics", desc: "Job-level P&L with real-time cost allocation" },
-  { name: "Labor Efficiency", desc: "Crew utilization, overtime, and productivity scoring" },
-  { name: "Parts & Materials", desc: "Inventory optimization with waste tracking" },
-  { name: "Cash Speed", desc: "Days-to-cash acceleration and billing velocity" },
-]
-
-const fieldIndustries = ["HVAC", "Plumbing", "Electrical", "Roofing", "Landscaping", "General Contracting"]
-
-const differentiators = [
+const platformProducts: Product[] = [
   {
-    icon: Database,
-    number: "01",
-    title: "Enterprise Data Bridge",
-    description: "Native ERP connectors supporting REST, OData, SOAP, and GraphQL. No ETL, no data movement. Bidirectional read/write via Unified Business Schema.",
+    id: "ehr-bridge",
+    href: "/products/ehr-bridge",
+    name: "EHR Bridge",
+    tagline: "Universal healthcare data integration",
+    description:
+      "Plaid for EHR. Real-time bidirectional sync across 78+ platforms — Epic, Cerner, Allscripts, athenahealth — with FHIR R4 and HL7 support.",
+    icon: Network,
+    accent: "teal",
+    bullets: ["78+ EHR connectors", "FHIR R4 / HL7", "<2s sync", "HIPAA-compliant"],
   },
   {
+    id: "compliance-os",
+    href: "/products/compliance-os",
+    name: "ComplianceOS",
+    tagline: "Compliance automation with AI workflows",
+    description:
+      "SOC 2, ISO 27001, and HIPAA automation across 12+ tool integrations with continuous monitoring and audit-ready reporting.",
     icon: Shield,
-    number: "02",
-    title: "4-Tier Trust Architecture",
-    description: "Deterministic business rules never mix with LLM inference. Multi-layer auth, AES-256-GCM encryption, and full audit trails at every layer.",
+    accent: "gold",
+    bullets: ["SOC 2 / ISO 27001 / HIPAA", "12+ integrations", "Continuous monitoring", "Audit-ready"],
   },
   {
-    icon: Workflow,
-    number: "03",
-    title: "Closed-Loop Write-Back",
-    description: "Insights write back directly into SAP, Oracle, and Salesforce autonomously. The loop between insight and action is fully closed.",
+    id: "call-center-ai",
+    href: "/products/call-center-ai",
+    name: "Call Center AI",
+    tagline: "Voice agents with sub-500ms response",
+    description:
+      "Inbound and outbound voice agents with intelligent triage, multi-language routing, and human-in-the-loop supervision. LiveKit + Gemini 2.0.",
+    icon: Bot,
+    accent: "coral",
+    bullets: ["<500ms response", "4+ languages", "Human-in-the-loop", "LiveKit + Gemini 2.0"],
+  },
+  {
+    id: "commbridge",
+    href: "/products/commbridge",
+    name: "CommBridge",
+    tagline: "Unified communications layer",
+    description:
+      "One API across Slack, Teams, Discord, email, voice, and push notifications. Multi-language microservices in Go, Rust, Python, and TypeScript.",
+    icon: MessageSquare,
+    accent: "blue",
+    bullets: ["6 channels, one API", "Go / Rust / Python / TS", "Microservices", "Idempotent delivery"],
+  },
+  {
+    id: "autoprd",
+    href: "/products/autoprd",
+    name: "AutoPRD",
+    tagline: "Autonomous development pipeline",
+    description:
+      "Feedback → PRD → implementation → reviewed code. Claude Code agents with untrusted-actor review patterns and Docker-sandboxed execution.",
+    icon: Code2,
+    accent: "teal",
+    bullets: ["Feedback to PR", "Sandboxed execution", "Auto-generated tests", "Reviewed by humans"],
+  },
+  {
+    id: "orynx-agents",
+    href: "/agents",
+    name: "Orynx Agents",
+    tagline: "Enterprise-grade agentic AI SDK",
+    description:
+      "Multi-agent SDK with intelligent context management (24+ strategies), graph memory, durable execution, and 100+ LLM providers across Python, TypeScript, Rust, and Go.",
+    icon: BrainCircuit,
+    accent: "coral",
+    bullets: ["100+ LLM providers", "24+ context strategies", "Graph memory", "4 language SDKs"],
   },
 ]
+
+const healthcareProducts: Product[] = [
+  {
+    id: "ambient-scribe",
+    href: "/products/ambient-scribe",
+    name: "Ambient Scribe",
+    tagline: "Real-time clinical transcription",
+    description:
+      "NHS-compliant. Doctor-patient conversations into structured SOAP notes with EHR auto-population.",
+    icon: MessageSquare,
+    accent: "teal",
+    bullets: ["NHS-compliant", "SOAP-structured", "EHR auto-populate"],
+  },
+  {
+    id: "openeyes-cloud",
+    href: "/products/openeyes-cloud",
+    name: "OpenEyes Cloud",
+    tagline: "Cloud-native ophthalmology EPR",
+    description:
+      "EyeDraw graphical documentation, OCT and visual-field device integration, rapid surgical templates, browser-native.",
+    icon: Eye,
+    accent: "blue",
+    bullets: ["EyeDraw", "OCT / VFA integration", "Browser-native"],
+  },
+  {
+    id: "medsynth",
+    href: "/products/medsynth",
+    name: "MedSynth",
+    tagline: "Privacy-safe synthetic patient data",
+    description:
+      "Realistic synthetic records for AI training and simulation across emergency, surgical, chronic, and rare conditions.",
+    icon: Sparkles,
+    accent: "gold",
+    bullets: ["100% HIPAA-safe", "All clinical domains", "Training-ready"],
+  },
+  {
+    id: "diawound-ai",
+    href: "/products/diawound-ai",
+    name: "DiaWound AI",
+    tagline: "Diabetic wound analysis on mobile",
+    description:
+      "Image capture, instant classification, severity scoring, and healing tracking via native iOS and Android apps.",
+    icon: Activity,
+    accent: "coral",
+    bullets: ["iOS + Android", "Severity scoring", "Healing tracker"],
+  },
+  {
+    id: "orynx-education",
+    href: "/products/orynx-education",
+    name: "Orynx Education",
+    tagline: "AI-powered healthcare education",
+    description:
+      "Virtual patient simulations, interactive 3D anatomy, OSCE training, and adaptive learning pathways.",
+    icon: GraduationCap,
+    accent: "teal",
+    bullets: ["Virtual patients", "3D anatomy", "OSCE training"],
+  },
+]
+
+const accentMap: Record<Product["accent"], { bg: string; text: string; border: string; pill: string }> = {
+  teal: {
+    bg: "bg-teal/10",
+    text: "text-teal",
+    border: "hover:border-teal/30",
+    pill: "bg-teal/10 text-teal border-teal/15",
+  },
+  gold: {
+    bg: "bg-gold/10",
+    text: "text-gold",
+    border: "hover:border-gold/30",
+    pill: "bg-gold/10 text-gold border-gold/15",
+  },
+  coral: {
+    bg: "bg-coral/10",
+    text: "text-coral",
+    border: "hover:border-coral/30",
+    pill: "bg-coral/10 text-coral border-coral/15",
+  },
+  blue: {
+    bg: "bg-brand-blue/10",
+    text: "text-brand-blue",
+    border: "hover:border-brand-blue/30",
+    pill: "bg-brand-blue/10 text-brand-blue border-brand-blue/15",
+  },
+}
 
 const metrics = [
-  { value: "40", label: "ERP Connectors" },
-  { value: "4", label: "AI Modules" },
-  { value: "17+", label: "Context Strategies" },
-  { value: "10", label: "AR Agents" },
-  { value: "99.5%", label: "Accuracy" },
-  { value: "<5s", label: "Response Time" },
+  { value: "78+", label: "EHR connectors" },
+  { value: "100+", label: "LLM providers" },
+  { value: "24+", label: "Context strategies" },
+  { value: "<500ms", label: "Voice response" },
+  { value: "<2s", label: "EHR sync" },
+  { value: "4", label: "Language SDKs" },
 ]
 
 /* ─── Page ─── */
 
 export default function ProductsPage() {
-  const diffRef = useRef<HTMLDivElement>(null)
-  const [diffVisible, setDiffVisible] = useState(false)
-  const [activeStep, setActiveStep] = useState(-1)
-
   const metricsRef = useRef<HTMLDivElement>(null)
   const [metricsVisible, setMetricsVisible] = useState(false)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setDiffVisible(true)
-          observer.disconnect()
-        }
-      },
-      { threshold: 0.1 },
-    )
-    if (diffRef.current) observer.observe(diffRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (diffVisible) {
-      differentiators.forEach((_, i) => {
-        setTimeout(() => setActiveStep(i), 400 + i * 300)
-      })
-    }
-  }, [diffVisible])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -198,29 +290,30 @@ export default function ProductsPage() {
       <section className="relative bg-background overflow-hidden border-b border-rule">
         <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
-            src="/heroes/platform.webp"
+            src="/heroes/platform.png"
             alt=""
             fill
             priority
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
-            className="object-cover object-right-top"
+            className="object-cover object-right-top opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 via-55% to-background/40" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Products
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
-            AI products for{" "}
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            Platforms that{" "}
             <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
-              enterprise.
+              connect & automate.
             </span>
           </h1>
           <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
-            Enterprise-grade AI that connects to your existing systems, learns
-            from every interaction, and writes intelligent decisions back
-            autonomously.
+            Production-ready integration platforms and AI products across
+            healthcare, fintech, IoT, and compliance. Built by engineers, run
+            in production today.
           </p>
           <div className="flex flex-wrap items-center gap-2 mt-8">
             <Link
@@ -231,7 +324,7 @@ export default function ProductsPage() {
               <ArrowUpRight className="w-4 h-4 transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
             <a
-              href="#products"
+              href="#platforms"
               className="inline-flex items-center gap-2 h-12 px-5 text-[15px] font-semibold text-ink hover:text-brand-blue transition-colors duration-150 group"
             >
               Browse the suite
@@ -241,243 +334,110 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* ─── Product Bento Grid ─── */}
-      <section className="py-16">
+      {/* ─── Platform products grid ─── */}
+      <section id="platforms" className="py-20 lg:py-24">
         <div className="container mx-auto px-6 lg:px-12">
           <AnimatedCard delay={0} direction="up">
             <div className="mb-12 max-w-2xl">
               <span className="text-sm font-medium text-teal uppercase tracking-wider">
-                Our Products
+                Platforms
               </span>
               <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
-                Three products, one platform
+                Six platforms. One studio.
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                From enterprise AI orchestration to accounts receivable automation and field operations intelligence.
+                Integration, compliance, voice, communications, dev tooling,
+                and the multi-agent SDK that runs underneath them.
               </p>
             </div>
           </AnimatedCard>
 
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:auto-rows-[200px]">
-            {/* ── STRATAX AI Enterprise: Featured left card ── */}
-            <AnimatedCard delay={100} direction="left" className="min-h-[420px] md:min-h-0 md:col-span-7 md:row-span-2">
-              <BentoCard className="flex flex-col h-full border-teal/20 hover:border-teal/40">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-teal/10 text-teal flex items-center justify-center flex-shrink-0">
-                    <BrainCircuit className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">STRATAX AI Enterprise</h3>
-                    <p className="text-teal text-sm font-medium">The AI Operating System for Enterprise</p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-                  Full CAMP framework with self-learning AI, closed-loop write-back, and autonomous decision-making
-                  across all enterprise systems. Powered by the StrataxAI Agents SDK.
-                </p>
-
-                {/* CAMP module mini-cards */}
-                <div className="grid grid-cols-2 gap-2 mb-5 flex-1">
-                  {campModules.map((mod) => (
-                    <div key={mod.name} className="bg-muted/50 rounded-lg p-3 flex items-start gap-2.5">
-                      <mod.icon className="w-4 h-4 text-teal mt-0.5 flex-shrink-0" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {platformProducts.map((p, i) => {
+              const c = accentMap[p.accent]
+              const Icon = p.icon
+              return (
+                <AnimatedCard key={p.id} delay={80 + i * 60} direction="up">
+                  <BentoCard className={`flex flex-col h-full min-h-[340px] ${c.border}`}>
+                    <div className="flex items-start gap-3 mb-4">
+                      <div className={`w-11 h-11 rounded-xl ${c.bg} ${c.text} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className="w-5 h-5" />
+                      </div>
                       <div>
-                        <div className="text-xs font-semibold text-foreground">{mod.name}</div>
-                        <div className="text-[11px] text-muted-foreground leading-tight">{mod.desc}</div>
+                        <h3 className="text-lg font-bold text-foreground">{p.name}</h3>
+                        <p className={`${c.text} text-xs font-medium`}>{p.tagline}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3 mt-auto pt-2">
-                  <a href="/contact">
-                    <Button className="bg-foreground text-background hover:bg-foreground/90 group h-9 text-sm">
-                      Get a Demo
-                      <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </a>
-                  <Link
-                    href="/products/stratax-ai"
-                    className="inline-flex items-center gap-1 text-sm font-medium text-teal hover:underline"
-                  >
-                    Learn more <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </BentoCard>
-            </AnimatedCard>
-
-            {/* ── LEDGERLY PRO: Top right ── */}
-            <AnimatedCard delay={200} direction="right" className="min-h-[280px] md:min-h-0 md:col-span-5 md:row-span-1">
-              <BentoCard className="flex flex-col h-full hover:border-gold/30">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-gold/10 text-gold flex items-center justify-center flex-shrink-0">
-                    <BookOpen className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">LEDGERLY PRO</h3>
-                    <p className="text-gold text-xs font-medium">AI-Powered AR Automation</p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  10 intelligent agents automating the entire accounts receivable workflow.
-                  Natural language queries in plain English.
-                </p>
-
-                <div className="flex flex-wrap gap-1.5 mb-3 flex-1">
-                  {arAgents.slice(0, 6).map((agent) => (
-                    <span
-                      key={agent}
-                      className="px-2 py-0.5 rounded-full bg-gold/10 text-gold border border-gold/15 text-[10px] font-medium"
-                    >
-                      {agent}
-                    </span>
-                  ))}
-                  <span className="px-2 py-0.5 rounded-full bg-muted text-muted-foreground text-[10px] font-medium">
-                    +4 more
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 mt-auto">
-                  <a href="/contact">
-                    <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
-                      Book a Demo
-                      <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </a>
-                  <Link
-                    href="/products/ledgerly-ai"
-                    className="inline-flex items-center gap-1 text-xs font-medium text-gold hover:underline"
-                  >
-                    Learn more <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </BentoCard>
-            </AnimatedCard>
-
-            {/* ── LEDGERLY FIELD: Bottom right ── */}
-            <AnimatedCard delay={350} direction="up" className="min-h-[280px] md:min-h-0 md:col-span-5 md:row-span-1">
-              <BentoCard className="flex flex-col h-full hover:border-coral/30">
-                <div className="flex items-start gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-coral/10 text-coral flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground">LEDGERLY FIELD</h3>
-                    <p className="text-coral text-xs font-medium">Field Operations Intelligence</p>
-                  </div>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  Purpose-built financial intelligence for field service companies. Four economic engines across 14 financial views.
-                </p>
-
-                <div className="grid grid-cols-2 gap-2 mb-3 flex-1">
-                  {fieldEngines.map((engine) => (
-                    <div key={engine.name} className="bg-coral/5 rounded-lg p-2">
-                      <div className="text-[10px] font-semibold text-foreground">{engine.name}</div>
-                      <div className="text-[10px] text-muted-foreground leading-tight">{engine.desc}</div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                      {p.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mb-5 mt-auto">
+                      {p.bullets.map((b) => (
+                        <span
+                          key={b}
+                          className={`px-2 py-0.5 rounded-full ${c.pill} border text-[10px] font-medium`}
+                        >
+                          {b}
+                        </span>
+                      ))}
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {fieldIndustries.map((industry) => (
-                    <span
-                      key={industry}
-                      className="px-2 py-0.5 rounded-full bg-coral/5 text-muted-foreground border border-coral/10 text-[10px] font-medium"
+                    <Link
+                      href={p.href}
+                      className={`inline-flex items-center gap-1 text-sm font-semibold ${c.text} hover:underline`}
                     >
-                      {industry}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-3 mt-auto">
-                  <a href="/contact">
-                    <Button variant="outline" className="border-border hover:bg-muted bg-transparent group h-8 text-xs">
-                      Book a Demo
-                      <ArrowRight className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
-                    </Button>
-                  </a>
-                  <Link
-                    href="/products/ledgerly-field"
-                    className="inline-flex items-center gap-1 text-xs font-medium text-coral hover:underline"
-                  >
-                    Learn more <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </BentoCard>
-            </AnimatedCard>
+                      Learn more <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </BentoCard>
+                </AnimatedCard>
+              )
+            })}
           </div>
         </div>
       </section>
 
-      {/* ─── Platform Differentiators (reference3 how‑it‑works pattern) ─── */}
-      <section ref={diffRef} className="py-24 bg-muted/30 overflow-hidden">
+      {/* ─── Healthcare products ─── */}
+      <section className="py-20 lg:py-24 bg-muted/30 border-t border-rule">
         <div className="container mx-auto px-6 lg:px-12">
-          <div
-            className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${
-              diffVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-            }`}
-          >
-            <span className="text-sm font-medium text-teal uppercase tracking-wider">
-              Platform
-            </span>
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-foreground text-balance">
-              What makes StrataxAI{" "}
-              <span className="text-teal">different</span>
-            </h2>
-          </div>
+          <AnimatedCard delay={0} direction="up">
+            <div className="mb-12 max-w-2xl">
+              <span className="text-sm font-medium text-teal uppercase tracking-wider">
+                Healthcare specialists
+              </span>
+              <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">
+                Clinical-grade, in production.
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Purpose-built tools for clinicians, researchers, and educators
+                — privacy-by-design from the first commit.
+              </p>
+            </div>
+          </AnimatedCard>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
-            {differentiators.map((diff, i) => (
-              <div
-                key={diff.title}
-                className={`relative transition-all duration-700 ease-out ${
-                  activeStep >= i
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-16 scale-95"
-                }`}
-              >
-                {/* Connector line between steps */}
-                {i < differentiators.length - 1 && (
-                  <div
-                    className={`hidden md:block absolute top-10 left-[60%] h-px bg-gradient-to-r from-teal/40 to-transparent transition-all duration-1000 ease-out origin-left ${
-                      activeStep > i ? "w-[80%] opacity-100" : "w-0 opacity-0"
-                    }`}
-                    style={{ transitionDelay: "200ms" }}
-                  />
-                )}
-
-                <div className="flex flex-col items-start">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div
-                      className={`h-14 w-14 rounded-2xl bg-card border border-border flex items-center justify-center transition-all duration-500 ${
-                        activeStep >= i
-                          ? "border-teal/30 shadow-[0_0_20px_-5px_hsl(var(--teal)/0.3)]"
-                          : ""
-                      }`}
-                    >
-                      <diff.icon
-                        className={`w-7 h-7 transition-colors duration-500 ${
-                          activeStep >= i ? "text-teal" : "text-muted-foreground/40"
-                        }`}
-                      />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            {healthcareProducts.map((p, i) => {
+              const c = accentMap[p.accent]
+              const Icon = p.icon
+              return (
+                <AnimatedCard key={p.id} delay={80 + i * 50} direction="up">
+                  <BentoCard className={`flex flex-col h-full min-h-[260px] ${c.border}`}>
+                    <div className={`w-10 h-10 rounded-xl ${c.bg} ${c.text} flex items-center justify-center mb-3`}>
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <span
-                      className={`text-5xl font-bold transition-all duration-500 ${
-                        activeStep >= i ? "text-teal/20" : "text-muted/50"
-                      }`}
+                    <h3 className="text-base font-bold text-foreground">{p.name}</h3>
+                    <p className={`${c.text} text-[11px] font-medium mb-2`}>{p.tagline}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                      {p.description}
+                    </p>
+                    <Link
+                      href={p.href}
+                      className={`mt-auto inline-flex items-center gap-1 text-xs font-semibold ${c.text} hover:underline`}
                     >
-                      {diff.number}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{diff.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{diff.description}</p>
-                </div>
-              </div>
-            ))}
+                      Learn more <ArrowRight className="w-3 h-3" />
+                    </Link>
+                  </BentoCard>
+                </AnimatedCard>
+              )
+            })}
           </div>
         </div>
       </section>

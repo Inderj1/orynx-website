@@ -18,103 +18,103 @@ import Image from "next/image"
 
 const agentFamilies = [
   {
-    category: "CAMP Framework Agents",
+    category: "Healthcare & Clinical Agents",
     color: "teal",
     agents: [
       {
-        icon: BrainCircuit,
-        name: "Core AI",
-        role: "Self-Learning Engine",
-        description: "Graph Memory with 4-network cognitive model. Learns from every execution — gets measurably smarter every week.",
-        maturity: "Production",
-      },
-      {
-        icon: Activity,
-        name: "Axis AI",
-        role: "Predictive Foresight",
-        description: "What-if simulations, digital twins, and natural language queries across all connected systems.",
-        maturity: "Production",
-      },
-      {
-        icon: Globe,
-        name: "Markets AI",
-        role: "External Signals",
-        description: "Weather, geopolitical, logistics, and demand data for proactive disruption management.",
-        maturity: "Production",
-      },
-      {
-        icon: Zap,
-        name: "Pulse AI",
-        role: "Autonomous Resolution",
-        description: "Issue detection, auto-resolution, and team sync. Agents that act, not just recommend.",
-        maturity: "Production",
-      },
-    ],
-  },
-  {
-    category: "LEDGERLY PRO Agents",
-    color: "gold",
-    agents: [
-      {
-        icon: Workflow,
-        name: "Invoice Creation",
-        role: "Document Generation",
-        description: "Automated invoice generation from purchase orders and contracts with multi-format output.",
-        maturity: "Production",
-      },
-      {
-        icon: Shield,
-        name: "Validation & Compliance",
-        role: "Rules Engine",
-        description: "Deterministic validation rules that never mix with LLM inference. Full audit trail.",
+        icon: Network,
+        name: "EHR Bridge",
+        role: "Universal Healthcare Integration",
+        description: "Real-time bidirectional sync across 78+ EHR platforms (Epic, Cerner, Allscripts, athenahealth) with FHIR R4 and HL7 support.",
         maturity: "Production",
       },
       {
         icon: MessageSquare,
-        name: "CFO Copilot",
-        role: "Natural Language Interface",
-        description: '"Who owes me money?" "What invoices are overdue?" Plain English across your entire AR pipeline.',
+        name: "Ambient Scribe",
+        role: "Clinical Transcription",
+        description: "Real-time SOAP note generation from doctor-patient conversations using Deepgram and Azure OpenAI. NHS- and HIPAA-compliant.",
         maturity: "Production",
       },
       {
-        icon: BarChart3,
-        name: "Cash Application",
-        role: "Payment Matching",
-        description: "Intelligent payment-to-invoice matching with dispute detection and resolution workflows.",
+        icon: Activity,
+        name: "DiaWound Analyzer",
+        role: "Computer Vision Triage",
+        description: "Camera-based wound classification, severity assessment, healing tracking, and red-flag alerts for diabetic care.",
+        maturity: "Production",
+      },
+      {
+        icon: Sparkles,
+        name: "MedSynth Generator",
+        role: "Synthetic Patient Data",
+        description: "Privacy-safe synthetic patient records for model training, simulation, and research. 100% HIPAA-compliant by design.",
         maturity: "Production",
       },
     ],
   },
   {
-    category: "Data Intelligence Agents",
+    category: "Compliance & Communications Agents",
+    color: "gold",
+    agents: [
+      {
+        icon: Shield,
+        name: "ComplianceOS",
+        role: "Evidence Collection",
+        description: "Automates SOC 2, ISO 27001, and HIPAA evidence across 12+ tool integrations with continuous monitoring and audit-ready reporting.",
+        maturity: "Production",
+      },
+      {
+        icon: Workflow,
+        name: "Policy Generator",
+        role: "Document Automation",
+        description: "AI-generated policy documents and control mappings derived from framework requirements and live infrastructure state.",
+        maturity: "Production",
+      },
+      {
+        icon: Bot,
+        name: "Call Center AI",
+        role: "Voice Triage",
+        description: "LiveKit + Gemini 2.0 voice agents with intelligent triage, multi-language routing (4+), and sub-500ms response handoff.",
+        maturity: "Production",
+      },
+      {
+        icon: Globe,
+        name: "CommBridge",
+        role: "Unified Communications",
+        description: "Single-API routing across Slack, Teams, Discord, email, voice, and push. Multi-language microservices (Go, Rust, Python, TS).",
+        maturity: "Production",
+      },
+    ],
+  },
+  {
+    category: "Developer & Data Intelligence Agents",
     color: "coral",
     agents: [
+      {
+        icon: Code2,
+        name: "AutoPRD",
+        role: "Autonomous Dev Pipeline",
+        description: "Feedback → PRD → implementation → reviewed code. Claude Code agent loop with Docker-sandboxed execution and auto-generated test suites.",
+        maturity: "Production",
+      },
       {
         icon: Search,
         name: "Schema Interpreter",
         role: "Data Discovery",
-        description: "Identifies relevant tables, columns, and relationships across connected systems automatically.",
+        description: "Automatically identifies relevant tables, columns, FHIR resources, and relationships across connected systems.",
         maturity: "Production",
       },
       {
         icon: Database,
-        name: "SQL Generator",
-        role: "Query Synthesis",
-        description: "Converts natural language to optimized PostgreSQL with JOINs, filters, and aggregations.",
-        maturity: "Production",
-      },
-      {
-        icon: Shield,
-        name: "Query Validator",
-        role: "Security & Performance",
-        description: "Every generated query passes security validation, performance analysis, and error recovery.",
+        name: "Query Generator",
+        role: "NL → SQL / FHIR",
+        description: "Converts natural language to optimized PostgreSQL, FHIR queries, or GraphQL with JOINs, filters, and aggregations.",
         maturity: "Production",
       },
       {
         icon: Sparkles,
         name: "Result Explainer",
-        role: "Business Intelligence",
-        description: "Transforms raw query results into business insights, patterns, and actionable suggestions.",
+        role: "Insight Synthesis",
+        description: "Transforms raw query results into business insights, clinical summaries, and actionable next-step suggestions.",
         maturity: "Production",
       },
     ],
@@ -129,7 +129,7 @@ const architectureSteps = [
   { label: "Schema Interpreter", icon: Search, color: "coral" },
   { label: "Agent Orchestrator", icon: BrainCircuit, color: "gold" },
   { label: "Specialist Agents", icon: Bot, color: "coral" },
-  { label: "Validation & Audit", icon: Shield, color: "teal" },
+  { label: "Policy & Audit Layer", icon: Shield, color: "teal" },
   { label: "Write-Back / Response", icon: ArrowRight, color: "gold" },
 ]
 
@@ -138,38 +138,38 @@ const architectureSteps = [
 const sdkCapabilities = [
   {
     icon: Network,
-    title: "17+ Context Strategies",
-    description: "Full shared, scoped, isolated, hierarchical, and more. Every agent gets exactly the context it needs.",
+    title: "24+ Context Strategies",
+    description: "Full shared, scoped, isolated, hierarchical, and more. Every agent gets exactly the context it needs — critical for PHI, PCI, and tenant-boundary enforcement.",
     span: "md:col-span-4",
   },
   {
     icon: Database,
-    title: "Graph Memory",
-    description: "4-network cognitive model: episodic (experiences), semantic (facts), procedural (skills), belief (summaries).",
+    title: "Cognitive Graph Memory",
+    description: "Multi-tier memory (hot, warm, cold) modelling facts, experiences, beliefs, and summaries. LLM-powered extraction with deduplication and conflict resolution.",
     span: "md:col-span-4",
   },
   {
     icon: Code2,
     title: "Typed Handoff Protocol",
-    description: "Explicit contracts between agents with type-safe handoffs. Full lineage tracking for every decision.",
+    description: "Explicit contracts between agents with type-safe handoffs. Stateful agents with validated transitions and full lineage tracking for every decision.",
     span: "md:col-span-4",
   },
   {
     icon: Layers,
     title: "Multi-Language SDK",
-    description: "Python, TypeScript, Rust, and Go. First-class support across all four with identical APIs.",
+    description: "Python, TypeScript, Rust, and Go. First-class support across all four with identical APIs. Rust/Go core delivers up to 10x speedups.",
     span: "md:col-span-3",
   },
   {
     icon: Shield,
-    title: "4-Tier Trust Architecture",
-    description: "Deterministic business rules never mix with LLM inference. Multi-layer auth, AES-256-GCM encryption.",
+    title: "Compliance-Ready Safety",
+    description: "Policy engine with anomaly detection and human escalation. GDPR, HIPAA, and PCI-DSS ready out of the box. Sandboxed code execution with resource limits.",
     span: "md:col-span-5",
   },
   {
     icon: GitBranch,
     title: "Full Audit & Lineage",
-    description: "Complete audit trail of every agent action, decision, and data access. Enterprise-grade compliance built in.",
+    description: "Complete audit trail of every agent action, decision, and data access. Data flow tracking and DLP presets for enterprise compliance.",
     span: "md:col-span-4",
   },
 ]
@@ -177,31 +177,32 @@ const sdkCapabilities = [
 /* ─── Maturity Metrics ─── */
 
 const maturityMetrics = [
-  { value: "99.5%+", label: "Domain-specific accuracy", icon: CheckCircle2 },
-  { value: "<5s", label: "Query response time", icon: Timer },
-  { value: "10M+", label: "Rows processed in <10min", icon: Database },
+  { value: "100+", label: "LLM providers supported", icon: BrainCircuit },
+  { value: "24+", label: "Swappable context strategies", icon: Layers },
+  { value: "78+", label: "EHR connectors live", icon: Network },
   { value: "99.9%", label: "System uptime", icon: Activity },
-  { value: "15%+", label: "Cross-domain learning improvement", icon: BrainCircuit },
-  { value: "20+", label: "Tools in agent library", icon: Cpu },
+  { value: "10x", label: "Rust/Go core speedups", icon: Zap },
+  { value: "4", label: "Language SDKs (Py, TS, Rust, Go)", icon: Code2 },
 ]
 
 /* ─── Agent Code Preview ─── */
 
 const codeLines = [
-  { text: "import { Agent, GraphMemory } from '@strataxai/sdk'", type: "import" },
+  { text: "import { Agent, GraphMemory } from '@orynx/agents'", type: "import" },
   { text: "", type: "blank" },
   { text: "const agent = new Agent({", type: "declaration" },
-  { text: "  name: 'invoice-processor',", type: "property" },
+  { text: "  name: 'patient-sync',", type: "property" },
   { text: "  memory: new GraphMemory({", type: "property" },
   { text: "    networks: ['episodic', 'semantic', 'procedural', 'belief'],", type: "nested" },
-  { text: "    scoring: 'PersonalizedPageRank',", type: "nested" },
+  { text: "    tiers: ['hot', 'warm', 'cold'],", type: "nested" },
   { text: "  }),", type: "close" },
   { text: "  context: 'scoped',", type: "property" },
   { text: "  handoff: { typed: true, lineage: true },", type: "property" },
-  { text: "  tools: ['erp-bridge', 'write-back', 'audit'],", type: "property" },
+  { text: "  policy: { compliance: ['HIPAA', 'GDPR'] },", type: "property" },
+  { text: "  tools: ['ehr-bridge', 'comm-bridge', 'audit'],", type: "property" },
   { text: "})", type: "close" },
   { text: "", type: "blank" },
-  { text: "await agent.run('Process overdue invoices for Q4')", type: "execution" },
+  { text: "await agent.run('Reconcile patient records across EHRs')", type: "execution" },
 ]
 
 /* ─── Color utilities ─── */
@@ -379,14 +380,14 @@ function SDKBentoSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-teal/10 text-teal text-sm font-medium mb-4">
-            StrataxAI Agents SDK
+            Orynx Agents SDK
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Enterprise-grade agent{" "}
             <span className="text-teal">infrastructure</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Proprietary multi-agent framework with typed handoffs, graph memory, and full lineage tracking. Available in Python, TypeScript, Rust, and Go.
+            Provider-agnostic multi-agent framework with typed handoffs, cognitive graph memory, durable execution, and compliance-ready safety. 100+ LLM providers, four language SDKs.
           </p>
         </motion.div>
 
@@ -455,7 +456,7 @@ function MaturityMetricsSection() {
             <span className="text-gold">performance</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Real benchmarks from real deployments. Our agents are not prototypes — they run enterprise workloads at scale.
+            Real benchmarks from real deployments across healthcare, fintech, IoT, and compliance. Our agents are not prototypes — they run enterprise workloads at scale.
           </p>
         </motion.div>
 
@@ -560,15 +561,16 @@ function SDKPreviewSection() {
               <span className="text-teal">Deploy everywhere.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              The StrataxAI Agents SDK gives you typed, production-ready agents in under 15 lines of code. Graph Memory, context strategies, and typed handoffs are built into the framework — not bolted on.
+              The Orynx Agents SDK gives you typed, production-ready agents in under 15 lines of code. Cognitive graph memory, 24+ context strategies, typed handoffs, and compliance policy are built into the framework — not bolted on.
             </p>
             <ul className="space-y-3 mb-8">
               {[
                 "Python, TypeScript, Rust, and Go SDKs",
-                "Graph Memory with PersonalizedPageRank scoring",
+                "Cognitive graph memory with multi-tier storage",
                 "Typed handoff protocol with explicit contracts",
                 "Full lineage tracking for every decision",
-                "20+ built-in tools (ERP Bridge, write-back, audit)",
+                "100+ LLM providers, MCP client + server",
+                "GDPR, HIPAA, and PCI-DSS ready out of the box",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <CheckCircle2 className="w-4 h-4 text-teal mt-0.5 flex-shrink-0" />
@@ -596,11 +598,11 @@ function SupplyChainRDSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" })
 
   const scAgents = [
-    { icon: Workflow, name: "Route Optimizer", desc: "Optimizes delivery routes with real-time traffic and weather data" },
-    { icon: BarChart3, name: "Inventory Monitor", desc: "Tracks stock levels, predicts stockouts before they happen" },
-    { icon: Activity, name: "Traffic Analyzer", desc: "Analyzes traffic patterns and predicts delivery delays" },
-    { icon: Cpu, name: "Maintenance Predictor", desc: "Predicts maintenance needs from vehicle diagnostics data" },
-    { icon: Globe, name: "Demand Forecaster", desc: "Neural demand forecasting with MCTS-based supply chain planning" },
+    { icon: Activity, name: "Clinical Reasoner", desc: "Multi-modal reasoning across imaging, labs, vitals, and unstructured notes" },
+    { icon: Workflow, name: "Care-Pathway Planner", desc: "MCTS-based optimal care-pathway recommendation with lookahead planning" },
+    { icon: BarChart3, name: "Risk Forecaster", desc: "Neural risk scoring from longitudinal patient and financial data" },
+    { icon: Cpu, name: "IoT Telemetry Agent", desc: "Real-time anomaly detection across device fleets and clinical sensors" },
+    { icon: Globe, name: "Knowledge Synthesizer", desc: "Cross-domain summarization across regulations, research, and live system state" },
   ]
 
   return (
@@ -614,7 +616,7 @@ function SupplyChainRDSection() {
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="inline-block px-4 py-1.5 rounded-full bg-coral/10 text-coral text-sm font-medium">
-              Supply Chain Intelligence
+              Cross-Domain Intelligence
             </span>
             <span className="px-2 py-0.5 rounded-full bg-gold/10 text-gold text-[10px] font-bold tracking-wider uppercase flex items-center gap-1">
               <FlaskConical className="w-3 h-3" />
@@ -626,7 +628,7 @@ function SupplyChainRDSection() {
             <span className="text-coral">agent swarms</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Five specialized agents working in concert for end-to-end supply chain visibility. Neural world model concepts with MCTS-based planning.
+            Specialised agents working in concert across healthcare, fintech, IoT, and compliance. Neural reasoning concepts with MCTS-based planning and lookahead.
           </p>
         </motion.div>
 
@@ -666,15 +668,15 @@ export default function AgentsPage() {
       <section className="relative bg-background overflow-hidden">
         <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
-            src="/heroes/agents.webp"
+            src="/heroes/agents.png"
             alt=""
             fill
             priority
             sizes="(max-width: 1280px) 100vw, 1800px"
-            className="object-cover object-center"
+            className="object-cover object-center opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/92 via-background/70 via-55% to-background/15" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 via-55% to-background/40" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[96px] pb-12 lg:pt-[120px] lg:pb-16">
           <motion.div
@@ -686,19 +688,20 @@ export default function AgentsPage() {
             <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
               Agent Framework · Production-grade
             </span>
-            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+            <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[16ch]">
               AI agents that{" "}
               <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
                 act.
               </span>
             </h1>
             <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
-              Not prototypes. Not demos. Stratax Labs runs 30+ production agents
-              across enterprise finance, supply chain, and data intelligence —
-              with 99.5%+ accuracy, typed handoffs, and full audit trails.
+              Not prototypes. Not demos. Orynx runs production agents across
+              healthcare, fintech, IoT, compliance, and communications — with
+              intelligent context management, multi-tier memory, typed handoffs,
+              and HIPAA-grade audit trails.
             </p>
             <div className="flex flex-wrap items-center gap-2 mt-7">
-              {["12 CAMP Agents", "10 AR Agents", "6 Data Agents", "5 Supply Chain Agents"].map((label) => (
+              {["24+ Context Strategies", "Multi-Tier Memory", "100+ LLM Providers", "4 Language SDKs"].map((label) => (
                 <span
                   key={label}
                   className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-soft border border-rule rounded-full px-3 py-1.5 bg-background/60 backdrop-blur-sm"
@@ -725,7 +728,7 @@ export default function AgentsPage() {
               <span className="text-teal">families</span>
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Each agent family is purpose-built for a specific domain, with production-grade reliability and enterprise compliance baked in.
+              Each family is purpose-built for a domain — healthcare, compliance & communications, and developer & data intelligence — with production-grade reliability and enterprise compliance baked in.
             </p>
           </motion.div>
 

@@ -6,36 +6,36 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "How does StrataxAI connect to our systems?",
-    answer: "Through the Enterprise Data Bridge with 40 native connectors supporting REST, OData v2/v4, SOAP, and GraphQL protocols. Kong Gateway handles routing. No data movement — your data stays where it is.",
+    question: "What does Orynx actually build?",
+    answer: "Two things: production-ready platforms (EHR Bridge, ComplianceOS, Call Center AI, CommBridge, AutoPRD, Orynx Agents, plus our healthcare suite) and dedicated engineering teams that ship custom software end-to-end across web, AI/ML, LLM integration, and full-stack development.",
   },
   {
-    question: "Do we need to move our data?",
-    answer: "No. Enterprise Data Bridge uses the Unified Business Schema (UBS) for bidirectional read/write in place. No ETL, no pipelines, no copies. Your existing systems remain the single source of truth.",
+    question: "Where do you work?",
+    answer: "Healthcare, fintech, IoT, and compliance — the four sectors where deep integration, real-time AI, and audit-grade rigour all matter at the same time. We're based in Edinburgh, Scotland and work with teams worldwide.",
   },
   {
-    question: "What is the CAMP framework?",
-    answer: "Core AI (self-learning brain), Axis AI (predictive foresight), Markets AI (external signals), and Pulse AI (autonomous resolution) — four AI modules working in concert across your enterprise.",
+    question: "How does EHR Bridge connect to our systems?",
+    answer: "78+ EHR connectors out of the box (Epic, Cerner, Allscripts, athenahealth and the long tail of regional systems) with native FHIR R4 and HL7 v2 support. Real-time bidirectional sync with sub-2-second latency. No data movement required.",
   },
   {
-    question: "How does Graph Memory work?",
-    answer: "Graph Memory is a 4-network cognitive model: episodic (experiences), semantic (facts), procedural (skills), and belief (summaries). It uses PersonalizedPageRank scoring and gets measurably smarter every week as it learns from execution outcomes.",
+    question: "What is the Orynx Agents SDK?",
+    answer: "A multi-agent framework with 24+ context-sharing strategies, typed handoff protocol, multi-tier graph memory, durable execution, and compliance-ready safety policies. 100+ LLM providers supported across Python, TypeScript, Rust, and Go.",
   },
   {
-    question: "What is the StrataxAI Agents SDK?",
-    answer: "A proprietary multi-agent framework with 17+ context sharing strategies, typed handoff protocol with explicit contracts, and full lineage tracking across every agent interaction. Available in Python, TypeScript, Rust, and Go.",
+    question: "How fast can ComplianceOS get us audit-ready?",
+    answer: "Most teams hit audit-ready in under 30 days. The platform pulls evidence continuously from 12+ tools (AWS, GCP, GitHub, Okta, MDM, ticketing) and an Orynx engineer runs the readiness sprint with you — so you're not just tool-onboarded, you're prepared.",
   },
   {
-    question: "How does LEDGERLY PRO automate AR?",
-    answer: "LEDGERLY PRO deploys 10 intelligent agents: Invoice Creation, Validation, Delivery, Payment Reminders, Cash Application, Dispute Management, Credit Risk, AR Aging & Forecasting, Compliance & Audit, and CFO Copilot.",
+    question: "What about data privacy and compliance?",
+    answer: "Privacy-by-design from the first commit: end-to-end encryption, HIPAA / SOC 2 / ISO 27001 alignment, BAA-ready deployments, and configurable data residency. We architect for clinical-grade and finance-grade workloads.",
   },
   {
-    question: "What security do you provide?",
-    answer: "Multi-layer authentication (API keys, JWT RS256, OAuth2), AES-256-GCM encryption, role-based access, and a 4-tier trust architecture where deterministic rules never mix with LLM inference. Full audit trails on every action.",
+    question: "Can we hire a dedicated engineering team?",
+    answer: "Yes — that's the Custom Engineering offering. A team is assigned directly to your project (web, AI/ML, LLM, mobile, custom) and stays with it from discovery through production. Same engineers throughout, no throw-overs.",
   },
   {
-    question: "How fast is deployment?",
-    answer: "Pre-built modules and 40 native ERP connectors mean you can be operational in days, not months. An on-premise agent is available for desktop ERPs like QuickBooks Desktop and Tally.",
+    question: "How does pricing work?",
+    answer: "Custom. Most engagements pair one of our platforms with a dedicated team to integrate and extend it. Tell us what you run and what you want different — we'll quote it within a week.",
   },
 ]
 

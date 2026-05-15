@@ -2,35 +2,35 @@ import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
 import { Navbar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer/footer"
-import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
+import { COMPANY_NAME, PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 export const metadata: Metadata = {
-  title: "Case Studies | Stratax Labs",
+  title: `Case Studies | ${COMPANY_NAME}`,
   description:
-    "Stories from the field. How enterprise teams shipped AI with Stratax Labs — across SAP, Salesforce, Oracle, and beyond.",
+    "Stories from the field. How teams shipped real software with Orynx — across healthcare, fintech, IoT, and compliance.",
 }
 
 const teasers = [
   {
-    industry: "Manufacturing",
-    metric: "$2.4M",
-    metricLabel: "Working capital released",
+    industry: "Healthcare · Digital Health Platform",
+    metric: "3 weeks",
+    metricLabel: "Epic + Cerner + athenahealth, integrated",
     summary:
-      "A global parts manufacturer cut excess inventory across 14 plants by deploying a CAMP-framework supply-chain agent on top of their SAP S/4 stack.",
+      "A US digital-health team needed live integration with three Tier-1 EHRs in a quarter. EHR Bridge shipped the first integration in week one and all three by the end of week three — instead of the six-month custom build they'd scoped.",
   },
   {
-    industry: "Field Services",
-    metric: "37%",
-    metricLabel: "First-time-fix improvement",
+    industry: "Compliance · SaaS Scale-up",
+    metric: "27 days",
+    metricLabel: "From kickoff to SOC 2 Type I ready",
     summary:
-      "LEDGERLY FIELD agents triaged work orders, pre-staged parts, and rerouted technicians in real time — without replacing the existing FSM platform.",
+      "A Series-B SaaS company needed SOC 2 to close enterprise contracts. ComplianceOS pulled evidence from AWS, Okta, GitHub, and Linear continuously while an Orynx engineer ran the readiness sprint. They passed first audit attempt.",
   },
   {
-    industry: "Finance & AR",
-    metric: "11 days",
-    metricLabel: "Reduction in DSO",
+    industry: "IoT · Healthcare Voice",
+    metric: "<500ms",
+    metricLabel: "End-to-end voice latency in production",
     summary:
-      "LEDGERLY PRO automated cash application and dunning across NetSuite + Salesforce, freeing the AR team for the cases the model couldn't reach.",
+      "A clinical scheduling provider replaced their IVR with Call Center AI. Sub-500ms voice loops in four languages, human handoff on confidence drops, and a 40% reduction in calls reaching live agents — without sacrificing patient experience.",
   },
 ]
 
@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Case Studies
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-6 max-w-[18ch]">
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-6 max-w-[18ch]">
             Stories from the{" "}
             <span className="font-serif italic font-normal text-brand-blue">
               field.

@@ -7,42 +7,43 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { ArrowUpRight, Check, Mail, Calendar, MessageSquare } from "lucide-react"
 import Image from "next/image"
+import { COMPANY_EMAIL, COMPANY_NAME } from "@/lib/brand-copy"
 
 const offerings = [
   {
-    name: "STRATAX AI Enterprise",
-    tagline: "The AI Operating System for Enterprise",
+    name: "Products",
+    tagline: "Production-ready platforms",
     features: [
-      "Full CAMP framework (Core, Axis, Markets, Pulse)",
-      "40+ native ERP connectors",
-      "Graph Memory (4-network cognitive model)",
-      "17+ context sharing strategies",
-      "Stratax Labs Agents SDK",
-      "Self-Training ML pipelines",
-      "24/7 dedicated support, SOC 2 Type II",
+      "EHR Bridge — universal healthcare integration",
+      "ComplianceOS — SOC 2 / ISO 27001 / HIPAA automation",
+      "Call Center AI — sub-500ms voice agents",
+      "CommBridge — unified comms across Slack, Teams, voice",
+      "AutoPRD — autonomous dev pipeline",
+      "Orynx Agents — multi-agent SDK, 100+ LLM providers",
     ],
     highlighted: true,
   },
   {
-    name: "LEDGERLY PRO",
-    tagline: "AI-powered accounts receivable automation",
+    name: "Services",
+    tagline: "Dedicated engineering teams",
     features: [
-      "10 intelligent AR agents",
-      "CFO Copilot",
-      "Cash application + dispute management",
-      "Credit risk + AR aging & forecasting",
-      "QuickBooks, Xero, FreshBooks",
+      "Web development (Next.js, Vue, Node)",
+      "AI & ML model development",
+      "LLM integration & RAG",
+      "Mobile, desktop & custom systems",
+      "Same team, discovery to production",
     ],
     highlighted: false,
   },
   {
-    name: "LEDGERLY FIELD",
-    tagline: "Field operations intelligence",
+    name: "Healthcare specialists",
+    tagline: "Clinical-grade products & integrations",
     features: [
-      "Four economic engines",
-      "14 financial views",
-      "Per-job, per-crew profitability",
-      "Field service ERP integrations",
+      "Ambient Scribe — NHS-compliant transcription",
+      "OpenEyes Cloud — ophthalmology EPR",
+      "MedSynth — synthetic patient data",
+      "DiaWound AI — diabetic wound analysis",
+      "Orynx Education — virtual patient simulations",
     ],
     highlighted: false,
   },
@@ -52,7 +53,7 @@ const nextSteps = [
   {
     icon: MessageSquare,
     title: "We read every message",
-    desc: "An engineer from Stratax Labs replies, not a sales rep. We aim to respond inside one business day.",
+    desc: `An engineer from ${COMPANY_NAME} replies, not a sales rep. We aim to respond inside one business day.`,
   },
   {
     icon: Calendar,
@@ -77,29 +78,30 @@ export default function ContactPage() {
       <section className="relative bg-background overflow-hidden border-b border-rule">
         <div className="absolute inset-0 z-0" aria-hidden="true">
           <Image
-            src="/heroes/home.webp"
+            src="/heroes/home.png"
             alt=""
             fill
             priority
             sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
-            className="object-cover object-right-top"
+            className="object-cover object-right-top opacity-80"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/88 via-55% to-background/40" />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
         </div>
         <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[80px] pb-12 lg:pt-[96px] lg:pb-16">
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Speak with our team
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-5 max-w-[16ch]">
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-5 max-w-[16ch]">
             Tell us what{" "}
             <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
               you're building.
             </span>
           </h1>
           <p className="text-ink-soft text-lg lg:text-xl max-w-[58ch] leading-[1.55] mt-7">
-            An engineer will reply, usually within one business day. Most
-            customers see measurable ROI inside thirty days, but the first
-            conversation is just about your systems and your goals.
+            An engineer will reply, usually within one business day. The first
+            conversation is just about your systems, your stack, and what
+            you're trying to do.
           </p>
         </div>
       </section>
@@ -123,10 +125,10 @@ export default function ContactPage() {
                   <span className="font-semibold text-ink">Got it — thanks.</span>
                 </div>
                 <p className="text-ink-soft text-sm leading-relaxed">
-                  We'll reply from a real Stratax Labs engineer, usually within
-                  one business day. If it's urgent, email{" "}
-                  <a href="mailto:hello@strataxlabs.ai" className="text-brand-blue hover:underline">
-                    hello@strataxlabs.ai
+                  We'll reply from a real {COMPANY_NAME} engineer, usually
+                  within one business day. If it's urgent, email{" "}
+                  <a href={`mailto:${COMPANY_EMAIL}`} className="text-brand-blue hover:underline">
+                    {COMPANY_EMAIL}
                   </a>
                   .
                 </p>
@@ -177,7 +179,7 @@ export default function ContactPage() {
                     name="message"
                     rows={5}
                     className="w-full px-4 py-3 rounded-md border border-rule bg-background text-ink placeholder:text-ink-muted focus:outline-none focus:border-brand-blue transition-colors resize-y"
-                    placeholder="A few sentences on the problem, the systems involved (SAP, Oracle, Salesforce, NetSuite…), and what success looks like."
+                    placeholder="A few sentences on the problem, the systems involved, and what success looks like."
                   />
                 </label>
                 <button
@@ -189,8 +191,8 @@ export default function ContactPage() {
                 </button>
                 <p className="text-xs text-ink-muted">
                   Or email us directly at{" "}
-                  <a href="mailto:hello@strataxlabs.ai" className="text-brand-blue hover:underline">
-                    hello@strataxlabs.ai
+                  <a href={`mailto:${COMPANY_EMAIL}`} className="text-brand-blue hover:underline">
+                    {COMPANY_EMAIL}
                   </a>
                   .
                 </p>
@@ -237,32 +239,33 @@ export default function ContactPage() {
                 </span>
               </div>
               <a
-                href="mailto:hello@strataxlabs.ai"
+                href={`mailto:${COMPANY_EMAIL}`}
                 className="font-display font-semibold text-ink text-xl hover:text-brand-blue transition-colors"
               >
-                hello@strataxlabs.ai
+                {COMPANY_EMAIL}
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What you're choosing — extracted from former pricing page */}
+      {/* What you're choosing */}
       <section className="relative py-20 lg:py-28 bg-surface border-b border-rule">
         <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
           <div className="max-w-[60ch] mb-14">
             <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
-              What you're choosing
+              What you can buy
             </span>
             <h2 className="font-display font-semibold text-ink text-4xl lg:text-5xl tracking-[-0.02em] mt-3">
-              Three products.{" "}
+              Products, services,{" "}
               <span className="font-serif italic font-normal text-brand-blue tracking-[-0.01em]">
-                One platform.
+                or both.
               </span>
             </h2>
             <p className="text-ink-soft text-lg leading-relaxed mt-5">
-              Pricing is custom because every enterprise stack is. Tell us what
-              you run and what you want different — we'll quote it in a week.
+              Most engagements pair one of our platforms with a dedicated team
+              to integrate it. Pricing is custom — tell us what you run and
+              what you want different.
             </p>
           </div>
 

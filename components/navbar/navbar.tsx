@@ -10,14 +10,27 @@ type NavLink = {
   hasDropdown?: boolean
 }
 
-const productLinks = [
-  { label: "STRATAX AI Enterprise", href: "/products/stratax-ai", desc: "AI Operating System" },
-  { label: "LEDGERLY PRO", href: "/products/ledgerly-ai", desc: "AR Automation" },
-  { label: "LEDGERLY FIELD", href: "/products/ledgerly-field", desc: "Field Operations" },
+type ProductLink = { label: string; href: string; desc: string }
+
+const platformLinks: ProductLink[] = [
+  { label: "EHR Bridge", href: "/products/ehr-bridge", desc: "Universal healthcare integration" },
+  { label: "ComplianceOS", href: "/products/compliance-os", desc: "SOC 2 / ISO 27001 / HIPAA" },
+  { label: "Call Center AI", href: "/products/call-center-ai", desc: "Sub-500ms voice agents" },
+  { label: "CommBridge", href: "/products/commbridge", desc: "Unified communications layer" },
+  { label: "AutoPRD", href: "/products/autoprd", desc: "Autonomous dev pipeline" },
+  { label: "Orynx Agents", href: "/agents", desc: "Multi-agent AI SDK" },
 ]
 
+const healthcareLinks: ProductLink[] = [
+  { label: "Ambient Scribe", href: "/products/ambient-scribe", desc: "Real-time clinical transcription" },
+  { label: "OpenEyes Cloud", href: "/products/openeyes-cloud", desc: "Cloud-native ophthalmology EPR" },
+  { label: "MedSynth", href: "/products/medsynth", desc: "Synthetic patient data" },
+  { label: "DiaWound AI", href: "/products/diawound-ai", desc: "Diabetic wound triage" },
+  { label: "Orynx Education", href: "/products/orynx-education", desc: "AI-powered healthcare learning" },
+]
+
+
 const navLinks: NavLink[] = [
-  { label: "Services", href: "/services" },
   { label: "Products", href: "/products", hasDropdown: true },
   { label: "Agents SDK", href: "/agents" },
   { label: "Technology", href: "/how-it-works" },
@@ -60,13 +73,10 @@ export function Navbar() {
             <a
               href="/"
               className="flex items-baseline group flex-shrink-0 hover:opacity-80 transition-opacity"
-              aria-label="Stratax Labs — home"
+              aria-label="Orynx — home"
             >
               <span className="font-display font-bold text-ink text-xl lg:text-[24px] tracking-[-0.02em]">
-                STRATAX
-              </span>
-              <span className="font-display font-semibold text-accent-orange text-[13px] lg:text-[15px] uppercase tracking-[0.04em] ml-1">
-                LABS
+                ORYNX
               </span>
             </a>
 
@@ -102,24 +112,54 @@ export function Navbar() {
                         className="absolute top-full left-0 pt-2"
                         role="menu"
                       >
-                        <div className="w-[320px] bg-background border border-rule rounded-md shadow-[0_8px_24px_-8px_rgba(0,27,58,0.12)] overflow-hidden">
-                          {productLinks.map((product) => (
-                            <a
-                              key={product.label}
-                              href={product.href}
-                              className="flex items-baseline justify-between gap-4 px-5 py-4 hover:bg-surface transition-colors duration-150 border-b border-rule last:border-b-0"
-                              role="menuitem"
-                            >
-                              <div>
-                                <div className="text-[14px] font-semibold text-ink">{product.label}</div>
-                                <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
+                        <div className="w-[640px] bg-background border border-rule rounded-md shadow-[0_8px_24px_-8px_rgba(0,27,58,0.12)] overflow-hidden">
+                          <div className="grid grid-cols-2">
+                            {/* Platforms column */}
+                            <div className="border-r border-rule">
+                              <div className="px-5 pt-4 pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+                                Platforms
                               </div>
-                              <ArrowUpRight className="w-4 h-4 text-ink-muted flex-shrink-0 mt-1" />
-                            </a>
-                          ))}
+                              {platformLinks.map((product) => (
+                                <a
+                                  key={product.label}
+                                  href={product.href}
+                                  className="flex items-baseline justify-between gap-3 px-5 py-3 hover:bg-surface transition-colors duration-150"
+                                  role="menuitem"
+                                >
+                                  <div className="min-w-0">
+                                    <div className="text-[13px] font-semibold text-ink">{product.label}</div>
+                                    <div className="text-[11px] text-ink-muted mt-0.5 leading-snug">{product.desc}</div>
+                                  </div>
+                                  <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted flex-shrink-0 mt-1" />
+                                </a>
+                              ))}
+                            </div>
+
+                            {/* Healthcare suite column */}
+                            <div>
+                              <div className="px-5 pt-4 pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted">
+                                Healthcare suite
+                              </div>
+                              {healthcareLinks.map((product) => (
+                                <a
+                                  key={product.label}
+                                  href={product.href}
+                                  className="flex items-baseline justify-between gap-3 px-5 py-3 hover:bg-surface transition-colors duration-150"
+                                  role="menuitem"
+                                >
+                                  <div className="min-w-0">
+                                    <div className="text-[13px] font-semibold text-ink">{product.label}</div>
+                                    <div className="text-[11px] text-ink-muted mt-0.5 leading-snug">{product.desc}</div>
+                                  </div>
+                                  <ArrowUpRight className="w-3.5 h-3.5 text-ink-muted flex-shrink-0 mt-1" />
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+
                           <a
                             href="/products"
-                            className="flex items-center justify-between px-5 py-3 bg-surface hover:bg-rule transition-colors duration-150 text-[12px] font-mono uppercase tracking-[0.14em] text-ink-soft"
+                            className="flex items-center justify-between px-5 py-3 bg-surface hover:bg-rule border-t border-rule transition-colors duration-150 text-[12px] font-mono uppercase tracking-[0.14em] text-ink-soft"
                             role="menuitem"
                           >
                             View all products
@@ -171,18 +211,43 @@ export function Navbar() {
                   <ArrowUpRight className="w-5 h-5 text-ink-muted" />
                 </a>
                 {link.hasDropdown && (
-                  <div className="pl-2 py-2 space-y-2">
-                    {productLinks.map((product) => (
-                      <a
-                        key={product.label}
-                        href={product.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="block py-2"
-                      >
-                        <div className="text-[14px] font-semibold text-ink">{product.label}</div>
-                        <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
-                      </a>
-                    ))}
+                  <div className="pl-2 py-2 space-y-4">
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted py-2">
+                        Platforms
+                      </div>
+                      <div className="space-y-2">
+                        {platformLinks.map((product) => (
+                          <a
+                            key={product.label}
+                            href={product.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block py-2"
+                          >
+                            <div className="text-[14px] font-semibold text-ink">{product.label}</div>
+                            <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-muted py-2">
+                        Healthcare suite
+                      </div>
+                      <div className="space-y-2">
+                        {healthcareLinks.map((product) => (
+                          <a
+                            key={product.label}
+                            href={product.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="block py-2"
+                          >
+                            <div className="text-[14px] font-semibold text-ink">{product.label}</div>
+                            <div className="text-[12px] text-ink-muted mt-0.5">{product.desc}</div>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>

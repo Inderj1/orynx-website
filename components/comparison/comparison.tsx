@@ -5,45 +5,44 @@ import { useRef } from "react"
 import { Check, X, Minus } from "lucide-react"
 
 const columns = [
-  "StrataxAI",
-  "Generic AI Tools",
-  "Open-Source Agent Frameworks",
-  "Traditional ERP Add-ons",
+  "Orynx",
+  "Generic Dev Shops",
+  "Off-the-shelf Vendors",
+  "Open-source Stacks",
 ]
 
 const features = [
   {
-    name: "Context sharing strategies",
-    detail: "17+",
-    values: ["check", "minus", "x", "x"],
-  },
-  {
-    name: "Graph Memory (4-network)",
-    values: ["check", "x", "x", "x"],
-  },
-  {
-    name: "Typed Handoff Protocol",
-    values: ["check", "x", "x", "x"],
-  },
-  {
-    name: "Full lineage & audit tracking",
-    values: ["check", "x", "x", "minus"],
-  },
-  {
-    name: "Multi-language SDK (Py/TS/Rust/Go)",
+    name: "Production platforms (EHR Bridge, ComplianceOS, etc.)",
     values: ["check", "x", "minus", "x"],
   },
   {
-    name: "Native ERP integration (40+)",
+    name: "Dedicated engineering team, end-to-end",
+    values: ["check", "minus", "x", "x"],
+  },
+  {
+    name: "Healthcare specialism (FHIR R4, HL7, NHS-ready)",
+    values: ["check", "x", "minus", "x"],
+  },
+  {
+    name: "HIPAA / SOC 2 / ISO 27001 alignment by default",
+    values: ["check", "x", "minus", "x"],
+  },
+  {
+    name: "Multi-language SDKs (Python, TS, Rust, Go)",
+    values: ["check", "minus", "x", "minus"],
+  },
+  {
+    name: "100+ LLM providers, 24+ context strategies",
     values: ["check", "x", "x", "minus"],
   },
   {
-    name: "Closed-loop write-back",
-    values: ["check", "x", "x", "minus"],
+    name: "Sub-500ms voice loops out of the box",
+    values: ["check", "x", "x", "x"],
   },
   {
-    name: "No data movement",
-    values: ["check", "x", "x", "check"],
+    name: "Same team, discovery to production support",
+    values: ["check", "x", "x", "x"],
   },
 ]
 
@@ -108,7 +107,7 @@ export function Comparison() {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
             Why teams choose{" "}
-            <span className="text-teal">StrataxAI</span>
+            <span className="text-teal">Orynx.</span>
           </h2>
         </motion.div>
 

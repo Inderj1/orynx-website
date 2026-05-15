@@ -8,84 +8,84 @@ import {
   Lock, Eye, FileText, TrendingUp,
 } from "lucide-react"
 
-/* ─── Row 1: Data Bridge + Graph Memory capabilities ─── */
+/* ─── Row 1: Integration & data capabilities ─── */
 
 const row1 = [
   {
     icon: Database,
-    title: "Zero Data Movement",
-    description: "Connect to SAP, Oracle, Salesforce, and more via REST, OData, SOAP, and GraphQL — your data stays where it is.",
+    title: "78+ EHR Connectors",
+    description: "Epic, Cerner, Allscripts, athenahealth — and the long tail of regional systems hospitals actually run. Live in production today.",
     color: "teal",
   },
   {
     icon: Layers,
-    title: "Unified Business Schema",
-    description: "Every connector maps to a single canonical schema. One interface to query across all enterprise systems.",
+    title: "FHIR R4 + HL7 Native",
+    description: "Native support for both standards out of the box. We translate to a single canonical model so your app stays simple.",
     color: "teal",
   },
   {
     icon: BrainCircuit,
-    title: "4-Network Graph Memory",
-    description: "Episodic, semantic, procedural, and belief networks. The system learns from every execution and gets measurably smarter.",
+    title: "Multi-tier Graph Memory",
+    description: "Hot, warm, and cold tiers across episodic, semantic, procedural, and belief networks. LLM-powered extraction with conflict resolution.",
     color: "gold",
   },
   {
     icon: Network,
-    title: "17+ Context Strategies",
-    description: "Full-context, summary, semantic, temporal, and more. Agents share the right context at the right time.",
+    title: "24+ Context Strategies",
+    description: "Shared, scoped, isolated, hierarchical — every agent gets exactly the context it needs. Critical for PHI, PCI, and tenant boundaries.",
     color: "teal",
   },
   {
     icon: ArrowLeftRight,
     title: "Bidirectional Sync",
-    description: "Read and write back to your source systems. No one-way data pipelines — true closed-loop architecture.",
+    description: "Read and write back. Patients, encounters, observations, orders flow both directions with sub-2-second latency.",
     color: "coral",
   },
   {
     icon: Eye,
     title: "Full Lineage Tracking",
-    description: "Every data point traced from source to decision. Complete audit trail across all agent interactions.",
+    description: "Every action, decision, and data access traced end-to-end. Complete audit trail across every agent interaction.",
     color: "gold",
   },
 ]
 
-/* ─── Row 2: Trust Architecture + Write-Back capabilities ─── */
+/* ─── Row 2: Real-time, voice & compliance capabilities ─── */
 
 const row2 = [
   {
     icon: Shield,
-    title: "4-Tier Trust Architecture",
-    description: "Deterministic business rules never mix with LLM inference. Each tier has explicit boundaries and guarantees.",
+    title: "HIPAA / SOC 2 / ISO 27001",
+    description: "Privacy-by-design from the first commit. BAA-ready deployments and configurable data residency for clinical-grade workloads.",
     color: "coral",
   },
   {
     icon: Lock,
-    title: "AES-256-GCM Encryption",
-    description: "Multi-layer authentication with API keys, JWT RS256, and OAuth2. Enterprise-grade security at every layer.",
+    title: "End-to-end encryption",
+    description: "AES-256 at rest and in transit. Multi-layer auth with OAuth 2.0, JWT, and SMART on FHIR for healthcare contexts.",
     color: "coral",
   },
   {
-    icon: Workflow,
-    title: "Closed-Loop Write-Back",
-    description: "Insights write back directly into SAP, Oracle, and Salesforce autonomously. The loop between insight and action is fully closed.",
+    icon: Zap,
+    title: "Sub-500ms voice loops",
+    description: "Built on LiveKit and Gemini 2.0. End-to-end voice latency fast enough to feel human — across 4+ languages.",
     color: "teal",
   },
   {
-    icon: Zap,
-    title: "Typed Handoff Protocol",
-    description: "Explicit contracts between agents. Zero data loss, full validation, and complete state transfer at every handoff.",
+    icon: Workflow,
+    title: "Typed handoff protocol",
+    description: "Explicit contracts between agents. Stateful agents with validated transitions and full lineage tracking on every decision.",
     color: "gold",
   },
   {
     icon: FileText,
-    title: "SOX & ASC 606 Compliant",
-    description: "Full audit trails for every transaction. Revenue recognition, regulatory reporting, and compliance built in.",
+    title: "Audit-ready exports",
+    description: "One-click evidence packs for SOC 2, ISO 27001, and HIPAA audits. Mappings, timestamps, signoffs — all there.",
     color: "coral",
   },
   {
     icon: TrendingUp,
-    title: "Self-Learning Loop",
-    description: "Every decision feeds back into Graph Memory. Accuracy improves continuously — measurably smarter every week.",
+    title: "100+ LLM providers",
+    description: "Provider-agnostic SDK. Swap models without rewriting agents. Self-host via vLLM where compliance demands it.",
     color: "gold",
   },
 ]
@@ -121,14 +121,16 @@ export function TestimonialsSection() {
           className="text-center max-w-3xl mx-auto mb-16 px-6"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground text-sm font-medium mb-4">
-            Platform Architecture
+            Platform architecture
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 text-balance">
-            What makes StrataxAI{" "}
-            <span className="text-teal">different</span>
+            What makes Orynx{" "}
+            <span className="text-teal">different.</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Enterprise Data Bridge, Graph Memory, and Closed-Loop Write-Back — three architectural pillars that no other platform combines.
+            Deep healthcare integration, real-time voice AI, and audit-grade
+            compliance — combined in a single studio that ships both the
+            platforms and the engineering teams to deploy them.
           </p>
         </motion.div>
 

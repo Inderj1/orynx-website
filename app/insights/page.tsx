@@ -2,32 +2,32 @@ import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
 import { Navbar } from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer/footer"
-import { PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
+import { COMPANY_NAME, PRIMARY_CTA_LABEL } from "@/lib/brand-copy"
 
 export const metadata: Metadata = {
-  title: "Insights | Stratax Labs",
+  title: `Insights | ${COMPANY_NAME}`,
   description:
-    "Notes from the lab. Field-tested perspectives on enterprise AI agents, data integration, and closed-loop write-back from the Stratax Labs team.",
+    "Notes from the studio. Field-tested perspectives on integration, voice AI, multi-agent systems, and shipping software in regulated sectors.",
 }
 
 const previews = [
   {
-    tag: "Architecture",
-    title: "Why your AI agents need a four-tier trust model",
+    tag: "Healthcare",
+    title: "Why FHIR R4 is necessary but not sufficient",
     teaser:
-      "A note on policy, escalation, and the gap between 'works in eval' and 'works in production' — and the four trust tiers we use to bridge it.",
+      "Notes on what 78+ EHR integrations taught us — the standard solves the wire format, not the semantic mess underneath.",
   },
   {
-    tag: "Integration",
-    title: "Connecting to SAP without moving your data",
+    tag: "Voice AI",
+    title: "Hitting sub-500ms voice latency with LiveKit + Gemini",
     teaser:
-      "The Enterprise Data Bridge pattern: how Stratax Labs grounds agents in your SAP, Salesforce, and Oracle context without an ETL project.",
+      "The pipeline tricks, model choices, and protocol gymnastics behind a voice loop fast enough to feel human. Lessons from Call Center AI.",
   },
   {
-    tag: "Field Notes",
-    title: "What 40 ERP integrations taught us about agent memory",
+    tag: "Agents",
+    title: "Untrusted-actor review patterns for autonomous coding",
     teaser:
-      "Graph memory, working memory, and the distinction that turned out to matter most when an agent has to operate across a manufacturing month-end.",
+      "How AutoPRD uses adversarial reviewer agents to catch what the writer agent missed — before a human ever opens the PR.",
   },
 ]
 
@@ -42,7 +42,7 @@ export default function InsightsPage() {
           <span className="inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-ink-muted">
             Insights
           </span>
-          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[0.95] tracking-[-0.025em] mt-6 max-w-[18ch]">
+          <h1 className="font-display font-semibold text-ink text-[44px] sm:text-[64px] lg:text-[88px] leading-[1.05] tracking-[-0.025em] mt-6 max-w-[18ch]">
             Notes from the{" "}
             <span className="font-serif italic font-normal text-brand-blue">
               lab.

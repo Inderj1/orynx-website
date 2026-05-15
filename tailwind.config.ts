@@ -68,6 +68,7 @@ const config: Config = {
         coral: 'hsl(var(--coral))',
         teal: 'hsl(var(--teal))',
         gold: 'hsl(var(--gold))',
+        mint: 'hsl(var(--mint))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

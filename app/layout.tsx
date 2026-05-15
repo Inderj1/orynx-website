@@ -26,18 +26,18 @@ const hedvigSerif = Hedvig_Letters_Serif({
 })
 
 export const metadata: Metadata = {
-  title: 'Stratax Labs',
-  description: 'Stratax Labs designs, builds, and deploys enterprise AI. From strategy through closed-loop write-back, with measurable impact across SAP, Salesforce, and Oracle.',
-  keywords: ['Stratax Labs', 'enterprise AI', 'AI agents', 'closed-loop write-back', 'CAMP framework', 'Atvantiq Solutions', 'StrataxAI', 'AI Operating System'],
+  title: 'Orynx — AI Products & Software Engineering',
+  description: 'Orynx builds integration platforms, AI products, and custom software serving healthcare, fintech, IoT, and compliance. EHR Bridge, ComplianceOS, Call Center AI, CommBridge, and the Orynx Agents SDK.',
+  keywords: ['Orynx', 'AI agents', 'multi-agent SDK', 'EHR integration', 'FHIR R4', 'ComplianceOS', 'CommBridge', 'Call Center AI', 'healthcare AI', 'LLM integration', 'RAG'],
   openGraph: {
-    title: 'Stratax Labs',
-    description: 'We design, build, and deploy AI that creates real business value. From strategy through closed-loop write-back, with measurable impact across SAP, Salesforce, and Oracle.',
+    title: 'Orynx — AI Products & Software Engineering',
+    description: 'Software that connects, automates, and scales. Integration platforms, AI products, and custom software across healthcare, fintech, IoT, and compliance.',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Stratax Labs',
-    description: 'We design, build, and deploy AI that creates real business value. From strategy through closed-loop write-back.',
+    title: 'Orynx — AI Products & Software Engineering',
+    description: 'Integration platforms, AI products, and custom software engineering. Edinburgh, Scotland.',
   },
 }
 

@@ -1,17 +1,22 @@
-export const COMPANY_NAME = "Stratax Labs"
-export const COMPANY_NAME_LEGAL_PARENT = "StrataxAI"
-export const PREDECESSOR_NAME = "Atvantiq Solutions"
-export const ACQUISITION_YEAR = 2026
+export const COMPANY_NAME = "Orynx"
+export const COMPANY_LOCATION = "Edinburgh, Scotland"
+export const COMPANY_EMAIL = "admin@orynx.ai"
+export const COMPANY_PHONE = "+44 7985 309592"
 
-export const ACQUISITION_NOTICE_SHORT = `${COMPANY_NAME} (formerly ${PREDECESSOR_NAME}) is the AI labs of ${COMPANY_NAME_LEGAL_PARENT}.`
+export const COMPANY_TAGLINE = "Software that connects, automates, and scales."
 
-export const ACQUISITION_NOTICE_FOOTER = `© ${ACQUISITION_YEAR} ${COMPANY_NAME}. ${COMPANY_NAME} is the AI labs of ${COMPANY_NAME_LEGAL_PARENT}, formed from the acquisition of ${PREDECESSOR_NAME} in ${ACQUISITION_YEAR}.`
+export const COMPANY_DESCRIPTION_SHORT =
+  "Integration platforms, AI products, and custom software engineering."
 
-export const ACQUISITION_STORY_LONG = `In ${ACQUISITION_YEAR}, ${COMPANY_NAME_LEGAL_PARENT} completed the acquisition of ${PREDECESSOR_NAME}, a specialist enterprise AI services firm. ${PREDECESSOR_NAME} was renamed ${COMPANY_NAME} and now operates as the labs and services arm of ${COMPANY_NAME_LEGAL_PARENT} — the team that designs, builds, and deploys our agents, integrations, and industry solutions for enterprise customers.
+export const COMPANY_DESCRIPTION_LONG = `${COMPANY_NAME} builds integration platforms, AI products, and custom software across healthcare, fintech, IoT, and compliance — and ships dedicated engineering teams to enterprises that need them. Based in ${COMPANY_LOCATION}.`
 
-Our products — STRATAX AI Enterprise, LEDGERLY PRO, and LEDGERLY FIELD — are built and shipped by ${COMPANY_NAME}.`
+export const ABOUT_STORY_LONG = `${COMPANY_NAME} is an Edinburgh-based product and engineering studio. We build integration platforms, AI products, and custom software for teams in healthcare, fintech, IoT, and compliance — and we ship dedicated engineering teams alongside those products to handle the work in between.
 
-export const HERO_EYEBROW = `${COMPANY_NAME.toUpperCase()} · FORMERLY ${PREDECESSOR_NAME.toUpperCase()}`
+Our belief is simple: the best software comes from teams that combine deep technical craft with real domain knowledge. So we build our own products in parallel with client work, which keeps us grounded in what actually has to ship — not what looks good in a slide.
+
+That same discipline shapes everything we deliver: privacy-by-design, end-to-end encryption, and architectures aligned with HIPAA, SOC 2, and ISO 27001 from the first commit.`
+
+export const HERO_EYEBROW = "ORYNX · EDINBURGH"
 
 export const PRIMARY_CTA_LABEL = "Speak with our team"
 export const SECONDARY_CTA_LABEL = "See our work"

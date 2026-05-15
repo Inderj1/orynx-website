@@ -101,8 +101,8 @@ export function CTASection() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-3xl md:text-4xl lg:text-5xl font-bold text-background mb-6 text-balance"
             >
-              Ready to transform your{" "}
-              <span className="text-teal">operational intelligence</span>?
+              Software that{" "}
+              <span className="text-teal">connects, automates, and scales.</span>
             </motion.h2>
 
             {/* Description */}
@@ -112,7 +112,8 @@ export function CTASection() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="text-lg text-background/70 mb-10 leading-relaxed"
             >
-              Enterprise-grade AI that connects to your existing systems, learns from every interaction, and takes action autonomously. Start with a guided demo.
+              Pick a platform off the shelf, or hire a dedicated team to build
+              what you need from scratch. Most engagements do both.
             </motion.p>
 
             {/* CTAs */}
@@ -127,17 +128,17 @@ export function CTASection() {
                   size="lg"
                   className="bg-teal text-foreground hover:bg-teal/90 group px-8"
                 >
-                  Get a Demo
+                  Speak with our team
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </a>
-              <a href="/contact">
+              <a href="/products">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-background/30 text-background hover:bg-background/10 bg-transparent"
                 >
-                  Talk to an Expert
+                  Browse the products
                 </Button>
               </a>
             </motion.div>
@@ -149,11 +150,11 @@ export function CTASection() {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="mt-12 flex flex-wrap items-center justify-center gap-6 text-background/50 text-sm"
             >
-              <span>SOC 2 compliant</span>
+              <span>HIPAA-aligned</span>
               <span className="hidden sm:inline">&bull;</span>
-              <span>No data movement</span>
+              <span>SOC 2 / ISO 27001 ready</span>
               <span className="hidden sm:inline">&bull;</span>
-              <span>Full audit trail</span>
+              <span>End-to-end encrypted</span>
             </motion.div>
           </div>
         </motion.div>

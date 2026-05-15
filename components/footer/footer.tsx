@@ -5,20 +5,23 @@ import Image from "next/image"
 
 const footerLinks = {
   Products: [
-    { label: "STRATAX AI Enterprise", href: "/products/stratax-ai" },
-    { label: "LEDGERLY PRO", href: "/products/ledgerly-ai" },
-    { label: "LEDGERLY FIELD", href: "/products/ledgerly-field" },
+    { label: "EHR Bridge", href: "/products#ehr-bridge" },
+    { label: "ComplianceOS", href: "/products#compliance-os" },
+    { label: "Call Center AI", href: "/products#call-center-ai" },
+    { label: "CommBridge", href: "/products#commbridge" },
+    { label: "Orynx Agents", href: "/agents" },
   ],
-  Solutions: [
-    { label: "Manufacturing", href: "/solutions" },
-    { label: "Finance", href: "/solutions" },
-    { label: "Retail", href: "/solutions" },
-    { label: "Healthcare", href: "/solutions" },
-    { label: "Supply Chain", href: "/solutions" },
+  Services: [
+    { label: "Web Development", href: "/services#web" },
+    { label: "AI & ML Solutions", href: "/services#ai-ml" },
+    { label: "LLM Integration", href: "/services#llm" },
+    { label: "Custom Development", href: "/services#custom" },
   ],
-  Platform: [
+  Company: [
+    { label: "About", href: "/about" },
+    { label: "Solutions", href: "/solutions" },
     { label: "Technology", href: "/how-it-works" },
-    { label: "Agents SDK", href: "/agents" },
+    { label: "Contact", href: "/contact" },
   ],
 }
 
@@ -36,18 +39,18 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <a href="/" className="flex items-center mb-4">
-                <Image
-                  src="/stratax.png"
-                  alt="StrataxAI"
-                  width={160}
-                  height={40}
-                  className="h-8 w-auto brightness-0 invert"
-                />
+              <a href="/" className="flex items-baseline mb-4 group">
+                <span className="font-display font-bold text-background text-2xl tracking-[-0.02em]">
+                  ORYNX
+                </span>
               </a>
               <p className="text-background/60 text-sm leading-relaxed max-w-xs">
-                The intelligence layer that makes your data platforms self-learning, conversational, and profitable.
+                Integration platforms, AI products, and custom software engineering. Edinburgh, Scotland.
               </p>
+              <div className="mt-4 space-y-1 text-sm text-background/50">
+                <p>admin@orynx.ai</p>
+                <p>+44 7985 309592</p>
+              </div>
             </motion.div>
           </div>
 
@@ -80,7 +83,7 @@ export function Footer() {
         {/* Divider */}
         <div className="border-t border-background/10 pt-8">
           <p className="text-sm text-background/50 text-center">
-            &copy; {new Date().getFullYear()} StrataxAI. All rights reserved.
+            &copy; {new Date().getFullYear()} Orynx. All rights reserved.
           </p>
         </div>
       </div>
