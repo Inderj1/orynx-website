@@ -1,24 +1,21 @@
-# Nuxt dev/build outputs
-.output
-.data
-.nuxt
-.nitro
-.cache
-dist
+# v0 runtime files (should only exist in preview, not in git)
+__v0_runtime_loader.js
+__v0_devtools.tsx
+__v0_jsx-dev-runtime.ts
+instrumentation-client.js
+instrumentation-client.ts
 
-# Node dependencies
-node_modules
+# Common ignores
+node_modules/
+.next/
 
-# Logs
-logs
-*.log
-
-# Misc
+out/
+.env*.local
 .DS_Store
-.fleet
-.idea
 
-# Local env files
-.env
-.env.*
-!.env.example
+# Reference / temp files
+home-page-folder/
+reference1/
+reference2/
+reference3/
+*.docx

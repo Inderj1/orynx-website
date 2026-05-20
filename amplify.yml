@@ -3,15 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - corepack enable
-        - npm ci
+        - npm install -g pnpm@10.7.0
+        - pnpm install --frozen-lockfile --force
     build:
       commands:
-        - npm run build
+        - pnpm build
   artifacts:
-    baseDirectory: .amplify-hosting
+    baseDirectory: out
     files:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/*
+      - .next/cache/**/*

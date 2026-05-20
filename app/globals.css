@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Orynx — blue-forward palette.
+       Core hexes:
+         #1F6BFF Primary blue · #2EA8FF Bright azure · #6FE8FF Cyan glow
+         #5B7CFF Soft indigo · #FFFFFF White · #F7FBFF Ice background
+         #EAF2FF Card tint · #4A5A78 Text slate · #2ED6A1 Success mint */
+
+    /* Surface */
+    --background: 210 100% 98%;        /* #F7FBFF ice background */
+    --foreground: 216 100% 12%;        /* deep navy headings */
+    --card: 0 0% 100%;                 /* #FFFFFF */
+    --card-foreground: 216 100% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 100% 12%;
+
+    /* Primary = deep navy for type weight */
+    --primary: 216 100% 12%;
+    --primary-foreground: 210 100% 98%;
+
+    /* Secondary = card tint */
+    --secondary: 217 100% 96%;         /* #EAF2FF card tint */
+    --secondary-foreground: 216 100% 12%;
+
+    /* Muted */
+    --muted: 217 100% 96%;             /* #EAF2FF card tint */
+    --muted-foreground: 219 24% 38%;   /* #4A5A78 text slate */
+
+    /* Accent = primary blue (CTAs) */
+    --accent: 219 100% 56%;            /* #1F6BFF primary blue */
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders / inputs / ring */
+    --border: 217 60% 92%;             /* soft icy border */
+    --input: 217 60% 92%;
+    --ring: 219 100% 56%;              /* #1F6BFF focus ring */
+
+    /* Charts */
+    --chart-1: 219 100% 56%;           /* primary blue */
+    --chart-2: 205 100% 59%;           /* bright azure */
+    --chart-3: 190 100% 72%;           /* cyan glow */
+    --chart-4: 228 100% 68%;           /* soft indigo */
+    --chart-5: 161 67% 51%;            /* success mint */
+
+    /* Radius */
+    --radius: 0.25rem;
+
+    /* Orynx semantic tokens */
+    --ink: 216 100% 12%;
+    --ink-soft: 219 24% 38%;           /* #4A5A78 text slate */
+    --ink-muted: 219 22% 55%;          /* lighter slate */
+    --brand-blue: 219 100% 56%;        /* #1F6BFF primary blue */
+    --brand-blue-bright: 205 100% 59%; /* #2EA8FF bright azure */
+    --accent-orange: 219 100% 56%;     /* CTA = primary blue */
+    --accent-orange-deep: 219 100% 42%;/* CTA hover (darker primary blue) */
+    --surface: 210 100% 98%;           /* #F7FBFF ice */
+    --rule: 217 60% 92%;               /* soft icy border */
+    --mint: 161 67% 51%;               /* #2ED6A1 success mint */
+
+    /* Legacy tokens REMAPPED to new palette */
+    --coral: 190 100% 72%;             /* #6FE8FF cyan glow */
+    --teal: 205 100% 59%;              /* #2EA8FF bright azure */
+    --gold: 228 100% 68%;              /* #5B7CFF soft indigo */
+
+    --bento-shadow: inset 0 1px 0 0 rgba(255,255,255,0.05), 0 1px 2px rgba(31,107,255,0.06);
+
+    /* Sidebar (shadcn) */
+    --sidebar-background: 210 100% 98%;
+    --sidebar-foreground: 219 24% 38%;
+    --sidebar-primary: 216 100% 12%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 100% 96%;
+    --sidebar-accent-foreground: 216 100% 12%;
+    --sidebar-border: 217 60% 92%;
+    --sidebar-ring: 219 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(-5px) translateX(-5px); }
+  75% { transform: translateY(-15px) translateX(3px); }
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bento-shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes dot-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(var(--float-x, 10px), var(--float-y, -15px));
+    opacity: 0.8;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: "▋";
+  animation: blink 1s step-end infinite;
+  color: hsl(var(--accent-orange));
+  margin-left: 2px;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 27, 58, 0.12);
+}
