@@ -15,21 +15,27 @@ export function HeroSection() {
     <>
       {/* Hero — text-led composition over a backgrounded image */}
       <section className="relative bg-background overflow-hidden">
-        {/* Background image — full-bleed, ambient on the right */}
-        <div className="absolute inset-0 z-0" aria-hidden="true">
-          <Image
-            src="/heroes/home.png"
-            alt=""
-            fill
-            priority
-            sizes="(max-width: 640px) 100vw, (max-width: 1280px) 100vw, 1800px"
-            className="object-cover object-right-top"
-          />
-          {/* Left scrim: dense over the headline column, transparent over the illustration */}
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 via-40% to-transparent" />
-        </div>
+        <div className="relative mx-auto max-w-[1280px]">
+          {/* Background image — constrained to the content rail so the orb stays
+              anchored to the headline on wide viewports. Offset below navbar
+              (72px) so it never sits under the header. Hidden on small screens
+              where there is no room for both headline and illustration. */}
+          <div className="absolute top-[72px] bottom-0 left-0 right-0 z-0 hidden xl:block" aria-hidden="true">
+            <Image
+              src="/heroes/home.png"
+              alt=""
+              fill
+              priority
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover"
+              style={{ objectPosition: "100% 35%" }}
+            />
+            {/* Soft left-to-right scrim: preserves headline contrast without
+                hiding the illustration. */}
+            <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/15 via-25% to-transparent" />
+          </div>
 
-        <div className="relative z-10 mx-auto max-w-[1280px] px-6 lg:px-10 pt-[120px] pb-24 lg:pt-[160px] lg:pb-32 min-h-[560px] lg:min-h-[640px] flex flex-col justify-center">
+          <div className="relative z-10 px-6 lg:px-10 pt-[120px] pb-24 lg:pt-[160px] lg:pb-32 min-h-[560px] lg:min-h-[640px] flex flex-col justify-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -71,6 +77,7 @@ export function HeroSection() {
               </a>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
 
