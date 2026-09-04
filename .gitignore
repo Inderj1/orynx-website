@@ -29,3 +29,6 @@ next-env.d.ts
 
 # local
 .DS_Store
+
+# static export output
+/out/
