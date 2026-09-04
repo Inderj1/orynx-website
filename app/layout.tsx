@@ -66,7 +66,7 @@ const organizationJsonLd = {
     addressRegion: 'Scotland',
     addressCountry: 'GB',
   },
-  email: 'admin@orynx.ai',
+  email: 'support@orynx.ai',
   telephone: '+447985309592',
   taxID: 'SC809987',
   sameAs: [
