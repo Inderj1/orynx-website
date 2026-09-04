@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="Orynx">
+  <!-- The "O" of the Orynx logo: three open rings, indigo · blue · coral -->
+  <g fill="none" stroke-linecap="round" transform="translate(24 24) scale(1.36) translate(-24 -24)">
+    <circle cx="24" cy="24" r="15" stroke="#46527f" stroke-width="3" stroke-dasharray="76 18.25" transform="rotate(-22 24 24)"/>
+    <circle cx="24" cy="24" r="11.5" stroke="#63a6c4" stroke-width="3" stroke-dasharray="57 15.26" transform="rotate(112 24 24)"/>
+    <circle cx="24" cy="24" r="8" stroke="#d9856f" stroke-width="3" stroke-dasharray="38 12.27" transform="rotate(228 24 24)"/>
+  </g>
+</svg>
