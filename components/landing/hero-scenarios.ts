@@ -26,8 +26,10 @@ export type Scenario = {
 export const SCENARIOS: Scenario[] = [
   { channel: "PHONE", type: "NEW REQUEST", vertical: "HVAC", time: "TUE 8:42 AM", quote: "“Our AC died overnight — can someone come today?”", result: "Urgency read · same-day slot held · dispatcher notified", outcome: "act" },
   { channel: "SMS", type: "RESCHEDULE", vertical: "PLUMBING", time: "WED 12:10 PM", quote: "“Can we move Thursday to Friday morning?”", result: "Calendar updated · confirmation sent", outcome: "act" },
+  { channel: "SCRIBE", type: "CONSULTATION", vertical: "CLINIC", time: "TUE 11:05 AM", quote: "A 12-minute consultation, captured in the room.", result: "Structured note drafted · sent for clinician review", outcome: "act" },
   { channel: "PATIENT PORTAL", type: "MESSAGE", vertical: "CLINIC", time: "MON 9:48 AM", quote: "“Is this something I should be worried about?”", result: "Clinical question · handed to the care team with context", outcome: "escalate" },
   { channel: "EMAIL", type: "INVOICE", vertical: "ELECTRICAL", time: "THU 4:05 PM", quote: "“Did you get my payment for last week’s job?”", result: "Payment matched · invoice closed · books updated", outcome: "act" },
+  { channel: "BOOKS", type: "RECONCILIATION", vertical: "ELECTRICAL", time: "MON 7:30 AM", quote: "Three invoices past 30 days with no payment logged.", result: "Reminders queued · ledger flagged · owner briefed", outcome: "act" },
   { channel: "WHATSAPP", type: "BOOKING", vertical: "HVAC", time: "FRI 10:20 AM", quote: "“Can you get me in on Tuesday?”", result: "Live availability checked · slot held", outcome: "act" },
   { channel: "WEB CHAT", type: "CANCELLATION", vertical: "CLINIC", time: "MON 2:15 PM", quote: "“I need to cancel my 3pm today.”", result: "Slot released · priority list texted · gap filled", outcome: "act" },
 ];

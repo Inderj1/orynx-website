@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = 'https://orynx.ai'
 const SITE_DESCRIPTION =
-  'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.'
+  'Orynx builds applied AI intelligence for service businesses and clinics: it takes work as it arrives, from calls and messages to consultations and books, understands it, acts on it, and brings a person in when judgment matters.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

@@ -6,7 +6,7 @@ const steps = [
   {
     number: "I",
     title: "Connect",
-    description: "Phone, inbox, calendar, books—or the scheduling and records around clinical care.",
+    description: "Phone, inbox, calendar and books—or the consultation room, scheduling and records around clinical care.",
     trace: `phone       connected
 inbox       connected
 calendar    connected

@@ -9,11 +9,11 @@ const products = [
     number: "01",
     tag: "Business operations",
     title: "Orynx Conductor",
-    description: "An AI operations layer for HVAC, plumbing, electrical and other service teams. It watches the business across every system and handles the work that should not need supervision.",
+    description: "The operations intelligence for HVAC, plumbing, electrical and other service teams. It watches calls, messages, schedules and the books, and handles the work that should not need supervision.",
     points: [
       "Answers calls and messages",
       "Books the jobs that pay first",
-      "Keeps schedules, invoices and follow-ups in sync",
+      "Keeps schedules, invoices and the books in sync",
     ],
     cta: "Explore Conductor",
     href: "/products#conductor",
@@ -24,7 +24,7 @@ const products = [
     number: "02",
     tag: "Clinical operations",
     title: "Orynx Clinic",
-    description: "An AI clinic assistant built around patient workflows. It handles the administration surrounding clinical care while leaving clinical judgment exactly where it belongs.",
+    description: "The clinical intelligence for practices. It scribes the consultation, supports triage and scheduling, and handles patient messaging, while clinical judgment stays exactly where it belongs.",
     points: [
       "Drafts ambient clinical notes",
       "Supports triage, scheduling and reminders",
@@ -234,14 +234,14 @@ export function ProductsSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              One standard for
+              One intelligence.
               <br />
-              <span className="text-brand-coral-ink">getting work done.</span>
+              <span className="text-brand-coral-ink">Two products.</span>
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:justify-self-end">
-            Orynx Conductor runs the operational front desk for service businesses. 
-            Orynx Clinic removes the administrative drag around clinical work. 
+            Orynx Conductor is the operations intelligence for service businesses. 
+            Orynx Clinic is the clinical intelligence for practices. 
             Each is purpose-built for its environment.
           </p>
         </div>

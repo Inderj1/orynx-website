@@ -22,12 +22,14 @@ const PAPER = "#f7f8fc";
 
 // Channel nodes at fixed positions on the disc (fractions of the sphere radius).
 const NODES: { name: string; x: number; y: number; tone: "blue" | "coral" }[] = [
-  { name: "PHONE", x: -0.7, y: -0.22, tone: "blue" },
-  { name: "WEB CHAT", x: 0.12, y: -0.72, tone: "blue" },
-  { name: "SMS", x: 0.74, y: -0.28, tone: "blue" },
-  { name: "WHATSAPP", x: 0.6, y: 0.48, tone: "blue" },
+  { name: "PHONE", x: -0.72, y: -0.24, tone: "blue" },
+  { name: "WEB CHAT", x: 0.05, y: -0.74, tone: "blue" },
+  { name: "BOOKS", x: 0.52, y: -0.6, tone: "blue" },
+  { name: "SMS", x: 0.76, y: -0.16, tone: "blue" },
+  { name: "WHATSAPP", x: 0.58, y: 0.5, tone: "blue" },
+  { name: "PATIENT PORTAL", x: -0.02, y: 0.74, tone: "coral" },
   { name: "EMAIL", x: -0.5, y: 0.58, tone: "blue" },
-  { name: "PATIENT PORTAL", x: -0.08, y: 0.7, tone: "coral" },
+  { name: "SCRIBE", x: -0.66, y: 0.2, tone: "coral" },
 ];
 const CHIPS: Record<string, string> = {
   "NEW REQUEST": "SLOT · TODAY 2:30 PM · HELD",
@@ -36,6 +38,8 @@ const CHIPS: Record<string, string> = {
   INVOICE: "PAYMENT · MATCHED · CLOSED",
   BOOKING: "SLOT · TUE 9:30 AM · HELD",
   CANCELLATION: "3:00 PM · REFILLED · SMS SENT",
+  CONSULTATION: "NOTE · DRAFTED · FOR REVIEW",
+  RECONCILIATION: "3 INVOICES · REMINDERS QUEUED",
 };
 
 const GLYPHS = "░▒▓█▀▄▌▐│─┤├┴┬╭╮╰╯";
