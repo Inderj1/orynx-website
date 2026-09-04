@@ -143,7 +143,7 @@ function GlobeCanvas() {
         ctx.stroke();
         ctx.setLineDash([]);
       }
-      if (stage >= 1 && stage <= 2) {
+      if (stage >= 1 && stage <= 2 && width >= 600) {
         ctx.beginPath();
         ctx.setLineDash([2, 4]);
         ctx.moveTo(ax, ay);
@@ -283,7 +283,7 @@ export function HeroGlobeScene() {
 
       {/* Conversation card */}
       <div
-        className={`absolute right-[5%] top-[12%] w-[300px] max-w-[46%] border border-foreground/10 bg-card/95 backdrop-blur-sm px-4 py-3 shadow-lg shadow-foreground/10 transition-all duration-500 ${
+        className={`hidden lg:block absolute right-[5%] top-[12%] w-[300px] max-w-[46%] border border-foreground/10 bg-card/95 backdrop-blur-sm px-4 py-3 shadow-lg shadow-foreground/10 transition-all duration-500 ${
           showCard ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2"
         }`}
         aria-live="polite"

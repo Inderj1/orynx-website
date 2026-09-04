@@ -6,6 +6,7 @@ import { BoundarySection } from "@/components/landing/boundary-section";
 import { CtaSection } from "@/components/landing/cta-section";
 
 export const metadata: Metadata = {
+  title: "About",
   description:
     "Orynx builds accountable applied AI that returns time to business and clinical teams.",
 };
