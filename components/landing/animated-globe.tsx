@@ -233,7 +233,7 @@ export function AnimatedGlobe() {
               ctx.textAlign = l.sx < cx ? "left" : "right";
               ctx.textBaseline = "middle";
               ctx.lineWidth = 3;
-              ctx.strokeStyle = `rgba(244,244,241,${(0.9 * a).toFixed(3)})`;
+              ctx.strokeStyle = `rgba(247,248,252,${(0.9 * a).toFixed(3)})`;
               ctx.strokeText(st.name, l.sx, l.sy);
               ctx.fillStyle = rgba(COLORS.ink, 0.8 * a);
               ctx.fillText(st.name, l.sx, l.sy);

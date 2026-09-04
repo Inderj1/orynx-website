@@ -18,7 +18,7 @@ const CORAL = "#d9856f";
 const CORAL_INK = "#a2472f";
 const AMBER = "#e2ac5a";
 const AMBER_INK = "#7f5312";
-const PAPER = "#f4f4f1";
+const PAPER = "#f7f8fc";
 
 // Channel nodes at fixed positions on the disc (fractions of the sphere radius).
 const NODES: { name: string; x: number; y: number; tone: "blue" | "coral" }[] = [
