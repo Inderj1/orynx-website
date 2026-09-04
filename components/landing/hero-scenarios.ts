@@ -31,11 +31,13 @@ export const SCENARIOS: Scenario[] = [
   { channel: "EMAIL", type: "INVOICE", vertical: "ELECTRICAL", time: "THU 16:05", quote: "“Did you get my payment for last week’s job?”", result: "Payment matched · invoice closed · books updated", outcome: "act" },
   { channel: "BOOKS", type: "RECONCILIATION", vertical: "ELECTRICAL", time: "MON 07:30", quote: "Three invoices past 30 days with no payment logged.", result: "Reminders queued · ledger flagged · owner briefed", outcome: "act" },
   { channel: "WHATSAPP", type: "BOOKING", vertical: "HEATING", time: "FRI 10:20", quote: "“Can you get me in on Tuesday?”", result: "Live availability checked · slot held", outcome: "act" },
+  { channel: "CALENDAR", type: "DOUBLE BOOKING", vertical: "HEATING", time: "WED 07:55", quote: "Two engineers booked into the same 10:00 slot.", result: "Clash resolved · customer moved to 11:30 · both notified", outcome: "act" },
+  { channel: "RECORDS", type: "RESULTS", vertical: "CLINIC", time: "THU 09:12", quote: "Blood results back for a patient on the recall list.", result: "Value outside range · routed to the clinician with context", outcome: "escalate" },
   { channel: "WEB CHAT", type: "CANCELLATION", vertical: "CLINIC", time: "MON 14:15", quote: "“I need to cancel my 3pm today.”", result: "Slot released · priority list texted · gap filled", outcome: "act" },
 ];
 
-export const SCENARIO_LENGTH = 7; // seconds
-const STAGE_ENDS = [1.4, 2.9, 4.8, SCENARIO_LENGTH]; // Listen · Understand · Act/Escalate · Logged
+export const SCENARIO_LENGTH = 6; // seconds
+const STAGE_ENDS = [1.2, 2.5, 4.2, SCENARIO_LENGTH]; // Listen · Understand · Act/Escalate · Logged
 
 export function stageAt(local: number): Stage {
   if (local < STAGE_ENDS[0]) return 0;
@@ -62,7 +64,7 @@ export function useScenario() {
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
-      setState({ ...scenarioAt(3.5), reduced: true });
+      setState({ ...scenarioAt(3.0), reduced: true });
       return;
     }
     const id = setInterval(() => setState({ ...scenarioAt(scenarioClock()), reduced: false }), 120);

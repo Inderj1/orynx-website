@@ -30,7 +30,24 @@ const NODES: { name: string; x: number; y: number; tone: "blue" | "coral" }[] = 
   { name: "PATIENT PORTAL", x: -0.02, y: 0.74, tone: "coral" },
   { name: "EMAIL", x: -0.5, y: 0.58, tone: "blue" },
   { name: "SCRIBE", x: -0.66, y: 0.2, tone: "coral" },
+  { name: "CALENDAR", x: 0.78, y: 0.2, tone: "blue" },
+  { name: "RECORDS", x: -0.36, y: -0.58, tone: "coral" },
 ];
+// Short outcomes for the background flows that run under the main scenario.
+const FLOW_CHIPS: Record<string, string> = {
+  PHONE: "CALLBACK BOOKED",
+  "WEB CHAT": "ANSWERED",
+  BOOKS: "LEDGER UPDATED",
+  SMS: "REMINDER SENT",
+  WHATSAPP: "CONFIRMED",
+  "PATIENT PORTAL": "REPLY SENT",
+  EMAIL: "REPLY SENT",
+  SCRIBE: "NOTE DRAFTED",
+  CALENDAR: "SLOT HELD",
+  RECORDS: "RECORD UPDATED",
+};
+const FLOW_EVERY = 0.4; // a new background flow every 0.4 s
+const FLOW_DUR = 1.3;
 const CHIPS: Record<string, string> = {
   "NEW REQUEST": "SLOT · TODAY 14:30 · HELD",
   RESCHEDULE: "MOVED · FRI 09:00 · CONFIRMED",
@@ -40,6 +57,8 @@ const CHIPS: Record<string, string> = {
   CANCELLATION: "15:00 · REFILLED · SMS SENT",
   CONSULTATION: "NOTE · DRAFTED · FOR REVIEW",
   RECONCILIATION: "3 INVOICES · REMINDERS QUEUED",
+  "DOUBLE BOOKING": "CLASH · RESOLVED · 11:30",
+  RESULTS: "CLINICIAN · WITH CONTEXT",
 };
 
 const GLYPHS = "░▒▓█▀▄▌▐│─┤├┴┬╭╮╰╯";
@@ -66,6 +85,9 @@ function GlobeCanvas() {
     let visible = true;
     let spin = 0;
     let last = performance.now();
+    const ledger: { angle: number; color: string; at: number }[] = [];
+    let ledgerUpTo = -1;
+    const easeInOutQuad = (x: number) => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2);
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
@@ -195,6 +217,93 @@ function GlobeCanvas() {
         ctx.strokeText(n.name, lx, ly);
         ctx.fillStyle = rgba(isActive ? inkColor : INK, isActive ? 1 : 0.55);
         ctx.fillText(n.name, lx, ly);
+      }
+
+      // ── Background flows: work arriving from every input and actions going back out ──
+      const iMax = Math.floor(t / FLOW_EVERY);
+      for (let i = Math.max(0, iMax - 8); i <= iMax; i++) {
+        const tau = t - i * FLOW_EVERY;
+        if (tau < 0 || tau > FLOW_DUR + 2.4) continue;
+        const node = NODES[(i * 7 + 3) % NODES.length];
+        if (node === active) continue;
+        const inbound = i % 10 < 6;
+        const nx = cx + node.x * R;
+        const ny = cy + node.y * R;
+        const fx = inbound ? nx : cx, fy = inbound ? ny : cy, tx = inbound ? cx : nx, ty = inbound ? cy : ny;
+        const color = node.tone === "coral" ? CORAL : BLUE;
+        const life = tau < FLOW_DUR ? 1 : 1 - clamp01((tau - FLOW_DUR) / 2.4);
+        ctx.beginPath();
+        ctx.setLineDash([1.5, 4]);
+        ctx.moveTo(fx, fy);
+        ctx.lineTo(tx, ty);
+        ctx.strokeStyle = rgba(color, 0.55 * life);
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.setLineDash([]);
+        if (tau < FLOW_DUR) {
+          const e = easeInOutQuad(tau / FLOW_DUR);
+          for (let k = 0; k < 6; k++) {
+            const ek = Math.max(0, e - k * 0.04);
+            ctx.beginPath();
+            ctx.arc(fx + (tx - fx) * ek, fy + (ty - fy) * ek, k === 0 ? 3.6 : 2.6 - k * 0.25, 0, Math.PI * 2);
+            ctx.fillStyle = rgba(color, k === 0 ? 1 : 0.6 - k * 0.09);
+            ctx.fill();
+          }
+          if (tau < 0.3) {
+            ctx.beginPath();
+            ctx.arc(fx, fy, 3 + 12 * (tau / 0.3), 0, Math.PI * 2);
+            ctx.strokeStyle = rgba(color, 0.8 * (1 - tau / 0.3));
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        } else {
+          const k = clamp01((tau - FLOW_DUR) / 0.5);
+          if (k < 1) {
+            ctx.beginPath();
+            ctx.arc(tx, ty, 4 + 16 * k, 0, Math.PI * 2);
+            ctx.strokeStyle = rgba(color, 0.9 * (1 - k));
+            ctx.lineWidth = 1.5;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+          if (!inbound) {
+            const label = FLOW_CHIPS[node.name] ?? "DONE";
+            const fade = Math.min(clamp01((tau - FLOW_DUR) / 0.25), life);
+            ctx.font = `600 9px ${mono}`;
+            const w = ctx.measureText(label).width + 16;
+            const chipX = node.x > 0.2 ? nx - 12 - w : node.x < -0.2 ? nx + 12 : nx - w / 2;
+            const chipY = node.y < -0.6 ? ny + 12 : ny - 26;
+            ctx.fillStyle = rgba(PAPER, 0.95 * fade);
+            ctx.strokeStyle = rgba(color, 1 * fade);
+            ctx.lineWidth = 1.2;
+            ctx.beginPath();
+            ctx.roundRect(chipX, chipY, w, 17, 8.5);
+            ctx.fill();
+            ctx.stroke();
+            ctx.textAlign = "left";
+            ctx.textBaseline = "middle";
+            ctx.fillStyle = rgba(node.tone === "coral" ? CORAL_INK : BLUE_INK, fade);
+            ctx.fillText(label, chipX + 8, chipY + 9);
+          }
+          // every completed inbound item leaves a tick on the ledger ring
+          if (inbound && i > ledgerUpTo) {
+            ledgerUpTo = i;
+            ledger.push({ angle: (t * 12 + 90) * RAD, color: color, at: t });
+            if (ledger.length > 72) ledger.shift();
+          }
+        }
+      }
+      for (const tick of ledger) {
+        const age = t - tick.at;
+        if (age > 40) continue;
+        const a = 0.75 * (1 - age / 40);
+        const c = Math.cos(tick.angle), s = Math.sin(tick.angle);
+        ctx.beginPath();
+        ctx.moveTo(cx + (R * 0.985 + 4) * c, cy + (R * 0.985 + 4) * s);
+        ctx.lineTo(cx + (R * 0.985 + 10) * c, cy + (R * 0.985 + 10) * s);
+        ctx.strokeStyle = rgba(tick.color, a);
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
       }
 
       // ── Core node (the front desk) ──
