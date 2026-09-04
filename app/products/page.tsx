@@ -8,7 +8,6 @@ import { CompareSection } from "@/components/landing/compare-section";
 import { CtaSection } from "@/components/landing/cta-section";
 
 export const metadata: Metadata = {
-  title: "Products",
   description:
     "Explore Orynx Conductor for business operations and Orynx Care for clinical teams.",
 };

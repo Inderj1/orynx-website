@@ -24,10 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://orynx.ai'),
-  title: {
-    default: 'ORYNX — Applied AI that runs the work',
-    template: '%s — ORYNX',
-  },
+  title: 'ORYNX',
   description: 'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.',
   openGraph: {
     siteName: 'ORYNX',

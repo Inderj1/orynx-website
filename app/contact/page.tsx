@@ -3,7 +3,6 @@ import { PageHero } from "@/components/landing/page-hero";
 import { ContactSection } from "@/components/landing/contact-section";
 
 export const metadata: Metadata = {
-  title: "Contact",
   description: "Book an Orynx demo for your business or clinical workflow.",
 };
 
