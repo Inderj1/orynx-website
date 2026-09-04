@@ -1,6 +1,6 @@
 # Orynx website — instructions for Claude
 
-This is the orynx.ai marketing site: Next.js 16 App Router, React 19, Tailwind 4, static export deployed by AWS Amplify. Read this file first; it is the source of truth for how the site looks, sounds and is built. `DESIGN.md` is the full design theme and `design-tokens.json` the same values as data.
+This is the orynx.ai marketing site: Next.js 16 App Router, React 19, Tailwind 4, static export deployed by AWS Amplify. Read this file first for project conventions. For the brand and design rules, follow `orynx-brand-guide.md` (self-contained, portable to any project); `DESIGN.md` is the longer rationale and `design-tokens.json` the same values as data.
 
 ## Commands
 
