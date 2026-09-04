@@ -19,10 +19,9 @@ const labelClass = "block font-mono text-xs uppercase tracking-widest text-muted
 
 const trim = (value: FormDataEntryValue | null) => String(value ?? "").trim();
 
-function buildMailto(to: string, subject: string, lines: string[]) {
-  const body = lines.filter(Boolean).join("\n");
-  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
+// Web3Forms accepts submissions straight from the browser, which is what lets
+// this stay a pure static export with no server route.
+const WEB3FORMS_ACCESS_KEY = "f656e7e3-c47a-4f40-a611-f3375b052645";
 
 type ContactSectionProps = {
   /** "embedded" (default) renders the full section with its own heading; "page" assumes a PageHero above it. */
@@ -33,6 +32,8 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
   const isPage = variant === "page";
   const [isVisible, setIsVisible] = useState(false);
   const [status, setStatus] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -47,29 +48,42 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
     return () => observer.disconnect();
   }, []);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     if (!form.reportValidity()) return;
 
     const data = new FormData(form);
+    const payload = Object.fromEntries(data) as Record<string, string>;
     const name = trim(data.get("name"));
-    const email = trim(data.get("email"));
-    const company = trim(data.get("company"));
-    const phone = trim(data.get("phone"));
     const product = trim(data.get("product"));
-    const message = trim(data.get("message"));
 
-    setStatus("Your email app is opening with the request prepared.");
-    window.location.href = buildMailto(contactEmail, `Orynx demo request — ${product}`, [
-      `Name: ${name}`,
-      `Work email: ${email}`,
-      `Company / clinic: ${company}`,
-      phone ? `Phone: ${phone}` : "",
-      `Product: ${product}`,
-      "",
-      message || "Please contact me to arrange a demo.",
-    ]);
+    setSubmitting(true);
+    setStatus("");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Orynx demo request${name ? ` \u2014 ${name}` : ""}${product ? ` (${product})` : ""}`,
+          from_name: name || "Orynx website",
+          ...payload,
+        }),
+      });
+      const json = await response.json();
+      if (response.ok && json.success) {
+        setSubmitted(true);
+        setStatus("Thanks \u2014 your request is with the team. We\u2019ll reply within one working day.");
+        form.reset();
+      } else {
+        setStatus(json.message || `Something went wrong. Please try again, or email ${contactEmail}.`);
+      }
+    } catch {
+      setStatus(`Something went wrong. Please try again, or email ${contactEmail}.`);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -207,13 +221,14 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-primary hover:bg-brand-indigo-deep text-primary-foreground h-14 text-base rounded-full group"
+                    disabled={submitting}
+                    className="w-full bg-primary hover:bg-brand-indigo-deep text-primary-foreground h-14 text-base rounded-full group disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Prepare my demo request
+                    {submitting ? "Sending\u2026" : submitted ? "Send another request" : "Send my demo request"}
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <p className="text-xs text-muted-foreground mt-4 font-mono">
-                    Submitting opens your email app with the request prepared. Nothing is sent until you choose to send it.
+                    Sent straight to the Orynx team. We reply within one working day.
                   </p>
                   <p className="text-sm mt-3 min-h-5" aria-live="polite">{status}</p>
                 </div>

@@ -1,0 +1,172 @@
+[
+  {
+    "source": "/agents/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/agents",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/solutions/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/solutions",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/services/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/services",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/how-it-works/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/how-it-works",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/case-studies/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/case-studies",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/insights/",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/insights",
+    "target": "/",
+    "status": "301"
+  },
+  {
+    "source": "/products/ambient-scribe/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/ambient-scribe",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/autoprd/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/autoprd",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/call-center-ai/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/call-center-ai",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/commbridge/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/commbridge",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/compliance-os/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/compliance-os",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/diawound-ai/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/diawound-ai",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/ehr-bridge/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/ehr-bridge",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/medsynth/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/medsynth",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/openeyes-cloud/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/openeyes-cloud",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/orynx-education/",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/products/orynx-education",
+    "target": "/products/",
+    "status": "301"
+  },
+  {
+    "source": "/<*>",
+    "target": "/index.html",
+    "status": "404-200"
+  },
+  {
+    "source": "https://orynx.co.uk",
+    "target": "https://www.orynx.co.uk",
+    "status": "302"
+  }
+]
