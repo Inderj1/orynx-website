@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Book an Orynx demo for your business or clinical workflow.">
+  <title>Contact — ORYNX</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="ORYNX home"><img src="assets/orynx-logo.svg" alt="ORYNX"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation" data-nav-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" id="primary-menu" data-nav-menu>
+        <a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About</a><a href="contact.html" aria-current="page">Contact</a><a class="button" href="contact.html">Book a demo</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow-light">Talk to the team</p>
+        <h1>Bring us the workflow. We’ll bring the questions.</h1>
+        <p class="lede">Tell us what your team handles today, where it breaks down, and which decisions must remain human. We’ll reply within one working day.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+        <form class="form-card" data-demo-form>
+          <p class="eyebrow">Request a demo</p>
+          <h2 style="font-size:clamp(2.2rem,4vw,3.6rem);margin-bottom:28px">Start with your real workflow.</h2>
+          <div class="form-grid">
+            <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Jordan Lee" required></div>
+            <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="jordan@company.com" required></div>
+            <div class="field"><label for="company">Company or clinic</label><input id="company" name="company" type="text" autocomplete="organization" placeholder="Acme Co." required></div>
+            <div class="field"><label for="phone">Phone <span style="font-weight:400">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 000 0000"></div>
+            <div class="field field-full"><label for="product">Which product?</label><select id="product" name="product"><option>Not sure yet</option><option>Orynx Conductor</option><option>Orynx Care</option></select></div>
+            <div class="field field-full"><label for="message">What should Orynx help handle?</label><textarea id="message" name="message" placeholder="Tell us about the calls, scheduling, messages or documentation taking time from your team."></textarea></div>
+          </div>
+          <button class="button" type="submit" style="width:100%;margin-top:22px">Prepare my demo request</button>
+          <p class="form-note">Submitting opens your email app with the request prepared. Nothing is sent until you choose to send it.</p>
+          <div class="form-status" data-form-status aria-live="polite"></div>
+        </form>
+
+        <aside class="contact-side">
+          <div class="contact-card">
+            <p class="eyebrow eyebrow-coral">Direct contact</p>
+            <h3>Prefer email?</h3>
+            <div class="contact-list"><a href="mailto:hello@orynx.ai">hello@orynx.ai</a><a href="mailto:sales@orynx.ai">sales@orynx.ai</a><a href="mailto:care@orynx.ai">care@orynx.ai</a></div>
+          </div>
+          <div class="contact-card">
+            <p class="eyebrow">What happens next</p>
+            <h3>A short, useful conversation.</h3>
+            <ol><li>We review the workflow and match it to the right product.</li><li>We spend 20 minutes showing Orynx against your process.</li><li>If there is a fit, we define a narrow pilot and clear success measures.</li></ol>
+          </div>
+          <div class="contact-card">
+            <p class="eyebrow">What to bring</p>
+            <h3>The messy version is useful.</h3>
+            <p>Call volumes, scheduling constraints, current tools and the exceptions your team handles manually are more valuable than a polished requirements document.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid container">
+      <div class="footer-brand"><img src="assets/orynx-logo.svg" alt="ORYNX"><p>Applied AI for the businesses and clinics that keep the world running.</p></div>
+      <div class="footer-col"><h3>Products</h3><a href="products.html#conductor">Orynx Conductor</a><a href="products.html#care">Orynx Care</a></div>
+      <div class="footer-col"><h3>Company</h3><a href="about.html">About</a><a href="contact.html">Contact</a><a href="index.html#download-html">Download as HTML</a></div>
+      <div class="footer-col"><h3>Get in touch</h3><a href="mailto:hello@orynx.ai">hello@orynx.ai</a><a href="contact.html">Book a demo</a></div>
+    </div>
+    <div class="footer-bottom"><div class="container">© <span data-year>2026</span> Orynx.ai. All rights reserved.</div></div>
+  </footer>
+</body>
+</html>

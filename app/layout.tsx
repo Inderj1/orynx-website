@@ -1,73 +1,39 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { DM_Sans, Urbanist, Fragment_Mono, Hedvig_Letters_Serif } from 'next/font/google'
-
+import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
+import { Navigation } from '@/components/landing/navigation'
+import { FooterSection } from '@/components/landing/footer-section'
 import './globals.css'
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-sans',
-})
-const urbanist = Urbanist({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-display',
-})
-const fragmentMono = Fragment_Mono({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-mono',
-})
-const hedvigSerif = Hedvig_Letters_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-serif',
-})
+const instrumentSans = Instrument_Sans({ 
+  subsets: ["latin"],
+  variable: '--font-instrument'
+});
+
+const instrumentSerif = Instrument_Serif({ 
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: '--font-instrument-serif'
+});
+
+const jetbrainsMono = JetBrains_Mono({ 
+  subsets: ["latin"],
+  variable: '--font-jetbrains'
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://orynx.co.uk'),
-  title: 'Orynx — AI Products & Software Engineering',
-  description: 'Orynx builds integration platforms, AI products, and custom software serving healthcare, fintech, IoT, and compliance. EHR Bridge, ComplianceOS, Call Center AI, CommBridge, and the Orynx Agents SDK.',
-  keywords: ['Orynx', 'AI agents', 'multi-agent SDK', 'EHR integration', 'FHIR R4', 'ComplianceOS', 'CommBridge', 'Call Center AI', 'healthcare AI', 'LLM integration', 'RAG'],
+  metadataBase: new URL('https://orynx.ai'),
+  title: {
+    default: 'ORYNX — Applied AI that runs the work',
+    template: '%s — ORYNX',
+  },
+  description: 'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.',
   openGraph: {
-    title: 'Orynx — AI Products & Software Engineering',
-    description: 'Software that connects, automates, and scales. Integration platforms, AI products, and custom software across healthcare, fintech, IoT, and compliance.',
+    siteName: 'ORYNX',
     type: 'website',
-    siteName: 'Orynx',
-    url: 'https://orynx.co.uk',
-    images: ['/og-image.png'],
+    images: ['/assets/orynx-hero.webp'],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Orynx — AI Products & Software Engineering',
-    description: 'Integration platforms, AI products, and custom software engineering. Edinburgh, Scotland.',
-    images: ['/og-image.png'],
-  },
-}
-
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'ORYNX LTD',
-  legalName: 'ORYNX LTD',
-  url: 'https://orynx.co.uk',
-  logo: 'https://orynx.co.uk/icon.png',
-  description: 'Integration platforms, AI products, and custom software engineering.',
-  foundingDate: '2024-05-09',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Edinburgh',
-    addressRegion: 'Scotland',
-    addressCountry: 'GB',
-  },
-  email: 'admin@orynx.ai',
-  telephone: '+447985309592',
-  taxID: 'SC809987',
-  sameAs: [
-    'https://uk.linkedin.com/company/orynx',
-    'https://github.com/orgs/Orynx-uk',
-  ],
 }
 
 export default function RootLayout({
@@ -77,13 +43,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
-      </head>
-      <body className={`${dmSans.variable} ${urbanist.variable} ${fragmentMono.variable} ${hedvigSerif.variable} font-sans antialiased`}>{children}</body>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+        {/* overflow-x-clip (not hidden) so this wrapper never becomes a scroll container, which would break position: sticky */}
+        <div className="relative min-h-screen overflow-x-clip noise-overlay">
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-5 focus:py-2 focus:rounded-full focus:bg-foreground focus:text-background focus:text-sm"
+          >
+            Skip to content
+          </a>
+          <Navigation />
+          <main id="main">{children}</main>
+          <FooterSection />
+        </div>
+      </body>
     </html>
   )
 }

@@ -1,19 +1,19 @@
-import { Navbar } from "@/components/navbar/navbar"
-import { HeroSection } from "@/components/hero/hero-section"
-import { FeatureSection } from "@/components/features/feature-section"
-import { TestimonialsSection } from "@/components/testimonials/testimonials-section"
-import { CTASection } from "@/components/cta/cta-section"
-import { Footer } from "@/components/footer/footer"
+import { HeroSection } from "@/components/landing/hero-section";
+import { ProductsSection } from "@/components/landing/products-section";
+import { HowItWorksSection } from "@/components/landing/how-it-works-section";
+import { ControlSection } from "@/components/landing/control-section";
+import { FaqSection } from "@/components/landing/faq-section";
+import { CtaSection } from "@/components/landing/cta-section";
 
 export default function Home() {
   return (
-    <main className="relative">
-      <Navbar />
+    <>
       <HeroSection />
-      <FeatureSection />
-      <TestimonialsSection />
-      <CTASection />
-      <Footer />
-    </main>
-  )
+      <ProductsSection />
+      <HowItWorksSection />
+      <ControlSection />
+      <FaqSection />
+      <CtaSection />
+    </>
+  );
 }
