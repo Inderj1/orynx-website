@@ -24,5 +24,27 @@ pnpm start
 | `content/*.ts` | All copy. Edit text here, not in components |
 | `public/assets/` | Logo and hero image |
 
-The contact form mirrors the reference: submitting opens the visitor's email
-app with a prepared request to `hello@orynx.ai`. Nothing is sent server-side.
+The contact form posts to Web3Forms from the browser, so submissions reach the
+team inbox without the site needing a server route (it stays a static export).
+The access key lives in `components/landing/contact-section.tsx`.
+
+## Deployment
+
+Pushing to `main` on `Orynx-uk/Orynx-website` auto-builds Amplify app
+`Orynx-website` (`d115aqu01rskeh`, account `consultez-admin`, us-east-1), which
+publishes the static export in `out/` to `orynx.ai` and `www.orynx.ai`.
+
+### Redirects
+
+This site has four pages; the previous site had twenty. `amplify-redirects.json`
+holds the 301s that map every removed URL onto its closest surviving page, plus
+the two pre-existing rules. Amplify redirects are app-level config, not part of
+the build, so the file is the source of truth and has to be applied by hand:
+
+```
+aws amplify update-app --profile consultez-admin --region us-east-1 --app-id d115aqu01rskeh --custom-rules file://amplify-redirects.json
+```
+
+Apply it **after** a deploy that removes routes, never before — the rules would
+otherwise 301 pages that are still live. Edit the file and re-run the command
+whenever routes change.

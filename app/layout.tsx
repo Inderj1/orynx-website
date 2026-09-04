@@ -22,15 +22,57 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains'
 });
 
+const SITE_URL = 'https://orynx.ai'
+const SITE_TITLE = 'ORYNX — Applied AI that runs the work'
+const SITE_DESCRIPTION =
+  'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://orynx.ai'),
-  title: 'ORYNX',
-  description: 'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.',
+  metadataBase: new URL(SITE_URL),
+  // Tab shows just "ORYNX"; pages that export a title get "Name — ORYNX".
+  title: {
+    default: 'ORYNX',
+    template: '%s — ORYNX',
+  },
+  description: SITE_DESCRIPTION,
   openGraph: {
     siteName: 'ORYNX',
     type: 'website',
-    images: ['/assets/orynx-hero.webp'],
+    url: SITE_URL,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/og-image.png'],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/og-image.png'],
+  },
+}
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ORYNX LTD',
+  legalName: 'ORYNX LTD',
+  url: SITE_URL,
+  logo: `${SITE_URL}/apple-icon.png`,
+  description: SITE_DESCRIPTION,
+  foundingDate: '2024-05-09',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Edinburgh',
+    addressRegion: 'Scotland',
+    addressCountry: 'GB',
+  },
+  email: 'admin@orynx.ai',
+  telephone: '+447985309592',
+  taxID: 'SC809987',
+  sameAs: [
+    'https://uk.linkedin.com/company/orynx',
+    'https://github.com/orgs/Orynx-uk',
+  ],
 }
 
 export default function RootLayout({
@@ -40,6 +82,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {/* overflow-x-clip (not hidden) so this wrapper never becomes a scroll container, which would break position: sticky */}
         <div className="relative min-h-screen overflow-x-clip noise-overlay">
