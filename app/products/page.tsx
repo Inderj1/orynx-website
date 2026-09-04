@@ -6,6 +6,7 @@ import {
 } from "@/components/landing/product-detail-section";
 import { CompareSection } from "@/components/landing/compare-section";
 import { CtaSection } from "@/components/landing/cta-section";
+import { LegacyAnchorRedirect } from "@/components/landing/legacy-anchor-redirect";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -86,6 +87,8 @@ const care: ProductDetail = {
 export default function ProductsPage() {
   return (
     <>
+      {/* /products#care was the section id before the Clinic rename */}
+      <LegacyAnchorRedirect map={{ care: "clinic" }} />
       <PageHero
         eyebrow="Two purpose-built products"
         title="Different work."
