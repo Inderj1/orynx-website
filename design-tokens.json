@@ -1,0 +1,60 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Orynx",
+    "source": "orynx.ai · app/globals.css",
+    "updated": "2026-09-04"
+  },
+  "color": {
+    "background": { "$value": "#f7f8fc", "$description": "Page ground, bright cool white" },
+    "card": { "$value": "#ffffff", "$description": "Cards, pop-ups, form fields, share images" },
+    "ink": { "$value": "#1b1f38", "$description": "Text, headings, dark section ground" },
+    "muted": { "$value": "#4f5875", "$description": "Secondary text, labels, captions" },
+    "surface-secondary": { "$value": "#eef0f6" },
+    "surface-muted": { "$value": "#e8ebf3" },
+    "border": { "$value": "#d9dde8", "$description": "Hairlines; on the site usually ink at 10% alpha" },
+    "night": { "$value": "#0f1430", "$description": "Layering inside dark sections" },
+    "indigo": { "$value": "#343b62", "$description": "Wordmark. Primary buttons, Understand state" },
+    "indigo-deep": { "$value": "#2a3050", "$description": "Primary hover" },
+    "indigo-slate": { "$value": "#46527f", "$description": "Logo outer ring, chart series 5" },
+    "blue": { "$value": "#63a6c4", "$description": "Orynx Conductor, Capture state, live dots. Accent only on light ground" },
+    "blue-ink": { "$value": "#2f5568", "$description": "Blue as text on the light ground" },
+    "blue-soft": { "$value": "#e3eff4", "$description": "Blue tint" },
+    "coral": { "$value": "#d9856f", "$description": "Orynx Clinic, Escalate state, highlights. Accent only on light ground" },
+    "coral-ink": { "$value": "#a2472f", "$description": "Coral as text; also errors" },
+    "coral-ink-deep": { "$value": "#8e3d27", "$description": "Coral-ink hover" },
+    "coral-soft": { "$value": "#f8e9e4", "$description": "Coral tint; highlight bar is coral at 25% alpha" },
+    "amber": { "$value": "#e2ac5a", "$description": "Act state, result chips. Accent only on light ground" },
+    "amber-ink": { "$value": "#7f5312", "$description": "Amber as text" },
+    "focus-ring": { "$value": "#3f86a8" },
+    "chart": { "$value": ["#343b62", "#63a6c4", "#e2ac5a", "#d9856f", "#46527f"], "$description": "Series order" }
+  },
+  "semantic": {
+    "product": { "conductor": "{color.blue}", "clinic": "{color.coral}" },
+    "state": { "capture": "{color.blue}", "understand": "{color.indigo}", "act": "{color.amber}", "escalate": "{color.coral}" },
+    "status": { "live": "{color.blue}", "handoff": "{color.coral}", "done": "{color.amber}", "error": "{color.coral-ink}" }
+  },
+  "font": {
+    "sans": { "$value": "Instrument Sans, system-ui, sans-serif", "$description": "All reading text and headings, regular weight" },
+    "mono": { "$value": "JetBrains Mono, ui-monospace, monospace", "$description": "Eyebrows, labels, times, chips" }
+  },
+  "type": {
+    "hero": { "size": [68, 48, 36], "lineHeight": 1.0, "letterSpacing": "-0.04em", "weight": 400 },
+    "h2": { "size": [48, 30], "lineHeight": 1.05, "letterSpacing": "-0.025em", "weight": 400 },
+    "h3": { "size": 24, "lineHeight": 1.2, "weight": 400 },
+    "lede": { "size": [26, 20], "lineHeight": 1.5, "color": "{color.muted}" },
+    "body": { "size": [18, 16], "lineHeight": 1.6, "color": "{color.muted}" },
+    "eyebrow": { "font": "{font.mono}", "size": 14, "case": "sentence" },
+    "label": { "font": "{font.mono}", "size": 11, "case": "upper", "letterSpacing": "0.1em" },
+    "chip": { "font": "{font.mono}", "size": 9, "case": "upper", "weight": 600 }
+  },
+  "space": { "scale": [4, 8, 12, 16, 24, 32, 48, 64, 96, 128], "section": [96, 128], "contentMax": 1400, "gutter": [24, 48] },
+  "radius": { "box": 0, "pill": 999, "control": 4 },
+  "motion": {
+    "reveal": { "duration": 700, "easing": "ease-out", "translate": [16, 32], "stagger": 100 },
+    "headlineCycle": { "interval": 2600 },
+    "flow": { "duration": 1300, "easing": "ease-in-out" },
+    "chipFade": { "duration": 250 },
+    "reducedMotion": "single static frame, no loops"
+  }
+}
