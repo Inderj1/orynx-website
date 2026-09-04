@@ -1,159 +1,219 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ── Orynx brand. Logo is canonical: indigo #343b62 · blue #63a6c4 · coral #d9856f ── */
+  --brand-indigo: #343b62;        /* wordmark indigo — primary, Understand state */
+  --brand-indigo-deep: #2a3050;   /* Home.dc accent-800 — primary hover, deep fills */
+  --brand-night: #0f1430;         /* deepest indigo — layering inside dark sections, canvas ink on dark */
+  --brand-blue: #63a6c4;          /* logo ring — Conductor, Listen state, live dots (accent only on light) */
+  --brand-blue-soft: #e3eff4;     /* blue tint — tags, hover fills */
+  --brand-blue-ink: #2f5568;      /* text-safe blue, 7.3:1 on background */
+  --brand-coral: #d9856f;         /* logo ring — Care, Escalate state (accent only on light) */
+  --brand-coral-soft: #f8e9e4;    /* coral tint — tags */
+  --brand-coral-ink: #a2472f;     /* text-safe coral, 5.5:1 on background; also destructive */
+  --brand-coral-ink-deep: #8e3d27; /* coral-ink hover — Care button, mirrors indigo-deep */
+  --brand-amber: #e2ac5a;         /* Act state — Vite #f1ad53 brought down to logo chroma (accent only on light) */
+  --brand-amber-ink: #7f5312;     /* text-safe amber, 6.1:1 on background */
+
+  /* ── shadcn tokens (light theme only) ── */
+  --background: #f4f4f1;
+  --foreground: #1b1f38;
+  --card: #ffffff;
+  --card-foreground: #1b1f38;
+  --popover: #ffffff;
+  --popover-foreground: #1b1f38;
+  --primary: #343b62;
+  --primary-foreground: #f4f4f1;
+  --secondary: #eeeeea;
+  --secondary-foreground: #1b1f38;
+  --muted: #e9e9e4;
+  --muted-foreground: #4f5875;
+  --accent: #e3eff4;
+  --accent-foreground: #1b1f38;
+  --destructive: #a2472f;
+  --destructive-foreground: #f4f4f1;
+  --border: #d9dad6;
+  --input: #d9dad6;
+  --ring: #3f86a8;
+  --chart-1: #343b62;
+  --chart-2: #63a6c4;
+  --chart-3: #e2ac5a;
+  --chart-4: #d9856f;
+  --chart-5: #46527f;
+  --radius: 0.25rem;
+  --sidebar: #f4f4f1;
+  --sidebar-foreground: #1b1f38;
+  --sidebar-primary: #343b62;
+  --sidebar-primary-foreground: #f4f4f1;
+  --sidebar-accent: #e3eff4;
+  --sidebar-accent-foreground: #1b1f38;
+  --sidebar-border: #d9dad6;
+  --sidebar-ring: #3f86a8;
 }
 
-@layer base {
-  :root {
-    /* Orynx — blue-forward palette.
-       Core hexes:
-         #1F6BFF Primary blue · #2EA8FF Bright azure · #6FE8FF Cyan glow
-         #5B7CFF Soft indigo · #FFFFFF White · #F7FBFF Ice background
-         #EAF2FF Card tint · #4A5A78 Text slate · #2ED6A1 Success mint */
-
-    /* Surface */
-    --background: 210 100% 98%;        /* #F7FBFF ice background */
-    --foreground: 216 100% 12%;        /* deep navy headings */
-    --card: 0 0% 100%;                 /* #FFFFFF */
-    --card-foreground: 216 100% 12%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 216 100% 12%;
-
-    /* Primary = deep navy for type weight */
-    --primary: 216 100% 12%;
-    --primary-foreground: 210 100% 98%;
-
-    /* Secondary = card tint */
-    --secondary: 217 100% 96%;         /* #EAF2FF card tint */
-    --secondary-foreground: 216 100% 12%;
-
-    /* Muted */
-    --muted: 217 100% 96%;             /* #EAF2FF card tint */
-    --muted-foreground: 219 24% 38%;   /* #4A5A78 text slate */
-
-    /* Accent = primary blue (CTAs) */
-    --accent: 219 100% 56%;            /* #1F6BFF primary blue */
-    --accent-foreground: 0 0% 100%;
-
-    /* Destructive */
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    /* Borders / inputs / ring */
-    --border: 217 60% 92%;             /* soft icy border */
-    --input: 217 60% 92%;
-    --ring: 219 100% 56%;              /* #1F6BFF focus ring */
-
-    /* Charts */
-    --chart-1: 219 100% 56%;           /* primary blue */
-    --chart-2: 205 100% 59%;           /* bright azure */
-    --chart-3: 190 100% 72%;           /* cyan glow */
-    --chart-4: 228 100% 68%;           /* soft indigo */
-    --chart-5: 161 67% 51%;            /* success mint */
-
-    /* Radius */
-    --radius: 0.25rem;
-
-    /* Orynx semantic tokens */
-    --ink: 216 100% 12%;
-    --ink-soft: 219 24% 38%;           /* #4A5A78 text slate */
-    --ink-muted: 219 22% 55%;          /* lighter slate */
-    --brand-blue: 219 100% 56%;        /* #1F6BFF primary blue */
-    --brand-blue-bright: 205 100% 59%; /* #2EA8FF bright azure */
-    --accent-orange: 219 100% 56%;     /* CTA = primary blue */
-    --accent-orange-deep: 219 100% 42%;/* CTA hover (darker primary blue) */
-    --surface: 210 100% 98%;           /* #F7FBFF ice */
-    --rule: 217 60% 92%;               /* soft icy border */
-    --mint: 161 67% 51%;               /* #2ED6A1 success mint */
-
-    /* Legacy tokens REMAPPED to new palette */
-    --coral: 190 100% 72%;             /* #6FE8FF cyan glow */
-    --teal: 205 100% 59%;              /* #2EA8FF bright azure */
-    --gold: 228 100% 68%;              /* #5B7CFF soft indigo */
-
-    --bento-shadow: inset 0 1px 0 0 rgba(255,255,255,0.05), 0 1px 2px rgba(31,107,255,0.06);
-
-    /* Sidebar (shadcn) */
-    --sidebar-background: 210 100% 98%;
-    --sidebar-foreground: 219 24% 38%;
-    --sidebar-primary: 216 100% 12%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 100% 96%;
-    --sidebar-accent-foreground: 216 100% 12%;
-    --sidebar-border: 217 60% 92%;
-    --sidebar-ring: 219 100% 56%;
-  }
+@theme inline {
+  --font-sans: var(--font-instrument), 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
+  --font-display: var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand-indigo: var(--brand-indigo);
+  --color-brand-indigo-deep: var(--brand-indigo-deep);
+  --color-brand-night: var(--brand-night);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-soft: var(--brand-blue-soft);
+  --color-brand-blue-ink: var(--brand-blue-ink);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-coral-soft: var(--brand-coral-soft);
+  --color-brand-coral-ink: var(--brand-coral-ink);
+  --color-brand-coral-ink-deep: var(--brand-coral-ink-deep);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-amber-ink: var(--brand-amber-ink);
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   }
-  h1, h2, h3, h4 {
-    font-family: var(--font-display), var(--font-sans), ui-sans-serif, system-ui, sans-serif;
-    letter-spacing: -0.02em;
-  }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0) translateX(0); }
-  25% { transform: translateY(-10px) translateX(5px); }
-  50% { transform: translateY(-5px) translateX(-5px); }
-  75% { transform: translateY(-15px) translateX(3px); }
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes scroll-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes bento-shine {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
-}
-
-@keyframes dot-float {
-  0%, 100% {
-    transform: translate(0, 0);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translate(var(--float-x, 10px), var(--float-y, -15px));
-    opacity: 0.8;
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+  
+  .text-stroke {
+    -webkit-text-stroke: 1.5px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .marquee {
+    animation: marquee 30s linear infinite;
+  }
+  
+  .marquee-reverse {
+    animation: marquee-reverse 25s linear infinite;
+  }
 
-.typing-cursor::after {
-  content: "▋";
-  animation: blink 1s step-end infinite;
-  color: hsl(var(--accent-orange));
-  margin-left: 2px;
-}
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  @keyframes marquee-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  
+  .line-reveal {
+    clip-path: inset(0 100% 0 0);
+    animation: line-reveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+  
+  @keyframes line-reveal {
+    to { clip-path: inset(0 0 0 0); }
+  }
+  
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  
+  .letter-spin {
+    display: inline-block;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .letter-spin:hover {
+    transform: rotateY(360deg);
+  }
+  
+  .animate-char-in {
+    animation: char-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    filter: blur(40px);
+    transform: translateY(100%);
+  }
+  
+  @keyframes char-in {
+    0% {
+      opacity: 0;
+      filter: blur(40px);
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
 
-.hover-lift {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px rgba(0, 27, 58, 0.12);
+  .noise-overlay {
+    position: relative;
+  }
+  
+  .noise-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .border-sketch {
+    border: 1px solid transparent;
+    background: 
+      linear-gradient(var(--background), var(--background)) padding-box,
+      linear-gradient(135deg, var(--foreground) 25%, transparent 25%, transparent 50%, var(--foreground) 50%, var(--foreground) 75%, transparent 75%) border-box;
+    background-size: 100% 100%, 8px 8px;
+  }
 }
