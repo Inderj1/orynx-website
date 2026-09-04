@@ -24,7 +24,7 @@ const conductor: ProductDetail = {
   id: "conductor",
   tag: "Business operations",
   name: "Orynx Conductor",
-  body: "An AI operations layer for HVAC, plumbing, electrical and other service businesses. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
+  body: "An AI operations layer for heating, plumbing, electrical and other trades. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
   cta: { href: "/contact", label: "Book a Conductor demo" },
   features: [
     {
@@ -77,7 +77,7 @@ const care: ProductDetail = {
     {
       label: "04 · GOVERN",
       title: "Compliance and audit",
-      body: "Uses encryption, role-based access and reviewable logs designed to support HIPAA-aligned workflows.",
+      body: "Uses encryption, role-based access and reviewable logs designed to support UK and EU GDPR and the NHS Data Security and Protection Toolkit.",
     },
   ],
   workflow: ["Patient query", "Context gathered", "Rule applied", "Care team"],

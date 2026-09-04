@@ -41,7 +41,7 @@ follow-up   sent
     description: "Anything uncertain, sensitive or high-stakes reaches the right person with context attached.",
     trace: `uncertain   -> owner
 sensitive   -> care team
-high-stakes -> dispatcher
+high-stakes -> office
 
 // context attached, every time`,
   },

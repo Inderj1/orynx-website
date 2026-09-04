@@ -22,16 +22,16 @@ export type Scenario = {
 };
 
 // Illustrative requests, drawn from the same situations as the activity feed
-// (cooling outage, cancellation slot filled, invoice matched, clinical message escalated).
+// (boiler breakdown, cancellation slot filled, invoice matched, clinical message escalated).
 export const SCENARIOS: Scenario[] = [
-  { channel: "PHONE", type: "NEW REQUEST", vertical: "HVAC", time: "TUE 8:42 AM", quote: "“Our AC died overnight — can someone come today?”", result: "Urgency read · same-day slot held · dispatcher notified", outcome: "act" },
-  { channel: "SMS", type: "RESCHEDULE", vertical: "PLUMBING", time: "WED 12:10 PM", quote: "“Can we move Thursday to Friday morning?”", result: "Calendar updated · confirmation sent", outcome: "act" },
-  { channel: "SCRIBE", type: "CONSULTATION", vertical: "CLINIC", time: "TUE 11:05 AM", quote: "A 12-minute consultation, captured in the room.", result: "Structured note drafted · sent for clinician review", outcome: "act" },
-  { channel: "PATIENT PORTAL", type: "MESSAGE", vertical: "CLINIC", time: "MON 9:48 AM", quote: "“Is this something I should be worried about?”", result: "Clinical question · handed to the care team with context", outcome: "escalate" },
-  { channel: "EMAIL", type: "INVOICE", vertical: "ELECTRICAL", time: "THU 4:05 PM", quote: "“Did you get my payment for last week’s job?”", result: "Payment matched · invoice closed · books updated", outcome: "act" },
-  { channel: "BOOKS", type: "RECONCILIATION", vertical: "ELECTRICAL", time: "MON 7:30 AM", quote: "Three invoices past 30 days with no payment logged.", result: "Reminders queued · ledger flagged · owner briefed", outcome: "act" },
-  { channel: "WHATSAPP", type: "BOOKING", vertical: "HVAC", time: "FRI 10:20 AM", quote: "“Can you get me in on Tuesday?”", result: "Live availability checked · slot held", outcome: "act" },
-  { channel: "WEB CHAT", type: "CANCELLATION", vertical: "CLINIC", time: "MON 2:15 PM", quote: "“I need to cancel my 3pm today.”", result: "Slot released · priority list texted · gap filled", outcome: "act" },
+  { channel: "PHONE", type: "NEW REQUEST", vertical: "HEATING", time: "TUE 08:42", quote: "“Our boiler’s gone off overnight — can someone come today?”", result: "Urgency read · same-day slot held · engineer assigned", outcome: "act" },
+  { channel: "SMS", type: "RESCHEDULE", vertical: "PLUMBING", time: "WED 12:10", quote: "“Can we move Thursday to Friday morning?”", result: "Calendar updated · confirmation sent", outcome: "act" },
+  { channel: "SCRIBE", type: "CONSULTATION", vertical: "CLINIC", time: "TUE 11:05", quote: "A 12-minute consultation, captured in the room.", result: "Structured note drafted · sent for clinician review", outcome: "act" },
+  { channel: "PATIENT PORTAL", type: "MESSAGE", vertical: "CLINIC", time: "MON 09:48", quote: "“Is this something I should be worried about?”", result: "Clinical question · handed to the care team with context", outcome: "escalate" },
+  { channel: "EMAIL", type: "INVOICE", vertical: "ELECTRICAL", time: "THU 16:05", quote: "“Did you get my payment for last week’s job?”", result: "Payment matched · invoice closed · books updated", outcome: "act" },
+  { channel: "BOOKS", type: "RECONCILIATION", vertical: "ELECTRICAL", time: "MON 07:30", quote: "Three invoices past 30 days with no payment logged.", result: "Reminders queued · ledger flagged · owner briefed", outcome: "act" },
+  { channel: "WHATSAPP", type: "BOOKING", vertical: "HEATING", time: "FRI 10:20", quote: "“Can you get me in on Tuesday?”", result: "Live availability checked · slot held", outcome: "act" },
+  { channel: "WEB CHAT", type: "CANCELLATION", vertical: "CLINIC", time: "MON 14:15", quote: "“I need to cancel my 3pm today.”", result: "Slot released · priority list texted · gap filled", outcome: "act" },
 ];
 
 export const SCENARIO_LENGTH = 7; // seconds

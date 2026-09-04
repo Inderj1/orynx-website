@@ -32,12 +32,12 @@ const NODES: { name: string; x: number; y: number; tone: "blue" | "coral" }[] = 
   { name: "SCRIBE", x: -0.66, y: 0.2, tone: "coral" },
 ];
 const CHIPS: Record<string, string> = {
-  "NEW REQUEST": "SLOT · TODAY 2:30 PM · HELD",
-  RESCHEDULE: "MOVED · FRI 9:00 AM · CONFIRMED",
+  "NEW REQUEST": "SLOT · TODAY 14:30 · HELD",
+  RESCHEDULE: "MOVED · FRI 09:00 · CONFIRMED",
   MESSAGE: "CARE TEAM · WITH CONTEXT",
   INVOICE: "PAYMENT · MATCHED · CLOSED",
-  BOOKING: "SLOT · TUE 9:30 AM · HELD",
-  CANCELLATION: "3:00 PM · REFILLED · SMS SENT",
+  BOOKING: "SLOT · TUE 09:30 · HELD",
+  CANCELLATION: "15:00 · REFILLED · SMS SENT",
   CONSULTATION: "NOTE · DRAFTED · FOR REVIEW",
   RECONCILIATION: "3 INVOICES · REMINDERS QUEUED",
 };

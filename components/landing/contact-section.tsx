@@ -182,11 +182,11 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                 </div>
                 <div>
                   <label htmlFor="company" className={labelClass}>Company or clinic</label>
-                  <input id="company" name="company" type="text" autoComplete="organization" placeholder="Acme Co." required className={fieldClass} />
+                  <input id="company" name="company" type="text" autoComplete="organization" placeholder="Acme Ltd" required className={fieldClass} />
                 </div>
                 <div>
                   <label htmlFor="phone" className={labelClass}>Phone <span className="normal-case tracking-normal">(optional)</span></label>
-                  <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+1 555 000 0000" className={fieldClass} />
+                  <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+44 7700 900123" className={fieldClass} />
                 </div>
                 <div className="sm:col-span-2">
                   <label htmlFor="product" className={labelClass}>Which product?</label>

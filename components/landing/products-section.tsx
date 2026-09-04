@@ -9,7 +9,7 @@ const products = [
     number: "01",
     tag: "Business operations",
     title: "Orynx Conductor",
-    description: "The operations intelligence for HVAC, plumbing, electrical and other service teams. It watches calls, messages, schedules and the books, and handles the work that should not need supervision.",
+    description: "The operations intelligence for heating, plumbing, electrical and other trades. It watches calls, messages, schedules and the books, and handles the work that should not need supervision.",
     points: [
       "Answers calls and messages",
       "Books the jobs that pay first",

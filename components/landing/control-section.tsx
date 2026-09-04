@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const activity = [
-  { id: "01", title: "Incoming service call qualified", meta: "Customer · cooling outage", state: "Ready to book", tone: "bg-brand-blue" },
+  { id: "01", title: "Incoming service call qualified", meta: "Customer · boiler breakdown", state: "Ready to book", tone: "bg-brand-blue" },
   { id: "02", title: "Clinical message escalated", meta: "Patient portal · human review", state: "Assigned", tone: "bg-brand-coral" },
   { id: "03", title: "Invoice matched to completed job", meta: "Books · calendar · payment", state: "Synced", tone: "bg-brand-amber" },
   { id: "04", title: "Cancellation slot filled", meta: "Priority list · SMS", state: "Confirmed", tone: "bg-brand-amber" },

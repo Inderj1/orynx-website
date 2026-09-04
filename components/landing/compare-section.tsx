@@ -5,13 +5,13 @@ const products = [
   {
     name: "Orynx Conductor",
     description: "Business operations",
-    summary: "An AI operations layer for HVAC, plumbing, electrical and other service businesses. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
+    summary: "An AI operations layer for heating, plumbing, electrical and other trades. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
     rows: [
-      { label: "Primary users", value: "Home-service and field-service teams" },
+      { label: "Primary users", value: "Trades and field-service businesses" },
       { label: "Channels", value: "Phone, SMS, WhatsApp, chat and email" },
-      { label: "Scheduling", value: "Job value, capacity and dispatch" },
+      { label: "Scheduling", value: "Job value, capacity and engineer availability" },
       { label: "Documentation", value: "Jobs, invoices and payments" },
-      { label: "Human handoff", value: "Owner or dispatcher can step in any time" },
+      { label: "Human handoff", value: "Owner or office manager can step in any time" },
     ],
     capabilities: [
       { label: "01 · See", title: "Cross-system monitoring" },

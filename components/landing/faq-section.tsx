@@ -17,8 +17,8 @@ const faqs = [
     answer: "Yes. Automated actions are logged, reviewable and overridable. Your team can step into any conversation or workflow at any time.",
   },
   {
-    question: "Is Orynx Clinic designed for protected health information?",
-    answer: "Clinic is built for clinical environments with encryption, audit trails and access controls designed to support HIPAA-aligned workflows. Your deployment is reviewed against your specific requirements.",
+    question: "Is Orynx Clinic designed for patient data?",
+    answer: "Clinic is built for clinical environments with encryption, audit trails and access controls designed to support UK and EU GDPR, the NHS Data Security and Protection Toolkit and the Caldicott principles. Your deployment is reviewed against your specific requirements.",
   },
 ];
 
