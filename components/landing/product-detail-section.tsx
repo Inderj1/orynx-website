@@ -19,7 +19,7 @@ export type ProductDetail = {
   cta: { href: string; label: string };
   features: ProductFeature[];
   workflow: string[];
-  /* Conductor = blue, Care = coral: tints the eyebrow hairline and emits data-tone. */
+  /* Conductor = blue, Clinic = coral: tints the eyebrow hairline and emits data-tone. */
   tone: "blue" | "coral";
 };
 
@@ -28,7 +28,7 @@ const TONE_HAIRLINE: Record<ProductDetail["tone"], string> = {
   coral: "bg-brand-coral",
 };
 
-/* CTA fill: Conductor keeps the indigo primary; Care takes text-safe coral. */
+/* CTA fill: Conductor keeps the indigo primary; Clinic takes text-safe coral. */
 const TONE_BUTTON: Record<ProductDetail["tone"], string> = {
   blue: "bg-primary hover:bg-brand-indigo-deep",
   coral: "bg-brand-coral-ink hover:bg-brand-coral-ink-deep",

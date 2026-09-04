@@ -11,10 +11,10 @@
   --brand-blue: #63a6c4;          /* logo ring — Conductor, Listen state, live dots (accent only on light) */
   --brand-blue-soft: #e3eff4;     /* blue tint — tags, hover fills */
   --brand-blue-ink: #2f5568;      /* text-safe blue, 7.3:1 on background */
-  --brand-coral: #d9856f;         /* logo ring — Care, Escalate state (accent only on light) */
+  --brand-coral: #d9856f;         /* logo ring — Clinic, Escalate state (accent only on light) */
   --brand-coral-soft: #f8e9e4;    /* coral tint — tags */
   --brand-coral-ink: #a2472f;     /* text-safe coral, 5.5:1 on background; also destructive */
-  --brand-coral-ink-deep: #8e3d27; /* coral-ink hover — Care button, mirrors indigo-deep */
+  --brand-coral-ink-deep: #8e3d27; /* coral-ink hover — Clinic button, mirrors indigo-deep */
   --brand-amber: #e2ac5a;         /* Act state — Vite #f1ad53 brought down to logo chroma (accent only on light) */
   --brand-amber-ink: #7f5312;     /* text-safe amber, 6.1:1 on background */
 

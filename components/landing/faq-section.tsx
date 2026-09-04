@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "How quickly can Orynx go live?",
-    answer: "Most Conductor workspaces can begin handling calls and messages within a week. Care deployments include a focused clinical validation before they touch patient workflows.",
+    answer: "Most Conductor workspaces can begin handling calls and messages within a week. Clinic deployments include a focused clinical validation before they touch patient workflows.",
   },
   {
     question: "Will it sound like a robot?",
@@ -17,8 +17,8 @@ const faqs = [
     answer: "Yes. Automated actions are logged, reviewable and overridable. Your team can step into any conversation or workflow at any time.",
   },
   {
-    question: "Is Orynx Care designed for protected health information?",
-    answer: "Care is built for clinical environments with encryption, audit trails and access controls designed to support HIPAA-aligned workflows. Your deployment is reviewed against your specific requirements.",
+    question: "Is Orynx Clinic designed for protected health information?",
+    answer: "Clinic is built for clinical environments with encryption, audit trails and access controls designed to support HIPAA-aligned workflows. Your deployment is reviewed against your specific requirements.",
   },
 ];
 

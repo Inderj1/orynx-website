@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const contactEmail = "support@orynx.ai";
 const emails = ["support@orynx.ai"];
-const productOptions = ["Not sure yet", "Orynx Conductor", "Orynx Care"];
+const productOptions = ["Not sure yet", "Orynx Conductor", "Orynx Clinic"];
 const nextSteps = [
   "We review the workflow and match it to the right product.",
   "We spend 20 minutes showing Orynx against your process.",

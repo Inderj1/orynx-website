@@ -4,7 +4,7 @@ import { AnimatedWave } from "./animated-wave";
 const footerLinks = {
   Products: [
     { name: "Orynx Conductor", href: "/products#conductor" },
-    { name: "Orynx Care", href: "/products#care" },
+    { name: "Orynx Clinic", href: "/products#clinic" },
     { name: "Compare products", href: "/products#compare" },
   ],
   Company: [

@@ -23,15 +23,15 @@ const products = [
   {
     number: "02",
     tag: "Clinical operations",
-    title: "Orynx Care",
+    title: "Orynx Clinic",
     description: "An AI clinic assistant built around patient workflows. It handles the administration surrounding care while leaving clinical judgment exactly where it belongs.",
     points: [
       "Drafts ambient clinical notes",
       "Supports triage, scheduling and reminders",
       "Escalates clinical decisions to the care team",
     ],
-    cta: "Explore Care",
-    href: "/products#care",
+    cta: "Explore Clinic",
+    href: "/products#clinic",
     visual: "care",
     tone: { dot: "bg-brand-coral", visual: "text-brand-coral" },
   },
@@ -96,7 +96,7 @@ function ConductorVisual() {
   );
 }
 
-/* Care: patient and clinician kept in sync, with the clinician's judgment in the loop. */
+/* Clinic: patient and clinician kept in sync, with the clinician's judgment in the loop. */
 function CareVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
@@ -241,7 +241,7 @@ export function ProductsSection() {
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:justify-self-end">
             Orynx Conductor runs the operational front desk for service businesses. 
-            Orynx Care removes the administrative drag around clinical work. 
+            Orynx Clinic removes the administrative drag around clinical work. 
             Each is purpose-built for its environment.
           </p>
         </div>

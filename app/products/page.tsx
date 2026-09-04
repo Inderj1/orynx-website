@@ -10,12 +10,12 @@ import { CtaSection } from "@/components/landing/cta-section";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore Orynx Conductor for business operations and Orynx Care for clinical teams.",
+    "Explore Orynx Conductor for business operations and Orynx Clinic for clinical teams.",
 };
 
 const jumpLinks = [
   { href: "#conductor", label: "Orynx Conductor ↓" },
-  { href: "#care", label: "Orynx Care ↓" },
+  { href: "#clinic", label: "Orynx Clinic ↓" },
   { href: "#compare", label: "Compare products ↓" },
 ];
 
@@ -52,11 +52,11 @@ const conductor: ProductDetail = {
 };
 
 const care: ProductDetail = {
-  id: "care",
+  id: "clinic",
   tag: "Clinical operations",
-  name: "Orynx Care",
+  name: "Orynx Clinic",
   body: "An AI clinic assistant that handles the work around the visit—documentation, routine messages, scheduling and reminders—while clinical decisions remain with clinicians.",
-  cta: { href: "/contact", label: "Book a Care demo" },
+  cta: { href: "/contact", label: "Book a Clinic demo" },
   features: [
     {
       label: "01 · DOCUMENT",
@@ -91,7 +91,7 @@ export default function ProductsPage() {
         title="Different work."
         titleAccent="The same standard of follow-through."
         visual="wave"
-        lede="Conductor runs the operational front desk for service businesses. Care handles the administrative work surrounding clinical care. Both know when to act and when to bring in a person."
+        lede="Conductor runs the operational front desk for service businesses. Clinic handles the administrative work surrounding clinical care. Both know when to act and when to bring in a person."
       >
         <div className="flex flex-wrap gap-3">
           {jumpLinks.map((link) => (

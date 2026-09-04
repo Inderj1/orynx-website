@@ -25,7 +25,7 @@ const products = [
     ctaHover: "hover:border-brand-blue-ink hover:text-brand-blue-ink",
   },
   {
-    name: "Orynx Care",
+    name: "Orynx Clinic",
     description: "Clinical operations",
     summary: "An AI clinic assistant that handles the work around the visit—documentation, routine messages, scheduling and reminders—while clinical decisions remain with clinicians.",
     rows: [
@@ -41,7 +41,7 @@ const products = [
       { label: "03 · Communicate", title: "Patient messaging" },
       { label: "04 · Govern", title: "Compliance and audit" },
     ],
-    cta: "Book a Care demo",
+    cta: "Book a Clinic demo",
     highlight: false,
     dot: "bg-brand-coral",
     ctaHover: "hover:border-brand-coral-ink hover:text-brand-coral-ink",
@@ -64,7 +64,7 @@ export function CompareSection() {
             <span className="text-brand-coral-ink">not feature count.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Conductor and Care share an operating philosophy, but their data, language 
+            Conductor and Clinic share an operating philosophy, but their data, language 
             and escalation boundaries are deliberately different.
           </p>
         </div>
