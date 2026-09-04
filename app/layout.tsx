@@ -23,7 +23,6 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = 'https://orynx.ai'
-const SITE_TITLE = 'ORYNX — Applied AI that runs the work'
 const SITE_DESCRIPTION =
   'Orynx builds applied AI that handles calls, messages, scheduling and operations for businesses and clinical teams.'
 
@@ -39,13 +38,13 @@ export const metadata: Metadata = {
     siteName: 'ORYNX',
     type: 'website',
     url: SITE_URL,
-    title: SITE_TITLE,
+    title: 'ORYNX',
     description: SITE_DESCRIPTION,
     images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: SITE_TITLE,
+    title: 'ORYNX',
     description: SITE_DESCRIPTION,
     images: ['/og-image.png'],
   },
