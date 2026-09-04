@@ -24,7 +24,7 @@ const products = [
     number: "02",
     tag: "Clinical operations",
     title: "Orynx Clinic",
-    description: "An AI clinic assistant built around patient workflows. It handles the administration surrounding care while leaving clinical judgment exactly where it belongs.",
+    description: "An AI clinic assistant built around patient workflows. It handles the administration surrounding clinical care while leaving clinical judgment exactly where it belongs.",
     points: [
       "Drafts ambient clinical notes",
       "Supports triage, scheduling and reminders",

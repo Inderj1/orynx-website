@@ -29,7 +29,7 @@ const products = [
     description: "Clinical operations",
     summary: "An AI clinic assistant that handles the work around the visit—documentation, routine messages, scheduling and reminders—while clinical decisions remain with clinicians.",
     rows: [
-      { label: "Primary users", value: "Clinics, clinicians and care operations" },
+      { label: "Primary users", value: "Clinics, clinicians and clinical operations" },
       { label: "Channels", value: "Patient messaging, phone and scheduling channels" },
       { label: "Scheduling", value: "Clinical rules, urgency and availability" },
       { label: "Documentation", value: "Ambient clinical notes and audit history" },
