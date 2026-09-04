@@ -4,8 +4,8 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-const contactEmail = "hello@orynx.ai";
-const emails = ["hello@orynx.ai", "sales@orynx.ai", "care@orynx.ai"];
+const contactEmail = "support@orynx.ai";
+const emails = ["support@orynx.ai"];
 const productOptions = ["Not sure yet", "Orynx Conductor", "Orynx Care"];
 const nextSteps = [
   "We review the workflow and match it to the right product.",

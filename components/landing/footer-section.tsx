@@ -13,15 +13,11 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   "Get in touch": [
-    { name: "hello@orynx.ai", href: "mailto:hello@orynx.ai" },
+    { name: "support@orynx.ai", href: "mailto:support@orynx.ai" },
     { name: "Book a demo", href: "/contact" },
   ],
 };
 
-const emailLinks = [
-  { name: "sales@orynx.ai", href: "mailto:sales@orynx.ai" },
-  { name: "care@orynx.ai", href: "mailto:care@orynx.ai" },
-];
 
 const linkClass =
   "text-sm text-muted-foreground hover:text-brand-coral-ink transition-colors inline-flex items-center gap-2";
@@ -49,20 +45,6 @@ export function FooterSection() {
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
                 Applied AI for the businesses and clinics that keep the world running.
               </p>
-
-              {/* Email Links */}
-              <div className="flex gap-6">
-                {emailLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-brand-coral-ink transition-colors flex items-center gap-1 group"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Link Columns */}
