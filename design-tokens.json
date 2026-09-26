@@ -17,7 +17,7 @@
     "indigo": { "$value": "#343b62", "$description": "Wordmark. Primary buttons, Understand state" },
     "indigo-deep": { "$value": "#2a3050", "$description": "Primary hover" },
     "indigo-slate": { "$value": "#46527f", "$description": "Logo outer ring, chart series 5" },
-    "blue": { "$value": "#63a6c4", "$description": "Orynx Conductor, Capture state, live dots. Accent only on light ground" },
+    "blue": { "$value": "#63a6c4", "$description": "Orynx Desk, Capture state, live dots. Accent only on light ground" },
     "blue-ink": { "$value": "#2f5568", "$description": "Blue as text on the light ground" },
     "blue-soft": { "$value": "#e3eff4", "$description": "Blue tint" },
     "coral": { "$value": "#d9856f", "$description": "Orynx Clinic, Escalate state, highlights. Accent only on light ground" },
@@ -30,7 +30,7 @@
     "chart": { "$value": ["#343b62", "#63a6c4", "#e2ac5a", "#d9856f", "#46527f"], "$description": "Series order" }
   },
   "semantic": {
-    "product": { "conductor": "{color.blue}", "clinic": "{color.coral}" },
+    "product": { "desk": "{color.blue}", "clinic": "{color.coral}" },
     "state": { "capture": "{color.blue}", "understand": "{color.indigo}", "act": "{color.amber}", "escalate": "{color.coral}" },
     "status": { "live": "{color.blue}", "handoff": "{color.coral}", "done": "{color.amber}", "error": "{color.coral-ink}" }
   },

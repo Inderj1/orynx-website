@@ -3,7 +3,7 @@ import { AnimatedWave } from "./animated-wave";
 
 const footerLinks = {
   Products: [
-    { name: "Orynx Conductor", href: "/products#conductor" },
+    { name: "Orynx Desk", href: "/products#desk" },
     { name: "Orynx Clinic", href: "/products#clinic" },
     { name: "Compare products", href: "/products#compare" },
   ],

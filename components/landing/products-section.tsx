@@ -8,16 +8,16 @@ const products = [
   {
     number: "01",
     tag: "Business operations",
-    title: "Orynx Conductor",
+    title: "Orynx Desk",
     description: "The operations intelligence for heating, plumbing, electrical and other trades. It watches calls, messages, schedules and the books, and handles the work that should not need supervision.",
     points: [
       "Answers calls and messages",
       "Books the jobs that pay first",
       "Keeps schedules, invoices and the books in sync",
     ],
-    cta: "Explore Conductor",
-    href: "/products#conductor",
-    visual: "conductor",
+    cta: "Explore Desk",
+    href: "/products#desk",
+    visual: "desk",
     tone: { dot: "bg-brand-blue", visual: "text-brand-blue" },
   },
   {
@@ -37,8 +37,8 @@ const products = [
   },
 ];
 
-/* Conductor: one operating context watching every connected system. */
-function ConductorVisual() {
+/* Desk: one operating context watching every connected system. */
+function DeskVisual() {
   return (
     <svg viewBox="0 0 200 160" className="w-full h-full">
       <circle cx="100" cy="80" r="12" fill="currentColor">
@@ -190,7 +190,7 @@ function ProductRow({ product, index }: { product: typeof products[0]; index: nu
           {/* Visual */}
           <div className="flex justify-center lg:justify-end">
             <div className={`w-48 h-40 ${product.tone.visual}`} aria-hidden="true">
-              {product.visual === "care" ? <CareVisual /> : <ConductorVisual />}
+              {product.visual === "care" ? <CareVisual /> : <DeskVisual />}
             </div>
           </div>
         </div>
@@ -240,7 +240,7 @@ export function ProductsSection() {
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:justify-self-end">
-            Orynx Conductor is the operations intelligence for service businesses. 
+            Orynx Desk is the operations intelligence for service businesses. 
             Orynx Clinic is the clinical intelligence for practices. 
             Each is purpose-built for its environment.
           </p>

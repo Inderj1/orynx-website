@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "How quickly can Orynx go live?",
-    answer: "Most Conductor workspaces can begin handling calls and messages within a week. Clinic deployments include a focused clinical validation before they touch patient workflows.",
+    answer: "Most Desk workspaces can begin handling calls and messages within a week. Clinic deployments include a focused clinical validation before they touch patient workflows.",
   },
   {
     question: "Will it sound like a robot?",

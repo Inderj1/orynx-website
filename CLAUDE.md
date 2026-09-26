@@ -34,10 +34,10 @@ Do not add dependencies without a reason. No three.js, no CSS-in-JS, no new font
 
 **Colour is an accent system, never a fill.**
 - Indigo `#343b62` (`bg-primary`): primary buttons, Understand state, dark sections via `bg-foreground`.
-- Blue `#63a6c4` (`brand-blue`): **Orynx Conductor**, Capture state, live status dots.
+- Blue `#63a6c4` (`brand-blue`): **Orynx Desk**, Capture state, live status dots.
 - Coral `#d9856f` (`brand-coral`): **Orynx Clinic**, Escalate state, highlighted phrases, eyebrow rules, nav underline, the Contact pill, numbering, link arrows.
 - Amber `#e2ac5a` (`brand-amber`): Act state, result chips.
-- Never swap Conductor blue and Clinic coral.
+- Never swap Desk blue and Clinic coral.
 - The light hue is for dots, strokes, rules and tints. As soon as a colour is readable text on the light ground use its ink partner: `text-brand-blue-ink` `#2f5568`, `text-brand-coral-ink` `#a2472f`, `text-brand-amber-ink` `#7f5312`. On the dark indigo ground the light hue is fine as text.
 
 **Type.** Instrument Sans for all reading text, regular weight even for headings. JetBrains Mono for eyebrows, labels, times, chips. Scale: hero 68/48/36 px, section h2 `text-3xl lg:text-5xl`, h3 `text-xl lg:text-2xl`, body 16 to 18 px, lede 26 px. Headings are never bold. The second line of a heading is often `text-brand-coral-ink`. Use standard Tailwind size classes, not arbitrary `clamp()` values.
@@ -58,7 +58,7 @@ Do not add dependencies without a reason. No three.js, no CSS-in-JS, no new font
 
 - The positioning is **intelligence first**: Orynx takes work however it arrives (a call, a message, a consultation to scribe, a set of books), understands it, acts on it, and brings a person in when judgment matters. Do not write as if everything starts with a phone call.
 - Workflow states are Capture, Understand, Act, Escalate.
-- Products are **Orynx Conductor** (trades and field service) and **Orynx Clinic** (practices and clinics). Never "Orynx Care": "care" means social care in the UK.
+- Products are **Orynx Desk** (trades and field service) and **Orynx Clinic** (practices and clinics). Never "Orynx Care": "care" means social care in the UK.
 - **UK English and UK context**: heating engineers not HVAC, boiler not AC, office manager not dispatcher, practices, UK and EU GDPR and the NHS Data Security and Protection Toolkit not HIPAA, patient data not PHI, 24-hour times, +44 numbers, Ltd not Co. Spelling: prioritise, organisation, colour. The site uses "judgment".
 - One contact address everywhere: support@orynx.ai.
 - Short declaratives, full stops in headlines, no exclamation marks, no "AI-powered". Name the human hand-off as a feature.

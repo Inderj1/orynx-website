@@ -20,7 +20,7 @@ When asked to design or build anything for Orynx:
 
 Orynx builds applied AI intelligence for service businesses and clinics. It takes work however it arrives, a call, a message, a consultation to scribe, a set of books, understands it, acts on it, and brings a person in exactly when judgment matters.
 
-- **Orynx Conductor.** Operations intelligence for trades and field-service businesses: heating, plumbing, electrical and similar.
+- **Orynx Desk.** Operations intelligence for trades and field-service businesses: heating, plumbing, electrical and similar.
 - **Orynx Clinic.** Clinical intelligence for practices and clinics: ambient scribe, triage, scheduling, patient messaging, with clinical judgment staying with clinicians.
 
 Workflow, always in this order: **Capture → Understand → Act → Escalate.**
@@ -51,7 +51,7 @@ Each hue has a light form for dots, strokes, rules and tints, and an ink form fo
 | Hue | Light | Ink (text) | Tint | Meaning |
 | --- | --- | --- | --- | --- |
 | Indigo | `#343b62` | `#343b62` (hover `#2a3050`) | | Wordmark. Primary buttons. Understand state. Dark sections |
-| Blue | `#63a6c4` | `#2f5568` | `#e3eff4` | **Orynx Conductor.** Capture state. Live status |
+| Blue | `#63a6c4` | `#2f5568` | `#e3eff4` | **Orynx Desk.** Capture state. Live status |
 | Coral | `#d9856f` | `#a2472f` (hover `#8e3d27`) | `#f8e9e4` | **Orynx Clinic.** Escalate and human hand-off. Highlighted phrases, eyebrow rules, nav underline, Contact button, numbering, link arrows. Errors |
 | Amber | `#e2ac5a` | `#7f5312` | | Act state. Results and confirmations |
 | Slate indigo | `#46527f` | | | Logo outer ring. Fifth chart series |
@@ -61,7 +61,7 @@ Focus ring `#3f86a8`, solid. Chart series order: indigo, blue, amber, coral, sla
 ### Rules
 
 - The page is white and indigo. Colour is a signal, never a fill. No coloured backgrounds larger than a chip or a tint behind a tag.
-- Conductor is blue, Clinic is coral. Never swap them.
+- Desk is blue, Clinic is coral. Never swap them.
 - Highlighted words in a headline are coral ink, optionally with a 12 px bar under them in coral at 25 % alpha.
 - No gradients, no glows, no coloured shadows.
 
@@ -108,7 +108,7 @@ All measurements in px. Hairline means 1 px in ink at 10 % alpha.
 
 **Bordered box.** Square corners, hairline border, card or page fill. Optional header row: mono label left, status dot and label right, hairline below. Rows divided by hairlines, never boxed individually.
 
-**Status dot.** 8 px circle, always beside a text label. Blue live or Conductor, coral hand-off or Clinic, amber done, indigo neutral.
+**Status dot.** 8 px circle, always beside a text label. Blue live or Desk, coral hand-off or Clinic, amber done, indigo neutral.
 
 **Numbering.** `01 · SEE` style mono labels in coral ink. Only where the content is genuinely a sequence.
 
@@ -149,7 +149,7 @@ All measurements in px. Hairline means 1 px in ink at 10 % alpha.
 
 - **Intelligence first.** Lead with what the intelligence does with work however it arrives. Never write as if everything starts with a phone call.
 - **UK English, UK context.** Heating engineers not HVAC, boiler not AC, office manager not dispatcher, practices and clinics, UK and EU GDPR and the NHS Data Security and Protection Toolkit not HIPAA, patient data not PHI, 24-hour times, +44 numbers, Ltd not Co. Spell prioritise, organisation, colour. The site uses "judgment".
-- **Names.** Orynx Conductor, Orynx Clinic. Never "Orynx Care". The company is ORYNX in the wordmark, Orynx in prose.
+- **Names.** Orynx Desk, Orynx Clinic. Never "Orynx Care". The company is ORYNX in the wordmark, Orynx in prose.
 - **Tone.** Short declaratives. Concrete outcomes. No "AI-powered", no "seamless", no "revolutionary", no exclamation marks.
 - **Human hand-off is a feature.** Say when a person takes over and what context they get.
 - **Contact.** One address everywhere: support@orynx.ai.
@@ -176,7 +176,7 @@ All measurements in px. Hairline means 1 px in ink at 10 % alpha.
 Background   #f7f8fc     Card        #ffffff
 Ink          #1b1f38     Muted       #4f5875     Border  #d9dde8 (or ink 10 %)
 Indigo       #343b62     hover       #2a3050     Night   #0f1430
-Blue         #63a6c4     text        #2f5568     tint    #e3eff4   Conductor · Capture · live
+Blue         #63a6c4     text        #2f5568     tint    #e3eff4   Desk · Capture · live
 Coral        #d9856f     text        #a2472f     tint    #f8e9e4   Clinic · Escalate · highlights
 Amber        #e2ac5a     text        #7f5312                       Act · results
 Focus ring   #3f86a8

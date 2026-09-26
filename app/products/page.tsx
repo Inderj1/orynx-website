@@ -11,21 +11,21 @@ import { LegacyAnchorRedirect } from "@/components/landing/legacy-anchor-redirec
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore Orynx Conductor for business operations and Orynx Clinic for clinical teams.",
+    "Explore Orynx Desk for business operations and Orynx Clinic for clinical teams.",
 };
 
 const jumpLinks = [
-  { href: "#conductor", label: "Orynx Conductor ↓" },
+  { href: "#desk", label: "Orynx Desk ↓" },
   { href: "#clinic", label: "Orynx Clinic ↓" },
   { href: "#compare", label: "Compare products ↓" },
 ];
 
-const conductor: ProductDetail = {
-  id: "conductor",
+const desk: ProductDetail = {
+  id: "desk",
   tag: "Business operations",
-  name: "Orynx Conductor",
-  body: "An AI operations layer for heating, plumbing, electrical and other trades. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
-  cta: { href: "/contact", label: "Book a Conductor demo" },
+  name: "Orynx Desk",
+  body: "An AI operations layer for heating, plumbing, electrical and other trades. Desk watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
+  cta: { href: "/contact", label: "Book a Desk demo" },
   features: [
     {
       label: "01 · SEE",
@@ -87,14 +87,14 @@ const care: ProductDetail = {
 export default function ProductsPage() {
   return (
     <>
-      {/* /products#care was the section id before the Clinic rename */}
-      <LegacyAnchorRedirect map={{ care: "clinic" }} />
+      {/* Old section ids: #care before the Clinic rename, #conductor before the Desk rename */}
+      <LegacyAnchorRedirect map={{ care: "clinic", conductor: "desk" }} />
       <PageHero
         eyebrow="Two purpose-built products"
         title="Different work."
         titleAccent="The same standard of follow-through."
         visual="wave"
-        lede="Conductor runs the operational front desk for service businesses. Clinic handles the administrative work surrounding clinical care. Both know when to act and when to bring in a person."
+        lede="Desk runs the operational front desk for service businesses. Clinic handles the administrative work surrounding clinical care. Both know when to act and when to bring in a person."
       >
         <div className="flex flex-wrap gap-3">
           {jumpLinks.map((link) => (
@@ -109,7 +109,7 @@ export default function ProductsPage() {
         </div>
       </PageHero>
 
-      <ProductDetailSection {...conductor} />
+      <ProductDetailSection {...desk} />
       <div className="border-t border-foreground/10" />
       <ProductDetailSection {...care} />
 

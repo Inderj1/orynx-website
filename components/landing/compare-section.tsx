@@ -3,9 +3,9 @@ import { ArrowRight, Check } from "lucide-react";
 
 const products = [
   {
-    name: "Orynx Conductor",
+    name: "Orynx Desk",
     description: "Business operations",
-    summary: "An AI operations layer for heating, plumbing, electrical and other trades. Conductor watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
+    summary: "An AI operations layer for heating, plumbing, electrical and other trades. Desk watches calls, calendar, inbox and books, then handles the work that should not need an owner’s attention.",
     rows: [
       { label: "Primary users", value: "Trades and field-service businesses" },
       { label: "Channels", value: "Phone, SMS, WhatsApp, chat and email" },
@@ -19,7 +19,7 @@ const products = [
       { label: "03 · Prioritise", title: "Margin-aware booking" },
       { label: "04 · Reconcile", title: "Schedule and books in sync" },
     ],
-    cta: "Book a Conductor demo",
+    cta: "Book a Desk demo",
     highlight: false,
     dot: "bg-brand-blue",
     ctaHover: "hover:border-brand-blue-ink hover:text-brand-blue-ink",
@@ -64,7 +64,7 @@ export function CompareSection() {
             <span className="text-brand-coral-ink">not feature count.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-xl">
-            Conductor and Clinic share an operating philosophy, but their data, language 
+            Desk and Clinic share an operating philosophy, but their data, language 
             and escalation boundaries are deliberately different.
           </p>
         </div>

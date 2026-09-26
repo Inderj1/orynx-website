@@ -6,7 +6,7 @@ The reference for anything that should look like orynx.ai: decks, documents, pro
 
 - **Editorial, not techy.** Large type, generous white space, hairline rules. No gradients, no glows, no drop shadows on cards, no rounded cards. The only rounded shapes are pill buttons and pill chips.
 - **Colour is an accent system.** The page is bright white and deep indigo. Blue, coral and amber appear as dots, rules, underlines, chips and highlighted phrases, never as large fills.
-- **Two products, two hues.** Conductor is blue. Clinic is coral. Never swap them.
+- **Two products, two hues.** Desk is blue. Clinic is coral. Never swap them.
 - **One workflow, four states.** Capture is blue, Understand is indigo, Act is amber, Escalate is coral. Anything that shows a step in the pipeline uses these.
 - **Intelligence first.** Copy leads with what the intelligence does with work however it arrives, not with the phone. UK English throughout.
 
@@ -31,7 +31,7 @@ The reference for anything that should look like orynx.ai: decks, documents, pro
 | --- | --- | --- | --- |
 | Indigo | `#343b62` | Wordmark. Primary buttons, Understand state | itself (9.8:1 on background) |
 | Indigo deep | `#2a3050` | Primary button hover | |
-| Blue | `#63a6c4` | Logo ring. **Conductor**, Capture state, live status dots | Blue ink `#2f5568` |
+| Blue | `#63a6c4` | Logo ring. **Desk**, Capture state, live status dots | Blue ink `#2f5568` |
 | Coral | `#d9856f` | Logo ring. **Clinic**, Escalate state, highlight phrases, nav underline, Contact pill | Coral ink `#a2472f` (hover `#8e3d27`) |
 | Amber | `#e2ac5a` | Act state, result chips | Amber ink `#7f5312` |
 
@@ -68,7 +68,7 @@ Heading rule: headings are regular weight, never bold. Emphasis comes from size 
 - **Coral phrase.** The second line or last clause of a headline set in coral ink, with an optional 12 px underline bar in coral at 25 %.
 - **Numbering.** Mono labels like `01 · SEE`, `02 · TRUST` in coral ink.
 - **Bordered box.** 1 px ink-at-10 % border, no radius, white or page ground fill, optional header row with a mono label and a status dot.
-- **Status dot.** 8 px circle: blue = live or Conductor, coral = Clinic or human hand-off, amber = action taken. Always paired with a text label.
+- **Status dot.** 8 px circle: blue = live or Desk, coral = Clinic or human hand-off, amber = action taken. Always paired with a text label.
 - **Pill.** Fully rounded, 36 to 56 px tall. Primary: indigo fill, white text. Secondary: 1 px ink-at-20 % outline. Contact: coral-ink outline, fills coral ink when active.
 - **Result chip.** Pill, 15 to 18 px tall, mono 8 to 9 px uppercase, paper fill, 1 px stroke in the state colour, text in the state's ink.
 - **Card pop-up.** White, 1 px border, soft indigo shadow, mono header row (channel · type on the left, vertical · time on the right), 13 px sentence, mono result line starting with →.
@@ -98,7 +98,7 @@ Heading rule: headings are regular weight, never bold. Emphasis comes from size 
 - Short declaratives. Full stops in headlines. No exclamation marks.
 - UK English and UK context: trades, engineers, practices, GDPR, NHS DSPT, 24-hour times, +44.
 - Name the human hand-off as a feature, not a fallback.
-- Product names: Orynx Conductor, Orynx Clinic. The company is ORYNX in the wordmark and Orynx in prose.
+- Product names: Orynx Desk, Orynx Clinic. The company is ORYNX in the wordmark and Orynx in prose.
 
 ## 8. Quick-apply values
 
