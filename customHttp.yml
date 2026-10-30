@@ -1,0 +1,16 @@
+# Amplify custom headers (read from the repo root on each build).
+# iPhones only open a Wallet pass or a contact card in place when the file has the right type;
+# without these, Amplify serves both as downloads.
+customHeaders:
+  - pattern: '**/*.pkpass'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/vnd.apple.pkpass'
+      - key: 'Cache-Control'
+        value: 'public, max-age=300'
+  - pattern: '**/*.vcf'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/vcard; charset=utf-8'
+      - key: 'Cache-Control'
+        value: 'public, max-age=300'

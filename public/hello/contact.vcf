@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:;;;;
+FN:Orynx
+ORG:ORYNX LTD
+X-ABShowAs:COMPANY
+EMAIL;TYPE=INTERNET,WORK:support@orynx.ai
+TEL;TYPE=WORK,VOICE:+447985309592
+URL;TYPE=WORK:https://orynx.ai
+X-SOCIALPROFILE;TYPE=linkedin:https://uk.linkedin.com/company/orynx
+NOTE:Applied AI for service businesses and clinics.
+END:VCARD

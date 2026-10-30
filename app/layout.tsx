@@ -1,8 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
-import { Navigation } from '@/components/landing/navigation'
-import { FooterSection } from '@/components/landing/footer-section'
 import './globals.css'
 
 const instrumentSans = Instrument_Sans({ 
@@ -88,18 +86,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
-        {/* overflow-x-clip (not hidden) so this wrapper never becomes a scroll container, which would break position: sticky */}
-        <div className="relative min-h-screen overflow-x-clip noise-overlay">
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-5 focus:py-2 focus:rounded-full focus:bg-foreground focus:text-background focus:text-sm"
-          >
-            Skip to content
-          </a>
-          <Navigation />
-          <main id="main">{children}</main>
-          <FooterSection />
-        </div>
+        {children}
       </body>
     </html>
   )

@@ -1,0 +1,22 @@
+{
+  "siteUrl": "https://orynx.ai",
+  "org": {
+    "name": "Orynx",
+    "legalName": "ORYNX LTD",
+    "tagline": "Applied AI for service businesses and clinics",
+    "email": "support@orynx.ai",
+    "phone": "+447985309592",
+    "phoneDisplay": "+44 7985 309592",
+    "linkedin": "https://uk.linkedin.com/company/orynx"
+  },
+  "people": [
+    {
+      "slug": "theo-tuc7k",
+      "firstName": "Theo",
+      "lastName": "Raptaki",
+      "role": "Chief Marketing Officer",
+      "email": "theo.raptaki@orynx.ai",
+      "linkedin": "https://www.linkedin.com/in/theonymfi-s-6a997a50/"
+    }
+  ]
+}
