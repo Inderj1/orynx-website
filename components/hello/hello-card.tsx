@@ -44,6 +44,7 @@ export function HelloCard({ person }: { person?: HelloPerson }) {
   const reach: Row[] = person
     ? [
         { label: person.email, href: `mailto:${person.email}` },
+        ...(person.phone ? [{ label: person.phoneDisplay!, href: `tel:${person.phone}` }] : []),
         { label: "LinkedIn", href: person.linkedin },
         site,
       ]

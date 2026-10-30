@@ -57,7 +57,10 @@ const allCards = [
       description: `Orynx contact card: ${p.firstName} ${p.lastName}`,
       primary: { key: "name", label: "NAME", value: `${p.firstName} ${p.lastName}` },
       secondary: [{ key: "role", label: "ROLE", value: p.role }],
-      auxiliary: [{ key: "email", label: "EMAIL", value: p.email }],
+      auxiliary: [
+        { key: "email", label: "EMAIL", value: p.email },
+        ...(p.phone ? [{ key: "phone", label: "MOBILE", value: p.phoneDisplay }] : []),
+      ],
       back: [
         { key: "web", label: "Website", value: cards.siteUrl },
         { key: "linkedin", label: "LinkedIn", value: p.linkedin },
@@ -92,6 +95,7 @@ function personVcard(p) {
     `ORG:${cards.org.legalName}`,
     `TITLE:${p.role}`,
     `EMAIL;TYPE=INTERNET,WORK:${p.email}`,
+    ...(p.phone ? [`TEL;TYPE=CELL,VOICE:${p.phone}`] : []),
     `URL;TYPE=WORK:${cards.siteUrl}`,
     `X-SOCIALPROFILE;TYPE=linkedin:${p.linkedin}`,
   ]);

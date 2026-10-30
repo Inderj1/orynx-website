@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Singh;Inder;;;
+FN:Inder Singh
+ORG:ORYNX LTD
+TITLE:Chief Technology Officer
+EMAIL;TYPE=INTERNET,WORK:inder.singh@orynx.ai
+TEL;TYPE=CELL,VOICE:+14793060212
+URL;TYPE=WORK:https://orynx.ai
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/inderjeet-s-6585a721/
+END:VCARD

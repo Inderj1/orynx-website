@@ -17,6 +17,26 @@
       "role": "Chief Marketing Officer",
       "email": "theo.raptaki@orynx.ai",
       "linkedin": "https://www.linkedin.com/in/theonymfi-s-6a997a50/"
+    },
+    {
+      "slug": "prateek-79cq6",
+      "firstName": "Prateek",
+      "lastName": "Rangra",
+      "role": "Chief Executive Officer",
+      "email": "prateek.rangra@orynx.ai",
+      "phone": "+447412496007",
+      "phoneDisplay": "+44 7412 496007",
+      "linkedin": "https://www.linkedin.com/in/prateek-rangra-13820936/"
+    },
+    {
+      "slug": "inder-68zlo",
+      "firstName": "Inder",
+      "lastName": "Singh",
+      "role": "Chief Technology Officer",
+      "email": "inder.singh@orynx.ai",
+      "phone": "+14793060212",
+      "phoneDisplay": "+1 479 306 0212",
+      "linkedin": "https://www.linkedin.com/in/inderjeet-s-6585a721/"
     }
   ]
 }
