@@ -1,5 +1,8 @@
 import Link from "next/link";
 import cards from "@/lib/hello-cards.json";
+import { shareCardData } from "@/lib/share-card";
+import { SaveContactButton } from "./save-contact-button";
+import { ShareButton } from "./share-button";
 
 export type HelloPerson = (typeof cards.people)[number];
 
@@ -40,6 +43,8 @@ export function HelloCard({ person }: { person?: HelloPerson }) {
   const { org, siteUrl } = cards;
   const base = person ? `/hello/${person.slug}/` : "/hello/";
   const site = { label: siteUrl.replace("https://", ""), href: "/" };
+  const vcf = `${base}contact.vcf`;
+  const share = shareCardData(person ? { person, url: `${siteUrl}${base}` } : { org, url: `${siteUrl}${base}` });
 
   const reach: Row[] = person
     ? [
@@ -72,18 +77,14 @@ export function HelloCard({ person }: { person?: HelloPerson }) {
         </h1>
         <p className="text-base text-primary-foreground/70 mt-2 mb-8">{person ? person.role : org.tagline}</p>
 
-        <a
-          href={`${base}contact.vcf`}
-          className="flex items-center justify-center h-12 rounded-full bg-primary-foreground text-primary text-base mb-3"
-        >
-          Save contact
-        </a>
+        <SaveContactButton href={vcf} />
         <Link
           href="/contact/"
           className="flex items-center justify-center h-12 rounded-full border border-primary-foreground/25 text-base"
         >
           Book a demo
         </Link>
+        <ShareButton {...share} />
 
         <RowBox title={person ? `REACH ${person.firstName.toUpperCase()}` : "REACH ORYNX"} rows={reach} />
 

@@ -42,6 +42,7 @@ const allCards = [
         { key: "phone", label: "PHONE", value: cards.org.phoneDisplay },
       ],
       back: [
+        { key: "card", label: "Share this card", value: `${cards.siteUrl}/hello/` },
         { key: "web", label: "Website", value: cards.siteUrl },
         { key: "demo", label: "Book a demo", value: `${cards.siteUrl}/contact/` },
         { key: "linkedin", label: "LinkedIn", value: cards.org.linkedin },
@@ -62,6 +63,7 @@ const allCards = [
         ...(p.phone ? [{ key: "phone", label: "MOBILE", value: p.phoneDisplay }] : []),
       ],
       back: [
+        { key: "card", label: "Share this card", value: `${cards.siteUrl}/hello/${p.slug}/` },
         { key: "web", label: "Website", value: cards.siteUrl },
         { key: "linkedin", label: "LinkedIn", value: p.linkedin },
       ],
