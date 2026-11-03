@@ -1,29 +1,29 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Clock, Eye, Users } from "lucide-react";
+import { BadgePoundSterling, Handshake, Ruler } from "lucide-react";
 
 const values = [
   {
-    icon: Clock,
-    label: "01 · TIME",
+    icon: Handshake,
+    label: "01 · PERSONAL",
     accent: "bg-brand-blue",
-    title: "Time is the product.",
-    description: "Every capability is measured by the hours and attention it returns to a team.",
+    title: "You deal with us directly.",
+    description: "The people doing the work, online or in person, from first chat to launch.",
   },
   {
-    icon: Eye,
-    label: "02 · TRUST",
+    icon: Ruler,
+    label: "02 · TAILORED",
     accent: "bg-brand-amber",
-    title: "Trust must be inspectable.",
-    description: "Actions are visible, reviewable and reversible. Confidence comes from evidence, not a promise.",
+    title: "Built around your business.",
+    description: "We start from how you work, not from a template.",
   },
   {
-    icon: Users,
-    label: "03 · PEOPLE",
+    icon: BadgePoundSterling,
+    label: "03 · FAIR",
     accent: "bg-brand-coral",
-    title: "People are not edge cases.",
-    description: "Human handoff is a core operating path—not what happens when automation fails.",
+    title: "Competitive, fixed prices.",
+    description: "Agreed before we start, with the option to spread the cost.",
   },
 ];
 
@@ -55,19 +55,18 @@ export function ValuesSection() {
           <div>
             <span className="inline-flex items-center gap-3 text-sm font-mono text-muted-foreground mb-6">
               <span className="w-8 h-px bg-brand-coral" />
-              What we believe
+              How we work with you
             </span>
             <h2
               className={`text-3xl lg:text-5xl font-display tracking-tight transition-all duration-700 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
             >
-              Three rules shape every workflow.
+              Three promises to every client.
             </h2>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-xl lg:justify-self-end">
-            Orynx should save time without obscuring decisions, impersonating people or moving
-            uncertainty somewhere harder to see.
+            What you can expect, whatever the size of the job.
           </p>
         </div>
 

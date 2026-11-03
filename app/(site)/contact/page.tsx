@@ -4,7 +4,7 @@ import { ContactSection } from "@/components/landing/contact-section";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book an Orynx demo for your business or clinical workflow.",
+  description: "Get in touch with Orynx in Edinburgh about a website, app, AI automation, consulting or marketing.",
 };
 
 export default function ContactPage() {
@@ -12,9 +12,9 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Talk to the team"
-        title="Bring us the workflow."
-        titleAccent="We’ll bring the questions."
-        lede="Tell us what your team handles today, where it breaks down, and which decisions must remain human. We’ll reply within one working day."
+        title="Tell us about your business."
+        titleAccent="We’ll take it from there."
+        lede="Meet us online or in person in Edinburgh. We’ll reply within one working day."
       />
       <ContactSection variant="page" />
     </>

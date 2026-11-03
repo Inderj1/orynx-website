@@ -17,10 +17,11 @@ Do not add dependencies without a reason. No three.js, no CSS-in-JS, no new font
 
 | Path | What |
 | --- | --- |
-| `app/` | Routes: `/`, `/products`, `/about`, `/contact`, plus `sitemap.ts`, `robots.ts`, `icon.svg`, `apple-icon.png` |
+| `app/` | Routes: `/`, `/services`, `/products`, `/about`, `/contact`, plus `sitemap.ts`, `robots.ts`, `icon.svg`, `apple-icon.png` |
 | `app/globals.css` | All colour tokens (`--brand-*` and shadcn tokens) and the `@theme inline` that exposes them to Tailwind. Change colours here only |
 | `app/layout.tsx` | Fonts (Instrument Sans, JetBrains Mono), nav and footer, metadata, JSON-LD |
 | `components/landing/*-section.tsx` | Page sections. Copy lives inline in each file |
+| `lib/services.ts` | The four services and recent work. Feeds the Services page, the services grid on Home and About, the footer, the contact form and the JSON-LD |
 | `components/landing/hero-globe-scene.tsx`, `hero-scenarios.ts` | The hero globe: ASCII sphere, channel nodes, background flows, scenario cards |
 | `components/landing/page-hero.tsx` | Sub-page hero with `titleAccent` (coral second sentence) and `visual="wave"` |
 | `components/ui/` | shadcn primitives. Rarely touched |
@@ -56,7 +57,8 @@ Do not add dependencies without a reason. No three.js, no CSS-in-JS, no new font
 
 ## Copy rules
 
-- The positioning is **intelligence first**: Orynx takes work however it arrives (a call, a message, a consultation to scribe, a set of books), understands it, acts on it, and brings a person in when judgment matters. Do not write as if everything starts with a phone call.
+- Orynx is an **Edinburgh** team that **helps small businesses put AI to work**. AI services are the goal; a website or app is usually the first step. The four services (websites and apps, AI agents and automation, business consulting, marketing advice) and recent work live in `lib/services.ts`. Tone: local, personal, tailored, competitive fixed prices, meet online or in person. Keep it short.
+- The product positioning is **intelligence first**: Orynx takes work however it arrives (a call, a message, a consultation to scribe, a set of books), understands it, acts on it, and brings a person in when judgment matters. Do not write as if everything starts with a phone call.
 - Workflow states are Capture, Understand, Act, Escalate.
 - Products are **Orynx Desk** (trades and field service) and **Orynx Clinic** (practices and clinics). Never "Orynx Care": "care" means social care in the UK.
 - **UK English and UK context**: heating engineers not HVAC, boiler not AC, office manager not dispatcher, practices, UK and EU GDPR and the NHS Data Security and Protection Toolkit not HIPAA, patient data not PHI, 24-hour times, +44 numbers, Ltd not Co. Spelling: prioritise, organisation, colour. The site uses "judgment".

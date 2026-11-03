@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { AnimatedWave } from "./animated-wave";
+import { services } from "@/lib/services";
 
 const footerLinks = {
+  Services: services.map((service) => ({ name: service.title, href: `/services#${service.id}` })),
   Products: [
     { name: "Orynx Desk", href: "/products#desk" },
     { name: "Orynx Clinic", href: "/products#clinic" },
@@ -14,7 +16,7 @@ const footerLinks = {
   ],
   "Get in touch": [
     { name: "support@orynx.ai", href: "mailto:support@orynx.ai" },
-    { name: "Book a demo", href: "/contact" },
+    { name: "Send an enquiry", href: "/contact" },
   ],
 };
 
@@ -35,7 +37,7 @@ export function FooterSection() {
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12">
         {/* Main Footer */}
         <div className="py-16 lg:py-24">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-12 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-12 lg:gap-8">
             {/* Brand Column */}
             <div className="col-span-2">
               <Link href="/" className="inline-flex items-center gap-2 mb-6" aria-label="ORYNX home">
@@ -43,7 +45,7 @@ export function FooterSection() {
               </Link>
 
               <p className="text-muted-foreground leading-relaxed mb-8 max-w-xs">
-                Applied AI for the businesses and clinics that keep the world running.
+                An Edinburgh team helping small businesses and clinics put AI to work, starting with the website.
               </p>
             </div>
 
@@ -78,9 +80,8 @@ export function FooterSection() {
           </p>
 
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-blue" />
-              Every call and message covered, 24/7
+            <span>
+              Edinburgh, Scotland · Online or in person
             </span>
           </div>
         </div>

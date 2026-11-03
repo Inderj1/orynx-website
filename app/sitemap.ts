@@ -8,6 +8,7 @@ const SITE_URL = "https://orynx.ai"
 // so the sitemap lists the URLs the site actually serves.
 const routes = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
+  { path: "/services/", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/products/", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "/about/", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/contact/", priority: 0.6, changeFrequency: "yearly" as const },

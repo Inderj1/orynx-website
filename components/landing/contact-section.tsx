@@ -3,14 +3,15 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { services } from "@/lib/services";
 
 const contactEmail = "support@orynx.ai";
 const emails = ["support@orynx.ai"];
-const productOptions = ["Not sure yet", "Orynx Desk", "Orynx Clinic"];
+const interestOptions = ["Not sure yet", ...services.map((service) => service.title), "Orynx Desk", "Orynx Clinic"];
 const nextSteps = [
-  "We review the workflow and match it to the right product.",
-  "We spend 20 minutes showing Orynx against your process.",
-  "If there is a fit, we define a narrow pilot and clear success measures.",
+  "We reply within one working day.",
+  "We meet online or in person to understand your business.",
+  "We send a clear proposal with a fixed price.",
 ];
 
 const fieldClass =
@@ -56,7 +57,7 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
     const data = new FormData(form);
     const payload = Object.fromEntries(data) as Record<string, string>;
     const name = trim(data.get("name"));
-    const product = trim(data.get("product"));
+    const interest = trim(data.get("interest"));
 
     setSubmitting(true);
     setStatus("");
@@ -66,7 +67,7 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `Orynx demo request${name ? ` \u2014 ${name}` : ""}${product ? ` (${product})` : ""}`,
+          subject: `Orynx enquiry${name ? ` \u2014 ${name}` : ""}${interest ? ` (${interest})` : ""}`,
           from_name: name || "Orynx website",
           ...payload,
         }),
@@ -74,7 +75,7 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
       const json = await response.json();
       if (response.ok && json.success) {
         setSubmitted(true);
-        setStatus("Thanks \u2014 your request is with the team. We\u2019ll reply within one working day.");
+        setStatus("Thanks \u2014 your enquiry is with the team. We\u2019ll reply within one working day.");
         form.reset();
       } else {
         setStatus(json.message || `Something went wrong. Please try again, or email ${contactEmail}.`);
@@ -111,13 +112,12 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                   Talk to the team
                 </span>
                 <h2 className="text-3xl lg:text-5xl font-display tracking-tight mb-8">
-                  Bring us the workflow.
+                  Tell us about your business.
                   <br />
-                  <span className="text-brand-coral-ink">We’ll bring the questions.</span>
+                  <span className="text-brand-coral-ink">We’ll take it from there.</span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed mb-12">
-                  Tell us what your team handles today, where it breaks down, and which 
-                  decisions must remain human. We’ll reply within one working day.
+                  Meet us online or in person. We’ll reply within one working day.
                 </p>
               </>
             )}
@@ -152,8 +152,8 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                 <span className={labelClass}><span className="inline-block w-5 h-px bg-brand-coral align-middle mr-2" />What to bring</span>
                 <h3 className="font-display text-2xl mb-3">The messy version is useful.</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Call volumes, scheduling constraints, current tools and the exceptions your 
-                  team handles manually are more valuable than a polished requirements document.
+                  Your current website, the tools you use and the jobs that eat your week are more
+                  useful than a polished brief.
                 </p>
               </div>
             </div>
@@ -167,21 +167,21 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
           >
             <form onSubmit={handleSubmit} className="border border-foreground/10">
               <div className="px-6 py-4 border-b border-foreground/10">
-                <span className="text-sm font-mono text-muted-foreground">Request a demo</span>
+                <span className="text-sm font-mono text-muted-foreground">Send an enquiry</span>
               </div>
 
               <div className="p-6 lg:p-8 grid sm:grid-cols-2 gap-5">
-                <h2 className="sm:col-span-2 font-display text-2xl mb-2">Start with your real workflow.</h2>
+                <h2 className="sm:col-span-2 font-display text-2xl mb-2">Tell us about your business.</h2>
                 <div>
                   <label htmlFor="name" className={labelClass}>Full name</label>
                   <input id="name" name="name" type="text" autoComplete="name" placeholder="Jordan Lee" required className={fieldClass} />
                 </div>
                 <div>
-                  <label htmlFor="email" className={labelClass}>Work email</label>
+                  <label htmlFor="email" className={labelClass}>Email</label>
                   <input id="email" name="email" type="email" autoComplete="email" placeholder="jordan@company.com" required className={fieldClass} />
                 </div>
                 <div>
-                  <label htmlFor="company" className={labelClass}>Company or clinic</label>
+                  <label htmlFor="company" className={labelClass}>Business name</label>
                   <input id="company" name="company" type="text" autoComplete="organization" placeholder="Acme Ltd" required className={fieldClass} />
                 </div>
                 <div>
@@ -189,15 +189,15 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                   <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+44 7700 900123" className={fieldClass} />
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="product" className={labelClass}>Which product?</label>
+                  <label htmlFor="interest" className={labelClass}>What can we help with?</label>
                   <div className="relative">
                     <select
-                      id="product"
-                      name="product"
-                      defaultValue={productOptions[0]}
+                      id="interest"
+                      name="interest"
+                      defaultValue={interestOptions[0]}
                       className={`${fieldClass} appearance-none pr-10 cursor-pointer`}
                     >
-                      {productOptions.map((option) => (
+                      {interestOptions.map((option) => (
                         <option key={option} value={option}>{option}</option>
                       ))}
                     </select>
@@ -208,12 +208,12 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className={labelClass}>What should Orynx help handle?</label>
+                  <label htmlFor="message" className={labelClass}>A little about your business</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
-                    placeholder="Tell us about the calls, scheduling, messages or documentation taking time from your team."
+                    placeholder="What you do, what takes up your time and what you’d like to change."
                     className={`${fieldClass} resize-y`}
                   />
                 </div>
@@ -224,7 +224,7 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
                     disabled={submitting}
                     className="w-full bg-primary hover:bg-brand-indigo-deep text-primary-foreground h-14 text-base rounded-full group disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    {submitting ? "Sending\u2026" : submitted ? "Send another request" : "Send my demo request"}
+                    {submitting ? "Sending\u2026" : submitted ? "Send another enquiry" : "Send my enquiry"}
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                   </Button>
                   <p className="text-xs text-muted-foreground mt-4 font-mono">

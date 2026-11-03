@@ -36,24 +36,23 @@ export function StorySection() {
               Why we started
             </span>
             <h2 className="text-3xl lg:text-5xl font-display tracking-tight mb-8">
-              Busywork is not a measure of care or commitment.
+              Good businesses deserve good tools.
             </h2>
             <div className="space-y-6 mb-10">
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Strong service businesses and clinical teams lose hours every day to phones,
-                follow-ups, rescheduling and duplicate entry. The work is essential, but the
-                repetition is not.
+                Small businesses lose hours to admin, missed enquiries and tools that don’t talk to
+                each other. AI can take that work on, but few owners have time to work out how.
               </p>
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Orynx exists to give that time back. The software stays patient, consistent and
-                alert; people keep the relationships, judgment and accountability.
+                We start with the basics, a website that brings in work, then put AI to work on the
+                routine. You keep the relationships and the judgment.
               </p>
             </div>
             <Link
-              href="/products"
+              href="/services"
               className="group inline-flex items-center gap-2 text-sm font-medium hover:underline underline-offset-4"
             >
-              See how the products work
+              See our services
               <ArrowRight className="w-4 h-4 text-brand-coral-ink transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
+import { services } from '@/lib/services'
 
 const instrumentSans = Instrument_Sans({ 
   subsets: ["latin"],
@@ -22,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const SITE_URL = 'https://orynx.ai'
 const SITE_DESCRIPTION =
-  'Orynx builds applied AI intelligence for service businesses and clinics: it takes work as it arrives, from calls and messages to consultations and books, understands it, acts on it, and brings a person in when judgment matters.'
+  'Orynx helps small businesses put AI to work. We start with a website or app, then add AI agents and automation for the routine work, with business and marketing advice along the way. Based in Edinburgh.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -62,6 +63,15 @@ const organizationJsonLd = {
     addressLocality: 'Edinburgh',
     addressRegion: 'Scotland',
     addressCountry: 'GB',
+  },
+  areaServed: ['Edinburgh', 'Scotland', 'United Kingdom'],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Services',
+    itemListElement: services.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: service.title, description: service.summary },
+    })),
   },
   email: 'support@orynx.ai',
   telephone: '+447985309592',
