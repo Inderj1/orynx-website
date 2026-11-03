@@ -10,6 +10,7 @@ const footerLinks = {
   Company: [
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Privacy", href: "/privacy" },
   ],
   "Get in touch": [
     { name: "support@orynx.ai", href: "mailto:support@orynx.ai" },
