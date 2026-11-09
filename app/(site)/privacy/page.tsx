@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { PageHero } from "@/components/landing/page-hero";
+import { ANALYTICS_ON } from "@/lib/analytics";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     "How ORYNX LTD collects, uses and protects personal data across orynx.ai, our outreach and our products.",
 };
 
-const UPDATED = "3 November 2026";
+const UPDATED = "9 November 2026";
 const CONTACT = "support@orynx.ai";
 
 type Section = { id: string; title: string; body: ReactNode };
@@ -76,6 +77,17 @@ const sections: Section[] = [
         <span className="text-foreground">Technical data.</span> Our hosting provider records standard server logs
         such as IP address, browser type and the pages requested, to keep the site secure and working.
       </>,
+      ...(ANALYTICS_ON
+        ? [
+            <>
+              <span className="text-foreground">Website analytics.</span> We use Umami, a cookieless analytics
+              service, to count visits: the pages viewed, the site or campaign link that sent you, your country,
+              browser and device type, and clicks on our contact links. Umami does not set cookies, does not store your
+              IP address and does not follow you across other sites. When you send an enquiry, we include the campaign
+              link and page you arrived on, so we know which of our posts reached you.
+            </>,
+          ]
+        : []),
     ]),
   },
   {
@@ -262,8 +274,11 @@ const sections: Section[] = [
     title: "Cookies",
     body: (
       <p>
-        This website does not use advertising or analytics cookies. If that changes, we will update this policy and
-        ask for your consent where the law requires it.
+        This website does not use advertising or analytics cookies
+        {ANALYTICS_ON
+          ? ", and stores nothing on your device. Our analytics (Umami, see What we collect) work without cookies"
+          : ""}
+        . If that changes, we will update this policy and ask for your consent where the law requires it.
       </p>
     ),
   },

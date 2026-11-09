@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { services } from "@/lib/services";
+import { getCampaign, trackEvent } from "@/components/analytics";
 
 const contactEmail = "support@orynx.ai";
 const emails = ["support@orynx.ai"];
@@ -58,6 +59,8 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
     const payload = Object.fromEntries(data) as Record<string, string>;
     const name = trim(data.get("name"));
     const interest = trim(data.get("interest"));
+    // Where the visitor came from (UTM tags, landing page, referring site), so the enquiry email names the post.
+    const campaign = getCampaign();
 
     setSubmitting(true);
     setStatus("");
@@ -70,10 +73,16 @@ export function ContactSection({ variant = "embedded" }: ContactSectionProps) {
           subject: `Orynx enquiry${name ? ` \u2014 ${name}` : ""}${interest ? ` (${interest})` : ""}`,
           from_name: name || "Orynx website",
           ...payload,
+          ...campaign,
         }),
       });
       const json = await response.json();
       if (response.ok && json.success) {
+        trackEvent("contact_submitted", {
+          interest,
+          ...(campaign.utm_source ? { utm_source: campaign.utm_source } : {}),
+          ...(campaign.utm_campaign ? { utm_campaign: campaign.utm_campaign } : {}),
+        });
         setSubmitted(true);
         setStatus("Thanks \u2014 your enquiry is with the team. We\u2019ll reply within one working day.");
         form.reset();

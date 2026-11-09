@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { services } from '@/lib/services'
+import { Analytics } from '@/components/analytics'
 
 const instrumentSans = Instrument_Sans({ 
   subsets: ["latin"],
@@ -97,6 +98,7 @@ export default function RootLayout({
       </head>
       <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
