@@ -20,16 +20,6 @@
     "status": "301"
   },
   {
-    "source": "/services/",
-    "target": "/",
-    "status": "301"
-  },
-  {
-    "source": "/services",
-    "target": "/",
-    "status": "301"
-  },
-  {
     "source": "/how-it-works/",
     "target": "/",
     "status": "301"
